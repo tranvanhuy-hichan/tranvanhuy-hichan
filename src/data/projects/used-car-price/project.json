@@ -1,0 +1,82 @@
+{
+  "id": 8,
+  "category": "ai",
+  "featured": true,
+  "showInitial": false,
+  "order": 7,
+  "internal": false,
+  "time": "10-2026",
+  "github": "https://github.com/tranvanhuy-hichan/used-car-price",
+  "demo": "#",
+  "tags": [
+    "Python",
+    "scikit-learn",
+    "pandas",
+    "Streamlit",
+    "Machine Learning"
+  ],
+  "en": {
+    "title": "Used-Car Price Prediction — End-to-End ML",
+    "description": "An end-to-end machine learning project: crawl real listings from a Vietnamese car marketplace, clean the data, compare models, and serve price estimates in a Streamlit app.",
+    "longDesc": "A personal data science project that predicts the asking price of used cars in Vietnam. I wrote a polite, standard-library crawler for bonbanh.com listing pages (2,849 usable listings after cleaning, no personal data stored), built a leak-free scikit-learn pipeline, trained on log(price), and selected models by cross-validated percentage error. The best Random Forest reaches a median error of 6.8% (MAPE 11.3%, R² 0.93) on a held-out test set; a tuned Gradient Boosting model reaches MAPE ≈ 10.8%. The repository also includes documentation and seven executed learning notebooks covering EDA, linear models, tree ensembles, tuning and error analysis, model interpretation, clustering/PCA, and classification.",
+    "role": "A personal learning project I designed and built end to end, from data collection to a working app.",
+    "responsibilities": [
+      "Built a rate-limited crawler and cleaned the raw listings (duplicates, missing mileage, price outliers)",
+      "Designed a scikit-learn Pipeline (one-hot encoding, log-price target) and compared linear models, Random Forest and Gradient Boosting with cross-validation",
+      "Analysed errors by price segment and brand, and interpreted the model with permutation importance and partial dependence",
+      "Built a Streamlit app for instant price estimates and wrote unit tests and project documentation"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "Predict log(price) and select models by MAPE instead of RMSE",
+        "reason": "Prices are heavily right-skewed, so RMSE is dominated by a few luxury cars; percentage error matches how users judge a price estimate."
+      },
+      {
+        "decision": "Crawl only listing pages and avoid Cho Tot",
+        "reason": "Fewer requests put less load on the site, and Cho Tot's robots.txt declares ai-train=no, so its data was not used to train a model."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "Default Gradient Boosting looked much worse than Random Forest (MAPE 25% vs 14%).",
+        "solution": "Diagnosed underfitting from the staged error curve (still falling at 100 trees) and tuned trees, learning rate and subsampling, which closed the gap and gave the best test error."
+      },
+      {
+        "challenge": "About 11% of listings had no mileage and were removed, biasing the data towards newer cars.",
+        "solution": "Measured the bias (dropped cars are older and cheaper), documented it as a limitation, and avoided claiming accuracy for old low-priced cars."
+      }
+    ]
+  },
+  "vi": {
+    "title": "Dự đoán giá ô tô cũ — Dự án ML từ đầu đến cuối",
+    "description": "Dự án machine learning trọn vẹn: thu thập tin đăng thật từ sàn ô tô Việt Nam, làm sạch dữ liệu, so sánh mô hình và cung cấp giá gợi ý qua ứng dụng Streamlit.",
+    "longDesc": "Dự án khoa học dữ liệu cá nhân dự đoán giá chào bán ô tô cũ tại Việt Nam. Tôi tự viết crawler (chỉ dùng thư viện chuẩn, thu thập chậm và lịch sự) cho các trang danh sách của bonbanh.com (2.849 tin dùng được sau khi làm sạch, không lưu dữ liệu cá nhân), xây dựng Pipeline scikit-learn không rò rỉ dữ liệu, huấn luyện trên log(giá) và chọn mô hình theo sai số phần trăm bằng cross-validation. Random Forest tốt nhất đạt sai số trung vị 6,8% (MAPE 11,3%, R² 0,93) trên tập test; Gradient Boosting sau khi tinh chỉnh đạt MAPE khoảng 10,8%. Repo còn có tài liệu và bảy notebook học tập đã chạy sẵn về EDA, mô hình tuyến tính, mô hình cây, tinh chỉnh và phân tích lỗi, giải thích mô hình, gom cụm/PCA và phân lớp.",
+    "role": "Dự án học tập cá nhân do tôi tự thiết kế và xây dựng từ thu thập dữ liệu đến ứng dụng chạy được.",
+    "responsibilities": [
+      "Viết crawler có giới hạn tốc độ và làm sạch dữ liệu thô (trùng lặp, thiếu số km, ngoại lai giá)",
+      "Thiết kế Pipeline scikit-learn (one-hot, mục tiêu log giá) và so sánh mô hình tuyến tính, Random Forest, Gradient Boosting bằng cross-validation",
+      "Phân tích lỗi theo phân khúc giá và hãng xe, giải thích mô hình bằng permutation importance và partial dependence",
+      "Xây dựng ứng dụng Streamlit cho giá gợi ý tức thì, viết kiểm thử và tài liệu dự án"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "Dự đoán log(giá) và chọn mô hình theo MAPE thay vì RMSE",
+        "reason": "Giá lệch phải mạnh nên RMSE bị chi phối bởi vài xe sang; sai số phần trăm phản ánh đúng cách người dùng đánh giá một mức giá gợi ý."
+      },
+      {
+        "decision": "Chỉ thu thập trang danh sách và không dùng Chợ Tốt",
+        "reason": "Ít yêu cầu hơn nên giảm tải cho trang nguồn, và robots.txt của Chợ Tốt khai báo ai-train=no nên không dùng dữ liệu của họ để huấn luyện mô hình."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "Gradient Boosting mặc định kém hơn Random Forest rất nhiều (MAPE 25% so với 14%).",
+        "solution": "Chẩn đoán underfitting từ đường sai số theo số cây (vẫn đang giảm ở 100 cây), rồi tinh chỉnh số cây, learning rate và subsample, thu hẹp khoảng cách và đạt sai số test tốt nhất."
+      },
+      {
+        "challenge": "Khoảng 11% tin không có số km nên bị loại, làm dữ liệu nghiêng về xe đời mới.",
+        "solution": "Đo mức thiên lệch (xe bị loại cũ hơn và rẻ hơn), ghi rõ là hạn chế và không khẳng định độ chính xác cho xe cũ giá rẻ."
+      }
+    ]
+  }
+}
