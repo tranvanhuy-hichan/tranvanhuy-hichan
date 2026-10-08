@@ -66,24 +66,6 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & 
       </p>
     </td>
   </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🚗 Used-Car Price Prediction — End-to-End ML</h3>
-      <p>End-to-end machine learning project: crawls real used-car listings from a Vietnamese marketplace, compares models with cross-validation, and serves price estimates in a Streamlit app.</p>
-      <p>
-        <code>Python</code> · <code>scikit-learn</code> · <code>pandas</code> · <code>Streamlit</code> · <code>Machine Learning</code>
-      </p>
-      <ul>
-        <li>2,849 cleaned listings, leak-free scikit-learn pipeline on log(price)</li>
-        <li>Median error 6.8% (MAPE 11.3%, R² 0.93) on a held-out test set</li>
-        <li>7 executed learning notebooks: EDA, tuning, interpretation, clustering/PCA, classification</li>
-      </ul>
-      <p>
-        <a href="https://github.com/tranvanhuy-hichan/used-car-price" target="_blank"><b>💻 Source Code (used-car-price)</b></a>
-      </p>
-    </td>
-    <td width="50%" valign="top"></td>
-  </tr>
 </table>
 
 ---
