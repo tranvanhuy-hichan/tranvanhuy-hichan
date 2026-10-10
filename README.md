@@ -12,7 +12,7 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & 
 
 - 💼 **Current Role:** Software Developer Intern @ **Digital Twin Group (MakeAI)**.
 - 📍 **Location:** Da Nang, Vietnam.
-- ⚙️ **Core Tech:** Java (Spring Boot), Next.js, React.js, Vue 3, Python (Frappe), PostgreSQL, PostGIS, WebSocket STOMP, Capacitor.
+- ⚙️ **Core Tech:** Java (Spring Boot), Next.js, React.js, Python (Frappe), PostgreSQL, PostGIS, WebSocket STOMP, Capacitor.
 - 🤖 **AI Focus:** I build **production AI agents** (OpenClaw, LLM workflows) — async agent jobs, code-side retrieval and verification, human-in-the-loop — plus Data Science pipelines.
 - 🎯 **Philosophy:** Engineering robust, scalable full-stack software systems with clean architecture, high reliability, and practical business impact.
 - 🌐 **Live Portfolio:** [www.tranvanhuy.io.vn](https://www.tranvanhuy.io.vn)
@@ -23,7 +23,7 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & 
 
 ## ⚡ What I Build
 
-- 🌐 **Full-Stack Web Applications** — Modern, responsive interfaces and performant architectures with Next.js, TypeScript, React.js, and Vue 3.
+- 🌐 **Full-Stack Web Applications** — Modern, responsive interfaces and performant architectures with Next.js, TypeScript, and React.js.
 - ⚙️ **Scalable Backend Systems** — Clean Architecture RESTful APIs, secure auth workflows (JWT/OAuth2), and real-time STOMP WebSockets with Spring Boot and Python Frappe.
 - 📱 **Cross-Platform Mobile Apps** — Hybrid applications packaged with Capacitor for seamless multi-platform deployment.
 - 🗺️ **GIS & Digital Transformation** — Interactive 2D/3D spatial data platforms with PostGIS and automated statutory enterprise workflows.
@@ -118,7 +118,6 @@ I build **LLM-powered agents that do real work** — not demos. Public Investmen
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=&message=Next.js&color=222222&style=flat&logo=nextdotjs&logoColor=white" alt="Next.js" />
   <img src="https://img.shields.io/static/v1?label=&message=React.js&color=222222&style=flat&logo=react&logoColor=61DAFB" alt="React" />
-  <img src="https://img.shields.io/static/v1?label=&message=Vue%203&color=222222&style=flat&logo=vuedotjs&logoColor=4FC08D" alt="Vue 3" />
   <img src="https://img.shields.io/static/v1?label=&message=Capacitor&color=222222&style=flat&logo=capacitor&logoColor=119EFF" alt="Capacitor" />
   <img src="https://img.shields.io/static/v1?label=&message=Tailwind%20CSS&color=222222&style=flat&logo=tailwindcss&logoColor=06B6D4" alt="Tailwind CSS" />
 </p>

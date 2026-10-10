@@ -23,10 +23,10 @@
     "aboutStory": [
       "Hi, I'm Tran Van Huy — a 3rd-year Information Technology student majoring in Data Science & Artificial Intelligence at Da Nang University of Technology (DUT - UD) with an academic GPA of 3.5/4.0.",
       "Currently, I work as a Software Developer Intern at Digital Twin Group (MakeAI), where I am the primary developer of a production ward/commune-level Public Investment Project Management System (rolled out across Da Nang, currently Huong Tra Ward) and own its AI-agent layer built on OpenClaw — estimate review, cost extraction, document drafting, legal-base discovery and a permission-aware data assistant — alongside GIS (PostGIS) platforms.",
-      "I am passionate about engineering robust full-stack software systems — taking full ownership from database design (PostgreSQL, MySQL), backend architecture (Java Spring Boot, Python Frappe, REST APIs), and real-time STOMP WebSockets to reactive user interfaces (Next.js, TypeScript, React, Vue 3) and containerized deployment (Docker Compose, Linux)."
+      "I am passionate about engineering robust full-stack software systems — taking full ownership from database design (PostgreSQL, MySQL), backend architecture (Java Spring Boot, Python Frappe, REST APIs), and real-time STOMP WebSockets to reactive user interfaces (Next.js, TypeScript, React) and containerized deployment (Docker Compose, Linux)."
     ],
     "bio": "Software Developer who builds production AI agents — async orchestration, tool use, retrieval and verification, human approval — on top of solid full-stack systems.",
-    "bio2": "I design the whole agent stack: prompts and skills, tools, job queue, backend (Python/Frappe, Java Spring Boot) and UI (React, Next.js, Vue 3). Proven in production, reusable on any workflow.",
+    "bio2": "I design the whole agent stack: prompts and skills, tools, job queue, backend (Python/Frappe, Java Spring Boot) and UI (React, Next.js). Proven in production, reusable on any workflow.",
     "objective": "To build AI agents and the software around them that automate real work reliably, as an AI / Software Engineer.",
     "availability": "Software Developer Intern @ Digital Twin Group (MakeAI)",
     "statusTag": "Working at Digital Twin Group (MakeAI)",
@@ -68,10 +68,10 @@
     "aboutStory": [
       "Xin chào, tôi là Trần Văn Huy — sinh viên năm 3 chuyên ngành Khoa học Dữ liệu & Trí tuệ Nhân tạo tại Trường Đại học Bách Khoa - Đại học Đà Nẵng (DUT) với GPA tích lũy 3.5/4.0.",
       "Hiện tại, tôi đang là Thực tập sinh Lập trình viên tại Digital Twin Group (MakeAI), là lập trình viên chính của hệ thống Quản lý Dự án Đầu tư công cấp Xã/Phường đang vận hành thực tế (triển khai cho các xã, phường TP. Đà Nẵng, hiện tại là phường Hương Trà) và phụ trách tầng AI agent xây dựng trên OpenClaw — thẩm tra dự toán, bóc tách chi phí, soạn văn bản, tìm căn cứ pháp lý và trợ lý dữ liệu theo phân quyền — bên cạnh các nền tảng GIS (PostGIS).",
-      "Tôi đam mê xây dựng các hệ thống phần mềm full-stack vững chắc — đảm nhận trọn vẹn từ thiết kế cơ sở dữ liệu (PostgreSQL, MySQL), kiến trúc backend (Java Spring Boot, Python Frappe, REST APIs), nhắn tin thời gian thực STOMP WebSockets đến giao diện người dùng hiện đại (Next.js, TypeScript, React, Vue 3) và triển khai container hóa (Docker Compose, Linux)."
+      "Tôi đam mê xây dựng các hệ thống phần mềm full-stack vững chắc — đảm nhận trọn vẹn từ thiết kế cơ sở dữ liệu (PostgreSQL, MySQL), kiến trúc backend (Java Spring Boot, Python Frappe, REST APIs), nhắn tin thời gian thực STOMP WebSockets đến giao diện người dùng hiện đại (Next.js, TypeScript, React) và triển khai container hóa (Docker Compose, Linux)."
     ],
     "bio": "Lập trình viên xây dựng AI agent chạy thực tế — điều phối bất đồng bộ, dùng công cụ, truy xuất và kiểm chứng, có bước duyệt của con người — trên nền hệ thống full-stack vững chắc.",
-    "bio2": "Tôi thiết kế trọn bộ agent: prompt và skill, công cụ, hàng đợi job, backend (Python/Frappe, Java Spring Boot) và giao diện (React, Next.js, Vue 3). Đã chứng minh trong môi trường thật, tái sử dụng được cho mọi quy trình.",
+    "bio2": "Tôi thiết kế trọn bộ agent: prompt và skill, công cụ, hàng đợi job, backend (Python/Frappe, Java Spring Boot) và giao diện (React, Next.js). Đã chứng minh trong môi trường thật, tái sử dụng được cho mọi quy trình.",
     "objective": "Xây dựng AI agent và phần mềm xung quanh để tự động hóa công việc thực tế một cách đáng tin cậy, ở vai trò AI / Software Engineer.",
     "availability": "Thực tập sinh Lập trình viên @ Digital Twin Group (MakeAI)",
     "statusTag": "Làm việc tại Digital Twin Group (MakeAI)",

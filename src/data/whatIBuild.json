@@ -5,16 +5,15 @@
       "Next.js",
       "TypeScript",
       "React",
-      "Vue 3",
       "Tailwind CSS"
     ],
     "en": {
       "title": "Full-Stack Web Applications",
-      "desc": "Modern, reactive interfaces and performant frontend architectures with Next.js, TypeScript, and Vue 3."
+      "desc": "Modern, reactive interfaces and performant frontend architectures with Next.js, React, and TypeScript."
     },
     "vi": {
       "title": "Ứng dụng Web Full-Stack",
-      "desc": "Xây dựng giao diện web hiện đại, phản hồi mượt mà và kiến trúc frontend hiệu năng cao với Next.js, TypeScript và Vue 3."
+      "desc": "Xây dựng giao diện web hiện đại, phản hồi mượt mà và kiến trúc frontend hiệu năng cao với Next.js, React và TypeScript."
     }
   },
   {
@@ -39,7 +38,7 @@
     "icon": "📱",
     "tags": [
       "Capacitor",
-      "Vue / React",
+      "React",
       "Mobile First"
     ],
     "en": {

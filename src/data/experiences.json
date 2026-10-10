@@ -8,7 +8,6 @@
       "Next.js",
       "TypeScript",
       "React.js",
-      "Vue 3",
       "Agentic AI",
       "Java (Spring Boot)",
       "Python",
@@ -47,7 +46,6 @@
     "type": "academic",
     "tech": [
       "React.js",
-      "Vue 3",
       "Python",
       "Spring Boot",
       ".NET Core",
@@ -59,7 +57,7 @@
       "description": [
         "Proactively researched and adopted state-of-the-art technologies in AI, Data Science, and Full-stack Web Development.",
         "Developed academic projects from concept to completion, applying computer science theories to practical engineering problems.",
-        "Integrated modern frameworks including React.js, Vue 3, Python (Frappe Framework), Spring Boot, and .NET Core into real-world business scenarios.",
+        "Integrated modern frameworks including React.js, Python (Frappe Framework), Spring Boot, and .NET Core into real-world business scenarios.",
         "Managed version control via Git/GitHub, coordinated tasks, and collaborated in Agile/Scrum team environments.",
         "Analyzed database schemas (PostgreSQL, MySQL, SQL Server), optimized SQL query performance, and designed robust APIs."
       ]
@@ -70,7 +68,7 @@
       "description": [
         "Chủ động nghiên cứu và áp dụng các công nghệ tiên tiến trong AI, Khoa học dữ liệu và Phát triển Full-stack.",
         "Phát triển các dự án học thuật từ ý tưởng đến hoàn thiện, áp dụng lý thuyết khoa học máy tính vào thực tiễn.",
-        "Tích hợp các framework hiện đại như React.js, Vue 3, Python (Frappe), Spring Boot và .NET Core vào giải quyết bài toán.",
+        "Tích hợp các framework hiện đại như React.js, Python (Frappe), Spring Boot và .NET Core vào giải quyết bài toán.",
         "Quản lý mã nguồn bằng Git/GitHub, làm việc nhóm trong quy trình Agile/Scrum.",
         "Thiết kế cơ sở dữ liệu (PostgreSQL, MySQL, SQL Server), tối ưu truy vấn SQL và xây dựng REST API."
       ]
@@ -83,7 +81,6 @@
     "type": "self-study",
     "tech": [
       "Frappe",
-      "Vue 3",
       "Spring Boot",
       "PostgreSQL",
       "Tailwind CSS"
