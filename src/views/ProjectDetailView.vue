@@ -117,11 +117,48 @@
               <span class="text-[10px] text-blue-400 light:text-blue-600 group-hover:underline">{{ store.locale === 'vi' ? 'Phóng to ảnh' : 'Zoom image' }}</span>
             </div>
             
-            <img
-              :src="project.image"
-              :alt="project.title"
-              class="w-full h-auto object-cover max-h-[420px]"
-            />
+            <div class="relative">
+              <img
+                :src="currentImage"
+                :alt="project.title"
+                class="w-full h-auto object-cover max-h-[420px]"
+              />
+              <template v-if="galleryImages.length > 1">
+                <button
+                  type="button"
+                  class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 hover:bg-black/80 text-white text-lg flex items-center justify-center cursor-pointer"
+                  aria-label="Previous image"
+                  @click.stop="stepImage(-1)"
+                >‹</button>
+                <button
+                  type="button"
+                  class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 hover:bg-black/80 text-white text-lg flex items-center justify-center cursor-pointer"
+                  aria-label="Next image"
+                  @click.stop="stepImage(1)"
+                >›</button>
+                <span class="absolute bottom-2 right-2 px-2 py-0.5 rounded-full bg-black/60 text-[10px] font-mono text-white">
+                  {{ activeImage + 1 }} / {{ galleryImages.length }}
+                </span>
+              </template>
+            </div>
+
+            <div
+              v-if="galleryImages.length > 1"
+              class="flex gap-2 p-2.5 overflow-x-auto bg-slate-900/60 light:bg-slate-100 border-t border-slate-800 light:border-slate-200"
+              @click.stop
+            >
+              <button
+                v-for="(img, i) in galleryImages"
+                :key="i"
+                type="button"
+                class="shrink-0 w-20 h-14 rounded-md overflow-hidden border-2 cursor-pointer transition-colors"
+                :class="i === activeImage ? 'border-blue-500' : 'border-transparent opacity-70 hover:opacity-100'"
+                :aria-label="`Image ${i + 1}`"
+                @click="activeImage = i"
+              >
+                <img :src="img" :alt="`${project.title} ${i + 1}`" class="w-full h-full object-cover" />
+              </button>
+            </div>
           </div>
 
           <!-- 01. Solution Overview -->
@@ -405,11 +442,25 @@
         >
           ✕
         </button>
+        <button
+          v-if="galleryImages.length > 1"
+          type="button"
+          class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-800/90 border border-slate-700 text-white text-xl flex items-center justify-center cursor-pointer hover:bg-slate-700"
+          aria-label="Previous image"
+          @click.stop="stepImage(-1)"
+        >‹</button>
         <img
-          :src="project.image"
+          :src="currentImage"
           :alt="project.title"
           class="max-w-full max-h-[88vh] object-contain rounded-lg shadow-2xl border border-slate-700"
         />
+        <button
+          v-if="galleryImages.length > 1"
+          type="button"
+          class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-800/90 border border-slate-700 text-white text-xl flex items-center justify-center cursor-pointer hover:bg-slate-700"
+          aria-label="Next image"
+          @click.stop="stepImage(1)"
+        >›</button>
       </div>
     </Transition>
   </div>
@@ -424,6 +475,18 @@ import IconGithub from '@/components/icons/IconGithub.vue'
 const route = useRoute()
 const store = usePortfolioStore()
 const zoomImage = ref(false)
+// Gallery: a project may have several screenshots (every image in its images/ folder).
+const activeImage = ref(0)
+const galleryImages = computed(() => {
+  const list = project.value?.images
+  if (list && list.length) return list
+  return project.value?.image ? [project.value.image] : []
+})
+const currentImage = computed(() => galleryImages.value[activeImage.value] || project.value?.image || '')
+const stepImage = (delta) => {
+  const n = galleryImages.value.length
+  if (n > 1) activeImage.value = (activeImage.value + delta + n) % n
+}
 
 const project = computed(() => {
   const id = Number(route.params.id)
@@ -440,6 +503,8 @@ const prevProject = computed(() => {
   }
   return null
 })
+
+watch(() => route.params.id, () => { activeImage.value = 0 })
 
 const nextProject = computed(() => {
   if (currentIndex.value >= 0 && currentIndex.value < store.projects.length - 1) {
