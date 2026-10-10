@@ -1,7 +1,45 @@
 [
   {
+    "id": "ai-agents",
+    "labels": {
+      "en": "AI Agents & LLM",
+      "vi": "AI Agent & LLM"
+    },
+    "icon": "🤖",
+    "skills": [
+      {
+        "name": "Agent Orchestration (async jobs)",
+        "level": 80,
+        "logo": "https://cdn.simpleicons.org/openai/10A37F"
+      },
+      {
+        "name": "Tool Calling & Skill Design",
+        "level": 80,
+        "logo": "https://cdn.simpleicons.org/openai/10A37F"
+      },
+      {
+        "name": "Retrieval & Verification",
+        "level": 80,
+        "logo": "https://cdn.simpleicons.org/openai/10A37F"
+      },
+      {
+        "name": "Prompt & Structured Output",
+        "level": 85,
+        "logo": "https://cdn.simpleicons.org/openai/10A37F"
+      },
+      {
+        "name": "Human-in-the-loop & Guardrails",
+        "level": 80,
+        "logo": "https://cdn.simpleicons.org/openai/10A37F"
+      }
+    ]
+  },
+  {
     "id": "languages",
-    "labels": { "en": "Languages", "vi": "Ngôn ngữ" },
+    "labels": {
+      "en": "Languages",
+      "vi": "Ngôn ngữ"
+    },
     "icon": "💻",
     "skills": [
       {
@@ -33,7 +71,10 @@
   },
   {
     "id": "backend",
-    "labels": { "en": "Backend & Frameworks", "vi": "Backend & Frameworks" },
+    "labels": {
+      "en": "Backend & Frameworks",
+      "vi": "Backend & Frameworks"
+    },
     "icon": "⚙️",
     "skills": [
       {
@@ -65,7 +106,10 @@
   },
   {
     "id": "frontend",
-    "labels": { "en": "Frontend Development", "vi": "Frontend" },
+    "labels": {
+      "en": "Frontend Development",
+      "vi": "Frontend"
+    },
     "icon": "🎨",
     "skills": [
       {
@@ -92,7 +136,10 @@
   },
   {
     "id": "database",
-    "labels": { "en": "Databases & Storage", "vi": "Cơ sở dữ liệu" },
+    "labels": {
+      "en": "Databases & Storage",
+      "vi": "Cơ sở dữ liệu"
+    },
     "icon": "🗄️",
     "skills": [
       {
@@ -119,7 +166,10 @@
   },
   {
     "id": "devops",
-    "labels": { "en": "DevOps & Tools", "vi": "DevOps & Công cụ" },
+    "labels": {
+      "en": "DevOps & Tools",
+      "vi": "DevOps & Công cụ"
+    },
     "icon": "🛠️",
     "skills": [
       {
@@ -151,7 +201,10 @@
   },
   {
     "id": "exploring",
-    "labels": { "en": "Currently Exploring", "vi": "Đang mở rộng & Nghiên cứu" },
+    "labels": {
+      "en": "Currently Exploring",
+      "vi": "Đang mở rộng & Nghiên cứu"
+    },
     "icon": "🧠",
     "skills": [
       {
@@ -163,11 +216,6 @@
         "name": "Rust",
         "level": 60,
         "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg"
-      },
-      {
-        "name": "Agentic AI & Automation",
-        "level": 70,
-        "logo": "https://cdn.simpleicons.org/openai/10A37F"
       },
       {
         "name": "Distributed Systems",

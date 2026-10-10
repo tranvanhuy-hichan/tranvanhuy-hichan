@@ -70,15 +70,27 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & 
   </tr>
 </table>
 
-### 🤖 What I did on the AI agents
+---
 
-| Problem | How I solved it |
+## 🤖 AI Agent Engineering
+
+I build **LLM-powered agents that do real work** — not demos. Public Investment is the production system where I proved it, but the approach is general and reusable on any workflow:
+
+| Capability | What I build |
 |---|---|
-| LLM calls are slow/flaky inside a request-response web app | Background workers behind a job abstraction: progress polling, cancellation, resume after reload, server-side result application |
-| Models invent numbers and quote sources that do not exist | Deterministic code does matching, arithmetic and source lookup; every citation is verified against the provided files; unverified findings are flagged |
-| Extracted names never match the names already in the data | Existing rows are fed to the prompt and matched on normalized names, so values land on the right line instead of duplicating |
-| Public-sector accountability | Human approve/reject on every AI finding; every amount change is logged (old → new, who, when) |
-| Agents must not leak data | Agents read through the same department/role permission checks as the UI |
+| **Agent orchestration** | Long-running agent jobs behind a queue: progress, cancel, retry, resume after reload, results applied server-side |
+| **Tool use & skills** | Agents that read files, call internal tools/APIs and follow reusable "skill" playbooks written for the domain |
+| **Retrieval before the LLM** | Deterministic search/matching in code first, so the model sees only what it needs — cheaper, faster, reproducible |
+| **Structured output & verification** | JSON-schema'd answers, numeric checks in code, citations validated against source files, unverified findings flagged |
+| **Human-in-the-loop** | Approve/reject checkpoints, editable drafts, audit trail of every decision |
+| **Learning from feedback** | Agents that learn the user's preferred document format from their edits |
+| **Safe by design** | Agents read data through the same permission layer as the UI; results cached by content hash to avoid repeated LLM calls |
+
+**Typical agent I can ship:** document reviewer · data/Excel extractor · report & form drafter · research/monitoring agent · natural-language data assistant — end to end, from prompt and tool design to the backend, queue and UI.
+
+<p>
+  <code>OpenClaw</code> · <code>LLM APIs</code> · <code>Prompt & Skill Design</code> · <code>Tool Calling</code> · <code>Structured Outputs</code> · <code>Python</code> · <code>Job Queues (Redis)</code> · <code>PostgreSQL</code> · <code>React / Next.js</code>
+</p>
 
 ---
 
@@ -127,6 +139,8 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & 
   <img src="https://img.shields.io/static/v1?label=&message=GitHub%20Actions&color=222222&style=flat&logo=githubactions&logoColor=2088FF" alt="GitHub Actions" />
   <img src="https://img.shields.io/static/v1?label=&message=Linux&color=222222&style=flat&logo=linux&logoColor=FCC624" alt="Linux" />
   <img src="https://img.shields.io/static/v1?label=&message=Agentic%20AI&color=222222&style=flat&logo=openai&logoColor=10A37F" alt="Agentic AI" />
+  <img src="https://img.shields.io/static/v1?label=&message=OpenClaw%20Agents&color=222222&style=flat&logo=openai&logoColor=10A37F" alt="OpenClaw Agents" />
+  <img src="https://img.shields.io/static/v1?label=&message=LLM%20Workflows&color=222222&style=flat&logo=openai&logoColor=10A37F" alt="LLM Workflows" />
 </p>
 
 ---
