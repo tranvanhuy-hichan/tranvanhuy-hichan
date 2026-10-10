@@ -1,0 +1,109 @@
+{
+  "id": 9,
+  "category": "fullstack",
+  "featured": false,
+  "showInitial": false,
+  "order": 3,
+  "internal": false,
+  "time": "10-2026",
+  "demo": "https://doanthanhnien.tranvanhuy.io.vn/",
+  "tags": [
+    "Next.js",
+    "TypeScript",
+    "Prisma",
+    "PostgreSQL",
+    "Passkey (WebAuthn)",
+    "PWA",
+    "Tailwind CSS"
+  ],
+  "en": {
+    "title": "Youth Union Portal & Management System (Student Science & Engineering Project)",
+    "description": "A web portal and management system for a high school's Youth Union — QR attendance, scoring, activities, reports — built by a student team for a science & engineering competition, with me as technical advisor.",
+    "longDesc": "A public news portal plus an internal management system for the Youth Union of Son Ha High School (Quang Ngai): member and branch management, activity planning, QR-code attendance with automatic point awarding, badges and rankings, reports with Excel export, anonymous feedback, and PWA push notifications. It was entered by a student team in a science & engineering competition. I acted as the team's technical advisor and support, guiding architecture, security and authorization, and helping with implementation, deployment and technical Q&A preparation.",
+    "role": "Technical advisor & support for the student team — architecture, security/authorization guidance, and hands-on help with selected features and deployment.",
+    "responsibilities": [
+      "Advised on the architecture: Next.js App Router with Server Actions, Prisma ORM on PostgreSQL, deployed on Vercel with scheduled cron jobs",
+      "Guided the security and authorization design: server-side role and ownership checks, bcrypt-hashed passwords, JWT session cookies, input validation with zod",
+      "Supported implementation of QR attendance with short-lived signed tokens and transactional point awarding, and of Passkey (WebAuthn) sign-in",
+      "Helped the team prepare technical documentation, a demo script and technical Q&A for the judges",
+      "Coached the team on responsible use of AI tools: only synthetic demo data, never real student data"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "Authorization enforced on the server, per branch",
+        "reason": "Every query goes through scope helpers, so a branch secretary opening another branch's URL gets a 404 — permissions are never left to the UI."
+      },
+      {
+        "decision": "Short-lived, rotating QR tokens",
+        "reason": "A signed token expires after 90 seconds and its nonce changes whenever attendance is reopened, so old QR codes and screenshots stop working."
+      },
+      {
+        "decision": "Points recorded as a ledger inside one transaction",
+        "reason": "Attendance and the point transaction commit together, with a unique (activity, member) constraint, so double check-ins and inconsistent totals cannot happen."
+      },
+      {
+        "decision": "Draft-and-approve publishing",
+        "reason": "Branch secretaries can only save drafts of website posts; an admin reviews and publishes, keeping the official channel controlled."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "Preventing members from checking in for each other.",
+        "solution": "Short-lived tokens, one check-in per member, device and IP logging, and a confirm step so browser prefetching cannot record attendance."
+      },
+      {
+        "challenge": "Protecting minors' personal data in a system built by students.",
+        "solution": "Seed and demo data only, no real student data in development or AI tools, hashed passwords, forced password change at first login."
+      },
+      {
+        "challenge": "Making a large system usable on phones for ~1,400 members.",
+        "solution": "PWA with push notifications, cached public pages, compact one-line lists and skeleton loading on mobile."
+      }
+    ]
+  },
+  "vi": {
+    "title": "Cổng thông tin & Hệ thống quản lý Đoàn trường (Dự án thi Khoa học Kỹ thuật học sinh)",
+    "description": "Cổng thông tin và hệ thống quản lý Đoàn trường THPT — điểm danh QR, tính điểm, hoạt động, báo cáo — do nhóm học sinh thực hiện cho cuộc thi Khoa học Kỹ thuật, tôi là cố vấn kỹ thuật.",
+    "longDesc": "Cổng thông tin công khai và hệ thống quản lý nội bộ cho Đoàn trường THPT Sơn Hà (Quảng Ngãi): quản lý đoàn viên và Chi đoàn, lập hoạt động, điểm danh bằng mã QR tự cộng điểm, huy hiệu và bảng xếp hạng, báo cáo xuất Excel, hộp thư góp ý ẩn danh và thông báo đẩy PWA. Dự án do một nhóm học sinh tham gia cuộc thi Khoa học Kỹ thuật. Tôi đóng vai trò cố vấn và hỗ trợ kỹ thuật cho nhóm: định hướng kiến trúc, bảo mật và phân quyền, hỗ trợ triển khai, đưa lên môi trường thật và chuẩn bị phần hỏi đáp kỹ thuật.",
+    "role": "Cố vấn và hỗ trợ kỹ thuật cho nhóm học sinh — định hướng kiến trúc, bảo mật/phân quyền, hỗ trợ trực tiếp một số chức năng và việc triển khai.",
+    "responsibilities": [
+      "Tư vấn kiến trúc: Next.js App Router với Server Actions, Prisma ORM trên PostgreSQL, triển khai trên Vercel kèm các tác vụ cron định kỳ",
+      "Định hướng thiết kế bảo mật và phân quyền: kiểm tra vai trò và quyền sở hữu ở máy chủ, mật khẩu băm bcrypt, phiên JWT trong cookie, kiểm tra dữ liệu đầu vào bằng zod",
+      "Hỗ trợ triển khai điểm danh QR với token ký số ngắn hạn và cộng điểm trong transaction, cùng đăng nhập Passkey (WebAuthn)",
+      "Giúp nhóm chuẩn bị tài liệu kỹ thuật, kịch bản demo và phần hỏi đáp kỹ thuật với giám khảo",
+      "Hướng dẫn nhóm dùng công cụ AI có trách nhiệm: chỉ dùng dữ liệu mẫu, không đưa dữ liệu học sinh thật"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "Phân quyền kiểm tra ở máy chủ, theo từng Chi đoàn",
+        "reason": "Mọi truy vấn đều qua hàm giới hạn phạm vi, bí thư mở đường dẫn của Chi đoàn khác sẽ nhận 404 — quyền không bao giờ phụ thuộc vào giao diện."
+      },
+      {
+        "decision": "Mã QR ngắn hạn và đổi liên tục",
+        "reason": "Token ký số hết hạn sau 90 giây và nonce đổi mỗi lần mở lại điểm danh, nên QR cũ hay ảnh chụp màn hình đều vô hiệu."
+      },
+      {
+        "decision": "Điểm ghi dạng sổ cái trong một transaction",
+        "reason": "Điểm danh và giao dịch điểm được ghi cùng lúc, kèm ràng buộc duy nhất (hoạt động, đoàn viên), nên không thể điểm danh đôi hay lệch tổng điểm."
+      },
+      {
+        "decision": "Đăng bài theo kiểu nháp rồi duyệt",
+        "reason": "Bí thư Chi đoàn chỉ lưu được bản nháp bài viết trên website; Admin duyệt rồi mới đăng, giữ kênh thông tin chính thức được kiểm soát."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "Ngăn đoàn viên điểm danh hộ nhau.",
+        "solution": "Token ngắn hạn, mỗi đoàn viên một lần, lưu thiết bị và địa chỉ IP, thêm bước xác nhận để trình duyệt tải trước không tự ghi nhận điểm danh."
+      },
+      {
+        "challenge": "Bảo vệ dữ liệu cá nhân của học sinh trong hệ thống do học sinh làm.",
+        "solution": "Chỉ dùng dữ liệu mẫu, không đưa dữ liệu học sinh thật vào quá trình phát triển hay công cụ AI, mật khẩu băm, bắt buộc đổi mật khẩu lần đầu."
+      },
+      {
+        "challenge": "Hệ thống lớn phải dùng mượt trên điện thoại cho khoảng 1.400 đoàn viên.",
+        "solution": "PWA kèm thông báo đẩy, trang công khai có lưu đệm, danh sách một dòng gọn và khung chờ khi tải trên điện thoại."
+      }
+    ]
+  }
+}
