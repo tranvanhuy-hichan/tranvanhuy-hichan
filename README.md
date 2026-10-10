@@ -36,21 +36,6 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & 
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>🛍️ NexShop — E-Commerce & POS Platform</h3>
-      <p>Full-stack omnichannel retail platform combining an online storefront with an in-person Point of Sale (POS) terminal and revenue analytics.</p>
-      <p>
-        <code>Next.js</code> · <code>TypeScript</code> · <code>Prisma</code> · <code>PostgreSQL</code> · <code>Google OAuth</code> · <code>Tailwind CSS</code>
-      </p>
-      <ul>
-        <li>Next.js App Router with Server Actions & Prisma ORM</li>
-        <li>POS offline-tolerant terminal & transactional stock locking</li>
-        <li>Admin revenue analytics dashboard & Google OAuth authentication</li>
-      </ul>
-      <p>
-        <a href="https://vattudongkha.io.vn" target="_blank"><b>🌐 Live Website (vattudongkha.io.vn)</b></a>
-      </p>
-    </td>
-    <td width="50%" valign="top">
       <h3>🤖 Ward/Commune-Level Public Investment Project Management System</h3>
       <p>Production system rolled out to wards and communes of <b>Da Nang city (currently Huong Tra Ward)</b>, digitizing the 10-step public investment workflow. I am the primary developer and <b>built its AI-agent layer</b> on OpenClaw.</p>
       <p>
@@ -65,6 +50,21 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & 
       <p>
         <i>🔒 Enterprise project @ Digital Twin Group (MakeAI) — in production (source code private)</i><br />
         <a href="https://digitaltwin.huongtra.danang.gov.vn/dautucong/" target="_blank"><b>🌐 Production system (login required)</b></a>
+      </p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🛍️ NexShop — E-Commerce & POS Platform</h3>
+      <p>Full-stack omnichannel retail platform combining an online storefront with an in-person Point of Sale (POS) terminal and revenue analytics.</p>
+      <p>
+        <code>Next.js</code> · <code>TypeScript</code> · <code>Prisma</code> · <code>PostgreSQL</code> · <code>Google OAuth</code> · <code>Tailwind CSS</code>
+      </p>
+      <ul>
+        <li>Next.js App Router with Server Actions & Prisma ORM</li>
+        <li>POS offline-tolerant terminal & transactional stock locking</li>
+        <li>Admin revenue analytics dashboard & Google OAuth authentication</li>
+      </ul>
+      <p>
+        <a href="https://vattudongkha.io.vn" target="_blank"><b>🌐 Live Website (vattudongkha.io.vn)</b></a>
       </p>
     </td>
   </tr>
