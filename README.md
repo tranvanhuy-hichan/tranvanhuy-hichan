@@ -13,7 +13,7 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & 
 - 💼 **Current Role:** Software Developer Intern @ **Digital Twin Group (MakeAI)**.
 - 📍 **Location:** Da Nang, Vietnam.
 - ⚙️ **Core Tech:** Java (Spring Boot), Next.js, React.js, Vue 3, Python (Frappe), PostgreSQL, PostGIS, WebSocket STOMP, Capacitor.
-- 🤖 **AI Focus:** AI Solutions, Agentic AI workflows, Data Science pipelines.
+- 🤖 **AI Focus:** I build **production AI agents** (OpenClaw, LLM workflows) — async agent jobs, code-side retrieval and verification, human-in-the-loop — plus Data Science pipelines.
 - 🎯 **Philosophy:** Engineering robust, scalable full-stack software systems with clean architecture, high reliability, and practical business impact.
 - 🌐 **Live Portfolio:** [www.tranvanhuy.io.vn](https://www.tranvanhuy.io.vn)
 
@@ -27,7 +27,7 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & 
 - ⚙️ **Scalable Backend Systems** — Clean Architecture RESTful APIs, secure auth workflows (JWT/OAuth2), and real-time STOMP WebSockets with Spring Boot and Python Frappe.
 - 📱 **Cross-Platform Mobile Apps** — Hybrid applications packaged with Capacitor for seamless multi-platform deployment.
 - 🗺️ **GIS & Digital Transformation** — Interactive 2D/3D spatial data platforms with PostGIS and automated statutory enterprise workflows.
-- 🤖 **Data & AI Systems** — Automated document parsing, ETL pipelines, and Agentic AI workflow integrations.
+- 🤖 **AI Agents & LLM Workflows** — Production agents for estimate review, document parsing/drafting and legal research, with verification and human approval.
 
 ---
 
@@ -35,21 +35,6 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & 
 
 <table>
   <tr>
-    <td width="50%" valign="top">
-      <h3>🏙️ BIMspace - Infrastructure Management</h3>
-      <p>Technical infrastructure management platform leveraging interactive 2D and 3D maps to manage assets and operational maintenance workflows.</p>
-      <p>
-        <code>Next.js</code> · <code>TypeScript</code> · <code>Frappe</code> · <code>Python</code> · <code>PostgreSQL</code> · <code>GIS Maps</code>
-      </p>
-      <ul>
-        <li>Interactive 2D/3D map visualization for technical infrastructure assets</li>
-        <li>Asset tracking, inspection logs, and scheduled maintenance</li>
-        <li>Viewport bounding-box spatial queries for high FPS performance</li>
-      </ul>
-      <p>
-        <i>🔒 Enterprise Internal Project @ Digital Twin Group (MakeAI)</i>
-      </p>
-    </td>
     <td width="50%" valign="top">
       <h3>🛍️ NexShop — E-Commerce & POS Platform</h3>
       <p>Full-stack omnichannel retail platform combining an online storefront with an in-person Point of Sale (POS) terminal and revenue analytics.</p>
@@ -65,8 +50,34 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & 
         <a href="https://vattudongkha.io.vn" target="_blank"><b>🌐 Live Website (vattudongkha.io.vn)</b></a>
       </p>
     </td>
+    <td width="50%" valign="top">
+      <h3>🤖 Public Investment Management — AI Agent Platform</h3>
+      <p>Production system digitizing the 10-step public investment workflow for a municipal government. I am the primary developer and <b>built its AI-agent layer</b> on OpenClaw.</p>
+      <p>
+        <code>OpenClaw</code> · <code>Agentic AI</code> · <code>LLM</code> · <code>React</code> · <code>TypeScript</code> · <code>Frappe</code> · <code>Python</code> · <code>PostgreSQL</code>
+      </p>
+      <ul>
+        <li><b>AI estimate review</b> against a monthly price warehouse — code-side matching first, LLM only for what code can't resolve, citations verified in code</li>
+        <li><b>AI cost extraction</b> from Excel workbooks, mapped onto existing cost lines; <b>AI drafting</b> of official Word forms</li>
+        <li><b>Async agent jobs</b> (queue, progress, cancel, resume) shared by every AI feature, with human approval and a full audit trail</li>
+        <li>Scheduled <b>legal-base discovery</b> and a <b>permission-aware data assistant</b></li>
+      </ul>
+      <p>
+        <i>🔒 Enterprise project @ Digital Twin Group (MakeAI) — in production</i>
+      </p>
+    </td>
   </tr>
 </table>
+
+### 🤖 What I did on the AI agents
+
+| Problem | How I solved it |
+|---|---|
+| LLM calls are slow/flaky inside a request-response web app | Background workers behind a job abstraction: progress polling, cancellation, resume after reload, server-side result application |
+| Models invent numbers and quote sources that do not exist | Deterministic code does matching, arithmetic and source lookup; every citation is verified against the provided files; unverified findings are flagged |
+| Extracted names never match the names already in the data | Existing rows are fed to the prompt and matched on normalized names, so values land on the right line instead of duplicating |
+| Public-sector accountability | Human approve/reject on every AI finding; every amount change is logged (old → new, who, when) |
+| Agents must not leak data | Agents read through the same department/role permission checks as the UI |
 
 ---
 
@@ -122,7 +133,7 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & 
 ## 🧠 Academic Specialization & Focus
 
 - 📊 **Data Science & ML:** Exploratory Data Analysis, Pandas, NumPy, Scikit-learn, and Deep Learning models.
-- 🤖 **Agentic AI & Automation:** Multi-agent architectures, tool calling, and automated statutory process workflows.
+- 🤖 **Agentic AI & Automation:** Agent job orchestration, tool calling, hybrid rule-based + LLM pipelines, and automated statutory process workflows.
 - 🏗️ **Software Engineering:** Scalable full-stack systems (Spring Boot, React, Next.js, PostgreSQL), Clean Architecture, and Transactional Systems.
 
 ---

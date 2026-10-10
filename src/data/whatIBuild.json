@@ -1,7 +1,13 @@
 [
   {
     "icon": "🌐",
-    "tags": ["Next.js", "TypeScript", "React", "Vue 3", "Tailwind CSS"],
+    "tags": [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Vue 3",
+      "Tailwind CSS"
+    ],
     "en": {
       "title": "Full-Stack Web Applications",
       "desc": "Modern, reactive interfaces and performant frontend architectures with Next.js, TypeScript, and Vue 3."
@@ -13,7 +19,13 @@
   },
   {
     "icon": "⚙️",
-    "tags": ["Java (Spring Boot)", "Python (Frappe)", "Node.js", "PostgreSQL", "Redis"],
+    "tags": [
+      "Java (Spring Boot)",
+      "Python (Frappe)",
+      "Node.js",
+      "PostgreSQL",
+      "Redis"
+    ],
     "en": {
       "title": "Scalable Backend Systems",
       "desc": "RESTful APIs, authentication workflows, clean architecture, and real-time communications."
@@ -25,7 +37,11 @@
   },
   {
     "icon": "📱",
-    "tags": ["Capacitor", "Vue / React", "Mobile First"],
+    "tags": [
+      "Capacitor",
+      "Vue / React",
+      "Mobile First"
+    ],
     "en": {
       "title": "Cross-Platform Mobile Apps",
       "desc": "Hybrid applications packaged for responsive and high-performance mobile deployment."
@@ -37,7 +53,13 @@
   },
   {
     "icon": "🗺️",
-    "tags": ["Next.js", "TypeScript", "2D/3D Maps", "PostGIS", "Frappe"],
+    "tags": [
+      "Next.js",
+      "TypeScript",
+      "2D/3D Maps",
+      "PostGIS",
+      "Frappe"
+    ],
     "en": {
       "title": "GIS & Digital Transformation",
       "desc": "Interactive spatial data platforms (2D/3D maps) and enterprise process automation."
@@ -49,14 +71,20 @@
   },
   {
     "icon": "🤖",
-    "tags": ["Agentic AI", "Python", "Pandas", "NumPy"],
+    "tags": [
+      "OpenClaw",
+      "Agentic AI",
+      "LLM",
+      "Python",
+      "RAG-style retrieval"
+    ],
     "en": {
-      "title": "Data & AI Systems",
-      "desc": "Data analysis pipelines and agentic AI-driven tools to automate enterprise workflows."
+      "title": "AI Agents & LLM Workflows",
+      "desc": "Production agents with async jobs, code-side retrieval and verification, and human approval — built for government workflows."
     },
     "vi": {
-      "title": "Hệ thống Dữ liệu & Agentic AI",
-      "desc": "Xây dựng pipeline phân tích dữ liệu và tích hợp công cụ Agentic AI tự động hóa xử lý tác vụ doanh nghiệp."
+      "title": "AI Agent & quy trình LLM",
+      "desc": "Agent chạy thực tế với job bất đồng bộ, truy xuất và kiểm chứng bằng code, có bước duyệt của con người — xây dựng cho quy trình cơ quan nhà nước."
     }
   }
 ]

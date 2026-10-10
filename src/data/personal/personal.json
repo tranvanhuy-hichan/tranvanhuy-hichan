@@ -11,17 +11,18 @@
   "en": {
     "name": "Trần Văn Huy",
     "title": "Software Developer",
-    "roleSubtitle": "Software Developer | Full-Stack & AI Solutions",
-    "statement": "Building scalable full-stack software systems and practical, data-driven AI solutions.",
+    "roleSubtitle": "Software Developer | Full-Stack & AI Agents",
+    "statement": "Building production full-stack systems and the AI agents that automate real government workflows.",
     "taglines": [
       "Software Developer",
       "Backend & Full-Stack Developer",
+      "AI Agent & LLM Workflows",
       "Data Science & AI Solutions",
       "Java Spring Boot & Next.js"
     ],
     "aboutStory": [
       "Hi, I'm Tran Van Huy — a 3rd-year Information Technology student majoring in Data Science & Artificial Intelligence at Da Nang University of Technology (DUT - UD) with an academic GPA of 3.5/4.0.",
-      "Currently, I work as a Software Developer Intern at Digital Twin Group (MakeAI), where I build production-grade enterprise modules for statutory Public Investment Management, GIS spatial mapping platforms (PostGIS), and Agentic AI (OpenClaw) workflow automations.",
+      "Currently, I work as a Software Developer Intern at Digital Twin Group (MakeAI), where I am the primary developer of a production Public Investment Management system and own its AI-agent layer built on OpenClaw — estimate review, cost extraction, document drafting, legal-base discovery and a permission-aware data assistant — alongside GIS (PostGIS) platforms.",
       "I am passionate about engineering robust full-stack software systems — taking full ownership from database design (PostgreSQL, MySQL), backend architecture (Java Spring Boot, Python Frappe, REST APIs), and real-time STOMP WebSockets to reactive user interfaces (Next.js, TypeScript, React, Vue 3) and containerized deployment (Docker Compose, Linux)."
     ],
     "bio": "Software Developer building scalable web, backend, and intelligent systems with a strong foundation in Data Science, Machine Learning, and AI Solutions.",
@@ -30,27 +31,43 @@
     "availability": "Software Developer Intern @ Digital Twin Group (MakeAI)",
     "statusTag": "Working at Digital Twin Group (MakeAI)",
     "quickFacts": [
-      { "label": "Current Role", "value": "Software Developer Intern" },
-      { "label": "Company", "value": "Digital Twin Group (MakeAI)" },
-      { "label": "Education", "value": "Bach Khoa Da Nang (DUT) — GPA 3.5/4.0" },
-      { "label": "Specialization", "value": "Data Science & Artificial Intelligence" },
-      { "label": "Location", "value": "Da Nang, Vietnam" }
+      {
+        "label": "Current Role",
+        "value": "Software Developer Intern"
+      },
+      {
+        "label": "Company",
+        "value": "Digital Twin Group (MakeAI)"
+      },
+      {
+        "label": "Education",
+        "value": "Bach Khoa Da Nang (DUT) — GPA 3.5/4.0"
+      },
+      {
+        "label": "Specialization",
+        "value": "Data Science & Artificial Intelligence"
+      },
+      {
+        "label": "Location",
+        "value": "Da Nang, Vietnam"
+      }
     ]
   },
   "vi": {
     "name": "Trần Văn Huy",
     "title": "Software Developer",
-    "roleSubtitle": "Lập trình viên Software Developer | Full-Stack & Giải pháp AI",
-    "statement": "Xây dựng các hệ thống phần mềm full-stack mở rộng và giải pháp AI & Dữ liệu thông minh.",
+    "roleSubtitle": "Lập trình viên Software Developer | Full-Stack & AI Agent",
+    "statement": "Xây dựng hệ thống full-stack thực tế và các AI agent tự động hóa quy trình nghiệp vụ của cơ quan nhà nước.",
     "taglines": [
       "Lập trình viên Software Developer",
       "Kỹ sư Backend & Full-Stack",
+      "AI Agent & LLM Workflows",
       "Khoa học Dữ liệu & Giải pháp AI",
       "Java Spring Boot & Next.js"
     ],
     "aboutStory": [
       "Xin chào, tôi là Trần Văn Huy — sinh viên năm 3 chuyên ngành Khoa học Dữ liệu & Trí tuệ Nhân tạo tại Trường Đại học Bách Khoa - Đại học Đà Nẵng (DUT) với GPA tích lũy 3.5/4.0.",
-      "Hiện tại, tôi đang là Thực tập sinh Lập trình viên tại Digital Twin Group (MakeAI), trực tiếp phát triển các phân hệ quản lý Đầu tư Công chuẩn 10 bước, nền tảng bản đồ hạ tầng không gian GIS (PostGIS), và ứng dụng Agentic AI (OpenClaw) để tự động hóa quy trình nghiệp vụ.",
+      "Hiện tại, tôi đang là Thực tập sinh Lập trình viên tại Digital Twin Group (MakeAI), là lập trình viên chính của hệ thống Quản lý Đầu tư Công đang vận hành thực tế và phụ trách tầng AI agent xây dựng trên OpenClaw — thẩm tra dự toán, bóc tách chi phí, soạn văn bản, tìm căn cứ pháp lý và trợ lý dữ liệu theo phân quyền — bên cạnh các nền tảng GIS (PostGIS).",
       "Tôi đam mê xây dựng các hệ thống phần mềm full-stack vững chắc — đảm nhận trọn vẹn từ thiết kế cơ sở dữ liệu (PostgreSQL, MySQL), kiến trúc backend (Java Spring Boot, Python Frappe, REST APIs), nhắn tin thời gian thực STOMP WebSockets đến giao diện người dùng hiện đại (Next.js, TypeScript, React, Vue 3) và triển khai container hóa (Docker Compose, Linux)."
     ],
     "bio": "Lập trình viên Software Developer phát triển hệ thống web, backend và ứng dụng thông minh với nền tảng vững chắc về Khoa học Dữ liệu, Học máy và Giải pháp AI.",
@@ -59,11 +76,26 @@
     "availability": "Thực tập sinh Lập trình viên @ Digital Twin Group (MakeAI)",
     "statusTag": "Làm việc tại Digital Twin Group (MakeAI)",
     "quickFacts": [
-      { "label": "Vị trí hiện tại", "value": "Thực tập sinh Lập trình viên" },
-      { "label": "Đơn vị", "value": "Digital Twin Group (MakeAI)" },
-      { "label": "Học vấn", "value": "Đại học Bách Khoa ĐN — GPA 3.5/4.0" },
-      { "label": "Chuyên ngành", "value": "Khoa học Dữ liệu & Trí tuệ Nhân tạo" },
-      { "label": "Địa điểm", "value": "Đà Nẵng, Việt Nam" }
+      {
+        "label": "Vị trí hiện tại",
+        "value": "Thực tập sinh Lập trình viên"
+      },
+      {
+        "label": "Đơn vị",
+        "value": "Digital Twin Group (MakeAI)"
+      },
+      {
+        "label": "Học vấn",
+        "value": "Đại học Bách Khoa ĐN — GPA 3.5/4.0"
+      },
+      {
+        "label": "Chuyên ngành",
+        "value": "Khoa học Dữ liệu & Trí tuệ Nhân tạo"
+      },
+      {
+        "label": "Địa điểm",
+        "value": "Đà Nẵng, Việt Nam"
+      }
     ]
   }
 }

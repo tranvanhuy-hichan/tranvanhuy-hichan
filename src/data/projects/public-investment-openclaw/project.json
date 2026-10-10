@@ -2,90 +2,122 @@
   "id": 7,
   "category": "fullstack",
   "featured": true,
-  "showInitial": false,
-  "order": 3,
+  "showInitial": true,
+  "order": 2,
   "internal": true,
   "time": "06-2026 – Present",
   "demo": "#",
   "tags": [
-    "Next.js",
+    "OpenClaw",
+    "Agentic AI",
+    "LLM",
+    "React",
     "TypeScript",
     "Frappe",
     "Python",
-    "PostgreSQL",
-    "Agentic AI"
+    "PostgreSQL"
   ],
   "en": {
-    "title": "Public Investment Management System",
-    "description": "A system that digitizes the 10-step public investment workflow and integrates agentic AI to automate processing.",
-    "longDesc": "A digital solution built at Digital Twin Group (MakeAI) to manage the entire public investment lifecycle. It digitizes the standard 10-step public investment process and integrates Agentic AI to automate workflow steps, cut processing time, and boost operational efficiency.",
-    "role": "A key project I lead at Digital Twin Group (MakeAI), taking over and continuing development after the initial phase was completed.",
+    "title": "Public Investment Management — AI Agent Platform",
+    "description": "A production system digitizing the 10-step public investment workflow, where I built the AI-agent layer: estimate review, cost extraction, document drafting, legal-base discovery and a data assistant.",
+    "longDesc": "A digital solution built at Digital Twin Group (MakeAI) for a municipal government to manage the full public-investment lifecycle (preparation, design, bidding, disbursement, settlement). I took over the system after phase 1 and am its primary developer. I designed and shipped the agentic AI layer on top of OpenClaw — long-running agent jobs, retrieval done in code before the LLM is called, citation verification, and human approval checkpoints — so that officers review AI output instead of doing the work by hand.",
+    "role": "Primary developer. Owned the AI/agent features end-to-end (design, backend, UI) and the frontend re-architecture on a Frappe/Python backend.",
     "responsibilities": [
-      "Continued developing the 10-step public investment workflow",
-      "Integrated Agentic AI into the process",
-      "Re-architected the frontend interface with Next.js & TypeScript",
-      "Built the Disbursement module",
-      "Built the System Settings module",
-      "Built the System Catalog module",
-      "Built the Construction & Supervision module",
-      "Built the Overview & Reports module",
-      "Built the Bidding Packages module"
+      "Designed the AI-agent layer on OpenClaw: a shared async job runner (queue, progress polling, cancel, resume after page reload) reused by every AI feature",
+      "AI estimate review: checks a project's cost estimate against a monthly price warehouse; documents are converted to text, matched in code first, and the LLM only reviews what code cannot resolve",
+      "AI cost extraction: parses an uploaded Excel workbook sheet by sheet, extracts the cost structure and maps it onto existing cost lines (khái toán / dự toán), creating only the missing ones",
+      "AI document drafting: fills official Word templates (settlement forms) from structured project data, and learns the user's edited format for next time",
+      "Legal-base discovery: a scheduled crawler of the national legal database ranks new regulations by relevance and proposes them to the legal library for approval",
+      "AI data assistant: natural-language questions over project data, restricted to what the asking user is permitted to see",
+      "Built the money-chain integrity layer: reconciliation from medium-term capital to settlement, adjustment records with decision numbers, and an audit log of every amount change",
+      "Re-architected the frontend (React, TypeScript, TanStack Router/Query) and built the Disbursement, Bidding Packages, Construction & Supervision, Reports and Settings modules"
     ],
     "engineeringDecisions": [
       {
-        "decision": "Agentic AI & Workflow Automation Integration",
-        "reason": "Automates extracting key financial metrics and legal clauses from investment dossiers, reducing manual review time significantly."
+        "decision": "Deterministic code first, LLM second",
+        "reason": "Matching, arithmetic checks and source lookup run in code; the model only handles ambiguous items. This cut latency and tokens and made results reproducible."
       },
       {
-        "decision": "Modular Feature Architecture",
-        "reason": "Separated Disbursement, Bidding, and Supervision modules into dedicated components for isolated testing and clear operational boundaries."
+        "decision": "Persistent, resumable agent jobs",
+        "reason": "AI tasks take minutes. Jobs are queued, cached by content hash, pollable and cancellable, and the backend applies their results, so work is never lost when the user navigates away."
+      },
+      {
+        "decision": "Human-in-the-loop with an audit trail",
+        "reason": "Every AI finding is approve/reject by an officer, and every change to an amount is logged (old value, new value, who, when) — required for public-sector accountability."
+      },
+      {
+        "decision": "Permission-aware agents",
+        "reason": "Agents read data through the same department/role permission checks as the UI, so an AI answer never exposes more than the user is allowed to see."
       }
     ],
     "challengesAndSolutions": [
       {
-        "challenge": "Enforcing complex legal preconditions across the statutory 10-step investment lifecycle.",
-        "solution": "Constructed an immutable multi-stage validation engine in Python/Frappe with exhaustive logging and step-gate validations."
+        "challenge": "LLM calls are slow and flaky for a request/response web app.",
+        "solution": "Moved them to background workers behind a job abstraction with progress, cancellation, retries and server-side result application."
       },
       {
-        "challenge": "Ensuring accuracy and explainability in AI-assisted document parsing.",
-        "solution": "Designed a hybrid pipeline combining rule-based deterministic checks with Agentic AI LLM inference and mandatory human reviewer checkpoints."
+        "challenge": "The model can invent figures or quote sources that do not exist.",
+        "solution": "Verified every citation in code against the provided files and flagged unverified findings, keeping hard numeric checks out of the LLM."
+      },
+      {
+        "challenge": "Names extracted by the model rarely match the names already in the project's cost table.",
+        "solution": "Fed the existing rows into the prompt and matched on normalized names, so values land on the right line instead of creating duplicates."
+      },
+      {
+        "challenge": "Real-world amounts always differ from the estimate (savings, adjustments).",
+        "solution": "Modelled each stage as a ceiling for the next, treated lower values as savings and above-ceiling values as needing an approved adjustment."
       }
     ]
   },
   "vi": {
-    "title": "Hệ thống Quản lý Đầu tư Công",
-    "description": "Hệ thống số hóa quy trình đầu tư công 10 bước và tích hợp agentic AI để tự động hóa xử lý.",
-    "longDesc": "Giải pháp số được xây dựng tại Digital Twin Group (MakeAI) nhằm quản lý toàn bộ vòng đời đầu tư công. Hệ thống số hóa quy trình đầu tư công chuẩn 10 bước và tích hợp Agentic AI để tự động hóa các bước xử lý, rút ngắn thời gian và nâng cao hiệu suất vận hành.",
-    "role": "Dự án trọng điểm tôi phụ trách tại Digital Twin Group (MakeAI), tiếp nhận và phát triển tiếp sau khi dự án đã hoàn thành giai đoạn đầu.",
+    "title": "Hệ thống Quản lý Đầu tư Công — Nền tảng AI Agent",
+    "description": "Hệ thống thực tế số hóa quy trình đầu tư công 10 bước, trong đó tôi xây dựng tầng AI agent: thẩm tra dự toán, bóc tách chi phí, soạn văn bản, tìm căn cứ pháp lý và trợ lý dữ liệu.",
+    "longDesc": "Giải pháp số được xây dựng tại Digital Twin Group (MakeAI) cho cơ quan chính quyền địa phương, quản lý toàn bộ vòng đời đầu tư công (chuẩn bị, thiết kế, lựa chọn nhà thầu, giải ngân, quyết toán). Tôi tiếp nhận hệ thống sau giai đoạn đầu và là lập trình viên chính. Tôi thiết kế và triển khai tầng agentic AI trên OpenClaw — job chạy nền dài, truy xuất dữ liệu bằng code trước khi gọi LLM, kiểm chứng trích dẫn và các điểm duyệt của con người — để cán bộ chỉ cần rà soát kết quả AI thay vì làm tay.",
+    "role": "Lập trình viên chính. Phụ trách trọn vẹn các chức năng AI/agent (thiết kế, backend, giao diện) và tái cấu trúc frontend trên nền backend Frappe/Python.",
     "responsibilities": [
-      "Tiếp tục phát triển mô hình quy trình đầu tư công 10 bước",
-      "Tích hợp Agentic AI vào quy trình",
-      "Tái cấu trúc và thiết kế lại giao diện hệ thống với Next.js & TypeScript",
-      "Xây dựng chức năng Giải ngân",
-      "Xây dựng chức năng Cài đặt hệ thống",
-      "Xây dựng chức năng Danh mục hệ thống",
-      "Xây dựng chức năng Thi công và Giám sát",
-      "Xây dựng chức năng Tổng quan và Báo cáo",
-      "Xây dựng chức năng Gói thầu"
+      "Thiết kế tầng AI agent trên OpenClaw: bộ chạy job bất đồng bộ dùng chung (hàng đợi, theo dõi tiến trình, hủy, khôi phục sau khi tải lại trang) cho mọi chức năng AI",
+      "Thẩm tra dự toán bằng AI: đối chiếu dự toán với kho giá theo tháng; tài liệu được chuyển sang văn bản, đối khớp bằng code trước, LLM chỉ xét phần code không giải quyết được",
+      "Bóc tách chi phí bằng AI: đọc file Excel theo từng Sheet, trích cấu trúc chi phí và ghép vào các dòng chi phí đã có (khái toán / dự toán), chỉ tạo thêm dòng còn thiếu",
+      "Soạn văn bản bằng AI: điền các biểu mẫu Word chính thức (mẫu quyết toán) từ dữ liệu dự án và học lại định dạng người dùng đã chỉnh sửa",
+      "Tìm căn cứ pháp lý: bộ quét định kỳ cơ sở dữ liệu văn bản pháp luật quốc gia, xếp hạng mức liên quan của văn bản mới và đề xuất vào thư viện pháp lý để duyệt",
+      "Trợ lý dữ liệu AI: hỏi đáp ngôn ngữ tự nhiên trên dữ liệu dự án, giới hạn đúng phạm vi người hỏi được phép xem",
+      "Xây dựng lớp toàn vẹn chuỗi tiền: đối chiếu từ vốn trung hạn đến quyết toán, phiếu điều chỉnh có số quyết định, nhật ký mọi thay đổi số tiền",
+      "Tái cấu trúc frontend (React, TypeScript, TanStack Router/Query) và xây dựng các chức năng Giải ngân, Gói thầu, Thi công & Giám sát, Báo cáo, Cài đặt"
     ],
     "engineeringDecisions": [
       {
-        "decision": "Tích hợp tầng Agentic AI & Tự động hóa",
-        "reason": "Tự động hóa bóc tách các chỉ số tài chính và điều khoản pháp lý từ hồ sơ dự án, giảm thiểu đáng kể thời gian rà soát thủ công."
+        "decision": "Code xử lý trước, LLM xử lý sau",
+        "reason": "Đối khớp, kiểm tra số học và tra cứu nguồn chạy bằng code; mô hình chỉ xử lý phần mơ hồ. Giảm độ trễ, giảm token và cho kết quả lặp lại được."
       },
       {
-        "decision": "Kiến trúc mô-đun hóa độc lập",
-        "reason": "Tách bạch rõ các phân hệ Giải ngân, Thi công giám sát, Gói thầu và Danh mục để thuận tiện cho việc kiểm thử và mở rộng nghiệp vụ trong tương lai."
+        "decision": "Job agent bền vững và khôi phục được",
+        "reason": "Tác vụ AI chạy nhiều phút. Job được xếp hàng, cache theo nội dung, theo dõi và hủy được, và backend tự áp dụng kết quả nên không mất công khi người dùng rời trang."
+      },
+      {
+        "decision": "Con người duyệt kèm nhật ký kiểm toán",
+        "reason": "Mọi phát hiện của AI do cán bộ duyệt hoặc từ chối, mọi thay đổi số tiền đều được ghi (giá trị cũ, mới, người sửa, thời điểm) — yêu cầu bắt buộc của khu vực công."
+      },
+      {
+        "decision": "Agent tuân thủ phân quyền",
+        "reason": "Agent đọc dữ liệu qua đúng các kiểm tra quyền theo phòng ban/vai trò như giao diện, nên câu trả lời AI không bao giờ vượt quá quyền của người hỏi."
       }
     ],
     "challengesAndSolutions": [
       {
-        "challenge": "Ràng buộc pháp lý và điều kiện chuyển bước nghiêm ngặt giữa 10 giai đoạn trong vòng đời dự án.",
-        "solution": "Xây dựng validation engine đa tầng trong Frappe/Python với cơ chế khóa dữ liệu và lưu vết nhật ký kiểm toán (Audit Trail) bất biến."
+        "challenge": "Gọi LLM chậm và không ổn định so với ứng dụng web dạng request/response.",
+        "solution": "Chuyển sang worker nền sau một lớp trừu tượng job có tiến trình, hủy, thử lại và áp dụng kết quả ở phía máy chủ."
       },
       {
-        "challenge": "Đảm bảo độ chính xác và tính giải trình khi AI hỗ trợ phân tích văn bản pháp lý.",
-        "solution": "Thiết kế pipeline kết hợp kiểm tra luật tĩnh (Rule-based) với mô hình Agentic AI và bắt buộc có bước xác nhận từ chuyên viên phụ trách."
+        "challenge": "Mô hình có thể bịa số liệu hoặc trích nguồn không tồn tại.",
+        "solution": "Kiểm chứng mọi trích dẫn bằng code đối chiếu tệp được cung cấp và gắn cờ phát hiện chưa xác minh; các phép kiểm tra số học không giao cho LLM."
+      },
+      {
+        "challenge": "Tên khoản mục do mô hình trích ra hiếm khi trùng với tên đã có trong bảng chi phí.",
+        "solution": "Đưa các dòng hiện có vào prompt và ghép theo tên chuẩn hóa, giúp giá trị rơi đúng dòng thay vì tạo trùng."
+      },
+      {
+        "challenge": "Số tiền thực tế luôn khác dự toán (tiết kiệm, điều chỉnh).",
+        "solution": "Mô hình hóa mỗi giai đoạn là trần của giai đoạn sau, số thấp hơn là tiết kiệm, vượt trần phải có điều chỉnh được duyệt."
       }
     ]
   }
