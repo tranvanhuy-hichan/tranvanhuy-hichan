@@ -63,7 +63,8 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & 
         <li>Scheduled <b>legal-base discovery</b> and a <b>permission-aware data assistant</b></li>
       </ul>
       <p>
-        <i>🔒 Enterprise project @ Digital Twin Group (MakeAI) — in production</i>
+        <i>🔒 Enterprise project @ Digital Twin Group (MakeAI) — in production (source code private)</i><br />
+        <a href="https://digitaltwin.huongtra.danang.gov.vn/dautucong/" target="_blank"><b>🌐 Production system (login required)</b></a>
       </p>
     </td>
   </tr>
