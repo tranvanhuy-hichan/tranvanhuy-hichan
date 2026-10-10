@@ -19,7 +19,7 @@
     "title": "BIMspace - Technical Infrastructure Management",
     "description": "A technical infrastructure management system applying interactive 3D and 2D maps to manage assets and infrastructure operations.",
     "longDesc": "A digital solution built at Digital Twin Group (MakeAI) to manage technical infrastructure using interactive 3D and 2D maps. The system enables asset visualization and tracking on the map, and manages the operational workflows (maintenance, monitoring, inspection) related to technical infrastructure.",
-    "role": "A key project I lead at Digital Twin Group (MakeAI) as the primary developer, building on top of an existing codebase.",
+    "role": "A key project I lead at Digital Twin Group (MakeAI) in charge of core development, building on top of an existing codebase.",
     "responsibilities": [
       "Developed frontend features with Next.js & TypeScript on top of the existing codebase",
       "Developed backend features on top of the existing codebase",
@@ -50,7 +50,7 @@
     "title": "BIMspace - Quản lý Hạ tầng Kỹ thuật",
     "description": "Hệ thống quản lý hạ tầng kỹ thuật ứng dụng bản đồ tương tác 3D và 2D để quản lý tài sản và các nghiệp vụ vận hành hạ tầng.",
     "longDesc": "Giải pháp số được xây dựng tại Digital Twin Group (MakeAI) nhằm quản lý hạ tầng kỹ thuật thông qua bản đồ tương tác 3D và 2D. Hệ thống hỗ trợ trực quan hóa và theo dõi tài sản trên bản đồ, đồng thời quản lý các nghiệp vụ vận hành (bảo trì, giám sát, kiểm tra) liên quan đến hạ tầng kỹ thuật.",
-    "role": "Dự án trọng điểm tôi phụ trách tại Digital Twin Group (MakeAI) với vai trò lập trình viên chính, kế thừa và phát triển tiếp trên codebase sẵn có.",
+    "role": "Dự án trọng điểm tôi phụ trách tại Digital Twin Group (MakeAI) đảm nhiệm phát triển chính, kế thừa và phát triển tiếp trên codebase sẵn có.",
     "responsibilities": [
       "Phát triển frontend với Next.js & TypeScript dựa trên codebase có sẵn",
       "Phát triển backend dựa trên codebase có sẵn",
