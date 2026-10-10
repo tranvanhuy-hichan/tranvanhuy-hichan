@@ -23,7 +23,7 @@
       "description": [
         "BIMspace (Technical Infrastructure Management): served as the primary developer, extending frontend and backend features on an existing codebase with Next.js & TypeScript.",
         "Son Tra Ward Health Management: built and owned the entire system solo during internship training — database design, backend, Next.js & React UI, map integration, and a PostGIS-based geospatial system.",
-        "Public Investment Management: primary developer after phase 1. Built the AI-agent layer on OpenClaw (async agent jobs, AI estimate review against a monthly price warehouse, Excel cost extraction, Word template drafting, legal-base discovery, permission-aware data assistant) with code-side verification and human approval; re-architected the frontend in React & TypeScript and delivered the Disbursement, Bidding Packages, Construction & Supervision, Reports and Settings modules.",
+        "Ward/Commune-Level Public Investment Project Management System (rolled out across Da Nang wards, currently Huong Tra Ward): primary developer after phase 1. Built the AI-agent layer on OpenClaw (async agent jobs, AI estimate review against a monthly price warehouse, Excel cost extraction, Word template drafting, legal-base discovery, permission-aware data assistant) with code-side verification and human approval; re-architected the frontend in React & TypeScript and delivered the Disbursement, Bidding Packages, Construction & Supervision, Reports and Settings modules.",
         "Designed database schemas, optimized SQL query performance, and implemented role-based authorization across projects.",
         "Collaborated in Agile sprint planning, daily stand-ups, and code review processes to ensure code quality."
       ]
@@ -34,7 +34,7 @@
       "description": [
         "BIMspace (Quản lý Hạ tầng Kỹ thuật): đảm nhận vai trò lập trình viên chính, mở rộng frontend với Next.js & TypeScript và backend trên codebase có sẵn.",
         "Quản lý Y tế Phường Sơn Trà: tự xây dựng và làm chủ toàn bộ hệ thống trong quá trình training thực tập — thiết kế CSDL PostGIS, backend, giao diện React.js & Next.js, tích hợp bản đồ.",
-        "Quản lý Đầu tư Công: lập trình viên chính sau giai đoạn đầu. Xây dựng tầng AI agent trên OpenClaw (job agent bất đồng bộ, thẩm tra dự toán bằng AI theo kho giá tháng, bóc tách chi phí từ Excel, soạn văn bản theo mẫu Word, tìm căn cứ pháp lý, trợ lý dữ liệu theo phân quyền) kèm kiểm chứng bằng code và bước duyệt của con người; tái cấu trúc frontend bằng React & TypeScript và triển khai các chức năng Giải ngân, Gói thầu, Thi công & Giám sát, Báo cáo, Cài đặt.",
+        "Quản lý Dự án Đầu tư công cấp Xã/Phường (triển khai cho các xã, phường TP. Đà Nẵng, hiện tại là phường Hương Trà): lập trình viên chính sau giai đoạn đầu. Xây dựng tầng AI agent trên OpenClaw (job agent bất đồng bộ, thẩm tra dự toán bằng AI theo kho giá tháng, bóc tách chi phí từ Excel, soạn văn bản theo mẫu Word, tìm căn cứ pháp lý, trợ lý dữ liệu theo phân quyền) kèm kiểm chứng bằng code và bước duyệt của con người; tái cấu trúc frontend bằng React & TypeScript và triển khai các chức năng Giải ngân, Gói thầu, Thi công & Giám sát, Báo cáo, Cài đặt.",
         "Thiết kế cơ sở dữ liệu, tối ưu hóa hiệu năng truy vấn SQL và triển khai phân quyền bảo mật vai trò cho các dự án.",
         "Cộng tác làm việc trong môi trường Agile/Scrum, báo cáo hàng ngày và kiểm duyệt mã nguồn."
       ]

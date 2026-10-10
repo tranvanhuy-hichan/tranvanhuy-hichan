@@ -51,8 +51,8 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & 
       </p>
     </td>
     <td width="50%" valign="top">
-      <h3>🤖 Public Investment Management — AI Agent Platform</h3>
-      <p>Production system digitizing the 10-step public investment workflow for a municipal government. I am the primary developer and <b>built its AI-agent layer</b> on OpenClaw.</p>
+      <h3>🤖 Ward/Commune-Level Public Investment Project Management System</h3>
+      <p>Production system rolled out to wards and communes of <b>Da Nang city (currently Huong Tra Ward)</b>, digitizing the 10-step public investment workflow. I am the primary developer and <b>built its AI-agent layer</b> on OpenClaw.</p>
       <p>
         <code>OpenClaw</code> · <code>Agentic AI</code> · <code>LLM</code> · <code>React</code> · <code>TypeScript</code> · <code>Frappe</code> · <code>Python</code> · <code>PostgreSQL</code>
       </p>
