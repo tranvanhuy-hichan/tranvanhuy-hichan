@@ -71,7 +71,7 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & 
 </table>
 
 <p>
-  <b>Also:</b> 🏫 <a href="https://doanthanhnien.tranvanhuy.io.vn/" target="_blank">Youth Union Portal & Management System</a> — a student science & engineering competition project (Next.js · Prisma · PostgreSQL · Passkey/WebAuthn · PWA) where I served as <b>technical advisor & support</b> for the student team.
+  <b>Also:</b> 🏫 <a href="https://doantruongthptsonha.sonhahub.cloud/" target="_blank">Youth Union Portal & Management System</a> — a student science & engineering competition project (Next.js · Prisma · PostgreSQL · Passkey/WebAuthn · PWA) where I served as <b>technical advisor & support</b> for the student team.
 </p>
 
 ---
