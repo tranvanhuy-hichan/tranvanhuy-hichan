@@ -5,7 +5,7 @@
  *   NEXT_PUBLIC_PORTFOLIO_URL   full URL of this portfolio, defaults to https://portfolio.<root>
  *   NEXT_PUBLIC_STORE_URL       full URL of the store, defaults to https://www.<root>
  */
-export const BRAND = { name: 'HTStudio', owner: 'Trần Văn Huy', role: 'Phát triển & vận hành HTStudio' } as const;
+export const BRAND = { name: 'HTStudio', owner: 'Trần Văn Huy', role: 'Founder @ HTStudio' } as const;
 
 export const ROOT_DOMAIN = process.env.NEXT_PUBLIC_ROOT_DOMAIN || 'tranvanhuy.io.vn';
 export const PORTFOLIO_URL = (process.env.NEXT_PUBLIC_PORTFOLIO_URL || `https://portfolio.${ROOT_DOMAIN}`).replace(/\/$/, '');
