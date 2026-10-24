@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Moon, Sun, Menu, X, ArrowUpRight } from 'lucide-react';
 import LocaleSwitch from '@/components/portfolio/layout/LocaleSwitch';
 import { usePortfolioStore } from '@/lib/portfolio/store';
@@ -15,11 +15,6 @@ const LINKS = [
   { id: 'skills', vi: 'Kỹ năng', en: 'Skills' },
   { id: 'education', vi: 'Học vấn', en: 'Education' },
   { id: 'contact', vi: 'Liên hệ', en: 'Contact' },
-];
-
-const STORE_LINKS = [
-  { href: `${STORE_URL}/dich-vu`, vi: 'Dịch vụ', en: 'Services' },
-  { href: `${STORE_URL}/cua-hang`, vi: 'Cửa hàng', en: 'Store' },
 ];
 
 function ThemeButton() {
@@ -44,6 +39,15 @@ function ThemeButton() {
   );
 }
 
+/** The logo goes to the top: on the home page there is no navigation, so scroll there and drop any #hash. */
+function backToTop(e: React.MouseEvent) {
+  if (window.location.pathname === '/') {
+    e.preventDefault();
+    history.replaceState(null, '', '/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
 export default function PortfolioNavbar() {
   const [open, setOpen] = useState(false);
   const isVi = usePortfolioStore((s) => s.locale) === 'vi';
@@ -51,7 +55,7 @@ export default function PortfolioNavbar() {
   return (
     <header className="pf-nav sticky top-0 z-50">
       <div className="mx-auto flex max-w-[var(--page-max)] items-center justify-between gap-3 px-3 py-2.5 sm:px-6">
-        <Link href="/" className="flex shrink-0 items-center gap-2.5" aria-label="Trang chủ">
+        <Link href="/" onClick={backToTop} className="flex shrink-0 items-center gap-2.5" aria-label="Về đầu trang">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/logo.png" alt="Trần Văn Huy" className="h-9 w-9 rounded-xl shadow-sm" />
           <span className="flex flex-col leading-none">
@@ -62,10 +66,6 @@ export default function PortfolioNavbar() {
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Điều hướng chính">
           {LINKS.map((l) => (
             <a key={l.id} href={`/#${l.id}`} className={`pf-nav-link ${active === l.id ? 'is-active' : ''}`}>{isVi ? l.vi : l.en}</a>
-          ))}
-          <span aria-hidden className="mx-1 h-4 w-px bg-[var(--pf-line)]" />
-          {STORE_LINKS.map((l) => (
-            <a key={l.href} href={l.href} className="pf-nav-link">{isVi ? l.vi : l.en}</a>
           ))}
         </nav>
         <div className="flex items-center gap-2">
@@ -84,9 +84,7 @@ export default function PortfolioNavbar() {
           {LINKS.map((l) => (
             <a key={l.id} href={`/#${l.id}`} onClick={() => setOpen(false)} className="pf-nav-link">{isVi ? l.vi : l.en}</a>
           ))}
-          {STORE_LINKS.map((l) => (
-            <a key={l.href} href={l.href} className="pf-nav-link">{isVi ? l.vi : l.en} ↗</a>
-          ))}
+          <a href={`${MAIN_SITE}/dich-vu`} className="pf-btn mt-2 justify-center !text-xs">{isVi ? 'Xem dịch vụ' : 'View services'} ↗</a>
         </nav>
       )}
     </header>
