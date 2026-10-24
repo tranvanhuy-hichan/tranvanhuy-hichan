@@ -1,11 +1,12 @@
 'use client';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Moon, Sun, Menu, X, ExternalLink } from 'lucide-react';
+import { Moon, Sun, Menu, X, ArrowUpRight } from 'lucide-react';
 import LocaleSwitch from '@/components/portfolio/layout/LocaleSwitch';
 import { usePortfolioStore } from '@/lib/portfolio/store';
+import { STORE_URL, BRAND, ROOT_DOMAIN } from '@/lib/site';
 
-export const MAIN_SITE = 'https://www.tranvanhuy.io.vn';
+export const MAIN_SITE = STORE_URL;
 
 const LINKS = [
   { id: 'about', vi: 'Giới thiệu', en: 'About' },
@@ -14,6 +15,11 @@ const LINKS = [
   { id: 'skills', vi: 'Kỹ năng', en: 'Skills' },
   { id: 'education', vi: 'Học vấn', en: 'Education' },
   { id: 'contact', vi: 'Liên hệ', en: 'Contact' },
+];
+
+const STORE_LINKS = [
+  { href: `${STORE_URL}/dich-vu`, vi: 'Dịch vụ', en: 'Services' },
+  { href: `${STORE_URL}/cua-hang`, vi: 'Cửa hàng', en: 'Store' },
 ];
 
 function ThemeButton() {
@@ -25,6 +31,10 @@ function ThemeButton() {
     c.toggle('dark', next);
     c.toggle('light', !next);
     try { localStorage.setItem('theme', next ? 'dark' : 'light'); } catch { /* ignore */ }
+    // Shared with the store: same cookie on the root domain.
+    if (location.hostname === ROOT_DOMAIN || location.hostname.endsWith('.' + ROOT_DOMAIN)) {
+      document.cookie = `ht_theme=${next ? 'dark' : 'light'}; path=/; max-age=31536000; domain=.${ROOT_DOMAIN}; samesite=lax`;
+    }
     setDark(next);
   }
   return (
@@ -44,16 +54,23 @@ export default function PortfolioNavbar() {
         <Link href="/" className="flex shrink-0 items-center gap-2.5" aria-label="Trang chủ">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/logo.png" alt="Trần Văn Huy" className="h-9 w-9 rounded-xl shadow-sm" />
-          <span className="pf-heading whitespace-nowrap text-base sm:text-xl">Trần Văn <span className="pf-brand">Huy</span></span>
+          <span className="flex flex-col leading-none">
+            <span className="pf-heading whitespace-nowrap text-base sm:text-xl">Trần Văn <span className="pf-brand">Huy</span></span>
+            <span className="pf-mute mt-0.5 hidden whitespace-nowrap text-[10px] font-bold tracking-wide min-[360px]:block sm:text-[11px]">{BRAND.role}</span>
+          </span>
         </Link>
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Điều hướng chính">
           {LINKS.map((l) => (
             <a key={l.id} href={`/#${l.id}`} className={`pf-nav-link ${active === l.id ? 'is-active' : ''}`}>{isVi ? l.vi : l.en}</a>
           ))}
+          <span aria-hidden className="mx-1 h-4 w-px bg-[var(--pf-line)]" />
+          {STORE_LINKS.map((l) => (
+            <a key={l.href} href={l.href} className="pf-nav-link">{isVi ? l.vi : l.en}</a>
+          ))}
         </nav>
         <div className="flex items-center gap-2">
-          <a href={MAIN_SITE} className="pf-btn-ghost hidden !py-1.5 !px-3.5 !text-xs sm:inline-flex items-center gap-1.5">
-            {isVi ? 'Website chính' : 'Main site'} <ExternalLink className="h-3.5 w-3.5" />
+          <a href={`${MAIN_SITE}/dich-vu`} className="pf-btn !py-1.5 !px-3.5 !text-xs hidden sm:inline-flex items-center gap-1.5">
+            {isVi ? `Thuê ${BRAND.name}` : `Hire ${BRAND.name}`} <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
           <LocaleSwitch />
           <ThemeButton />
@@ -67,7 +84,9 @@ export default function PortfolioNavbar() {
           {LINKS.map((l) => (
             <a key={l.id} href={`/#${l.id}`} onClick={() => setOpen(false)} className="pf-nav-link">{isVi ? l.vi : l.en}</a>
           ))}
-          <a href={MAIN_SITE} className="pf-nav-link">{isVi ? 'Website chính ↗' : 'Main site ↗'}</a>
+          {STORE_LINKS.map((l) => (
+            <a key={l.href} href={l.href} className="pf-nav-link">{isVi ? l.vi : l.en} ↗</a>
+          ))}
         </nav>
       )}
     </header>

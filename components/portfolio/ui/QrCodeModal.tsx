@@ -3,10 +3,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { QRCodeCanvas } from 'qrcode.react';
 import { usePortfolioStore } from '@/lib/portfolio/store';
+import { PORTFOLIO_URL, PORTFOLIO_HOST } from '@/lib/site';
 
 export default function QrCodeModal({
   isOpen,
-  url = 'https://portfolio.tranvanhuy.io.vn',
+  url = PORTFOLIO_URL,
   onClose,
 }: {
   isOpen: boolean;
@@ -15,7 +16,7 @@ export default function QrCodeModal({
 }) {
   const locale = usePortfolioStore((s) => s.locale);
   const isVi = locale === 'vi';
-  const qrUrl = url || 'https://portfolio.tranvanhuy.io.vn';
+  const qrUrl = url || PORTFOLIO_URL;
   const boxRef = useRef<HTMLDivElement>(null);
   const [copied, setCopied] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -84,7 +85,7 @@ export default function QrCodeModal({
           </div>
           <div className="mt-2 pt-2 border-t border-slate-100 flex items-center justify-center gap-1.5 text-xs font-black text-ink">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
-            <span>portfolio.tranvanhuy.io.vn</span>
+            <span>{PORTFOLIO_HOST}</span>
           </div>
         </div>
 

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import ProjectDetail from '@/components/portfolio/sections/ProjectDetail';
 import { getAllProjects } from '@/lib/portfolio/projects';
+import { PORTFOLIO_URL } from '@/lib/site';
 
 export const dynamicParams = false;
 
@@ -14,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const p = getAllProjects('en').find((x) => x.slug === slug);
   if (!p) return { title: 'Project Not Found | Trần Văn Huy' };
   const title = `${p.title} | Trần Văn Huy`;
-  const url = `https://portfolio.tranvanhuy.io.vn/projects/${p.slug}/`;
+  const url = `${PORTFOLIO_URL}/projects/${p.slug}/`;
   return { title, description: p.description, alternates: { canonical: url }, openGraph: { title, description: p.description, url, type: 'article', images: p.image ? [p.image] : undefined } };
 }
 

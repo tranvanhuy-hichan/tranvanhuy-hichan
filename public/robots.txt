@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://portfolio.tranvanhuy.io.vn/sitemap.xml

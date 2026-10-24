@@ -3,24 +3,25 @@ import Link from 'next/link';
 import { HeartHandshake, Globe, Wrench } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';
 import { usePortfolioStore } from '@/lib/portfolio/store';
+import { STORE_URL } from '@/lib/site';
 
 export const SERVICE_LINKS = [
   {
-    href: 'https://www.tranvanhuy.io.vn/thiep-cuoi',
+    href: `${STORE_URL}/thiep-cuoi`,
     Icon: HeartHandshake,
     iconColor: 'text-rose-500',
     vi: { label: 'Thiệp cưới', desc: 'Thiệp cưới online đẹp mắt, chia sẻ qua link, kèm RSVP và lời chúc.' },
     en: { label: 'Wedding Invitations', desc: 'Beautiful online wedding invitations with RSVP and guest wishes, shared via a link.' },
   },
   {
-    href: 'https://www.tranvanhuy.io.vn/landing',
+    href: `${STORE_URL}/landing`,
     Icon: Globe,
     iconColor: 'text-indigo-600',
     vi: { label: 'Landing page', desc: 'Trang giới thiệu sản phẩm, dịch vụ chuyên nghiệp, tối ưu chuyển đổi.' },
     en: { label: 'Landing Pages', desc: 'Professional product and service landing pages optimized for conversion.' },
   },
   {
-    href: 'https://www.tranvanhuy.io.vn/tien-ich',
+    href: `${STORE_URL}/tien-ich`,
     Icon: Wrench,
     iconColor: 'text-amber-600',
     vi: { label: 'Tiện ích', desc: 'Bộ công cụ nhỏ gọn hữu ích: mã QR, danh thiếp số và nhiều hơn nữa.' },

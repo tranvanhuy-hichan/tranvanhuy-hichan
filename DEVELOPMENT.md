@@ -39,3 +39,9 @@ Thiếu các biến này thì form chạy chế độ giả lập (không gửi 
 ## Triển khai
 
 Xem [DEPLOY.md](DEPLOY.md).
+
+## Domain và thương hiệu
+
+Tên thương hiệu và domain nằm ở một chỗ: `lib/site.ts`, đọc từ biến môi trường (xem `.env.example`). Đổi domain: đặt `NEXT_PUBLIC_ROOT_DOMAIN`, `NEXT_PUBLIC_PORTFOLIO_URL`, `NEXT_PUBLIC_STORE_URL` trên Vercel rồi Redeploy, không cần sửa code. Store có file tương ứng `lib/site/config.ts`; hai bên dùng chung `ROOT_DOMAIN`.
+
+Giao diện sáng/tối được chia sẻ giữa store và portfolio bằng cookie `ht_theme` trên domain gốc (chỉ hoạt động khi hai site cùng domain gốc).

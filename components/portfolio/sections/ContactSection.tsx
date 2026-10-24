@@ -6,6 +6,7 @@ import { IconGithub, IconLinkedin, IconFacebook, IconMail, IconQrCode, IconDownl
 import { usePortfolio } from '@/lib/portfolio/store';
 import { useContactForm } from '@/hooks/useContactForm';
 import { useSoundEffects } from '@/hooks/useSoundEffects';
+import { PORTFOLIO_URL, PORTFOLIO_HOST } from '@/lib/site';
 
 export default function ContactSection() {
   const store = usePortfolio();
@@ -138,7 +139,7 @@ export default function ContactSection() {
                     </span>
                     <span className="min-w-0">
                       <span className={`${infoLabel} block`}>{isVi ? 'Quét QR xem trên điện thoại' : 'Scan QR for Mobile View'}</span>
-                      <span className="text-sm font-extrabold pf-title truncate block">portfolio.tranvanhuy.io.vn</span>
+                      <span className="text-sm font-extrabold pf-title truncate block">{PORTFOLIO_HOST}</span>
                     </span>
                   </div>
                   <span className="pf-pill pf-pill-sky shrink-0">{isVi ? 'Quét mã' : 'Scan QR'}</span>
@@ -256,7 +257,7 @@ export default function ContactSection() {
         </div>
       </div>
 
-      <QrCodeModal isOpen={showQrModal} url="https://portfolio.tranvanhuy.io.vn" onClose={() => setShowQrModal(false)} />
+      <QrCodeModal isOpen={showQrModal} url={PORTFOLIO_URL} onClose={() => setShowQrModal(false)} />
     </section>
   );
 }
