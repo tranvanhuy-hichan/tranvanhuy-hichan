@@ -6,7 +6,7 @@ import { usePortfolioStore } from '@/lib/portfolio/store';
 
 export default function QrCodeModal({
   isOpen,
-  url = 'https://www.tranvanhuy.io.vn',
+  url = 'https://portfolio.tranvanhuy.io.vn',
   onClose,
 }: {
   isOpen: boolean;
@@ -15,7 +15,7 @@ export default function QrCodeModal({
 }) {
   const locale = usePortfolioStore((s) => s.locale);
   const isVi = locale === 'vi';
-  const qrUrl = url || 'https://www.tranvanhuy.io.vn';
+  const qrUrl = url || 'https://portfolio.tranvanhuy.io.vn';
   const boxRef = useRef<HTMLDivElement>(null);
   const [copied, setCopied] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -84,7 +84,7 @@ export default function QrCodeModal({
           </div>
           <div className="mt-2 pt-2 border-t border-slate-100 flex items-center justify-center gap-1.5 text-xs font-black text-ink">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
-            <span>www.tranvanhuy.io.vn</span>
+            <span>portfolio.tranvanhuy.io.vn</span>
           </div>
         </div>
 

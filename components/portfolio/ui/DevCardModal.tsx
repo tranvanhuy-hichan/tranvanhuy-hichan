@@ -192,8 +192,8 @@ export default function DevCardModal({ isOpen, onClose }: { isOpen: boolean; onC
                   </div>
 
                   {/* Top-Right: Pure QR Code Tile */}
-                  <div className="p-1 rounded-xl bg-slate-50 border border-slate-200 shrink-0 shadow-2xs" title="https://www.tranvanhuy.io.vn">
-                    <QRCodeSVG value="https://www.tranvanhuy.io.vn" size={56} level="M" className="block shrink-0" />
+                  <div className="p-1 rounded-xl bg-slate-50 border border-slate-200 shrink-0 shadow-2xs" title="https://portfolio.tranvanhuy.io.vn">
+                    <QRCodeSVG value="https://portfolio.tranvanhuy.io.vn" size={56} level="M" className="block shrink-0" />
                   </div>
                 </div>
 

@@ -138,7 +138,7 @@ export default function ContactSection() {
                     </span>
                     <span className="min-w-0">
                       <span className={`${infoLabel} block`}>{isVi ? 'Quét QR xem trên điện thoại' : 'Scan QR for Mobile View'}</span>
-                      <span className="text-sm font-extrabold pf-title truncate block">www.tranvanhuy.io.vn</span>
+                      <span className="text-sm font-extrabold pf-title truncate block">portfolio.tranvanhuy.io.vn</span>
                     </span>
                   </div>
                   <span className="pf-pill pf-pill-sky shrink-0">{isVi ? 'Quét mã' : 'Scan QR'}</span>
@@ -256,7 +256,7 @@ export default function ContactSection() {
         </div>
       </div>
 
-      <QrCodeModal isOpen={showQrModal} url="https://www.tranvanhuy.io.vn" onClose={() => setShowQrModal(false)} />
+      <QrCodeModal isOpen={showQrModal} url="https://portfolio.tranvanhuy.io.vn" onClose={() => setShowQrModal(false)} />
     </section>
   );
 }
