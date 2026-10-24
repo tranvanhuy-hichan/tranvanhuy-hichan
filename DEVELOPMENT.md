@@ -1,6 +1,6 @@
 # Phát triển portfolio
 
-Next.js (static export) + Tailwind, triển khai lên GitHub Pages tại **https://portfolio.tranvanhuy.io.vn**. (`README.md` là hồ sơ hiển thị trên trang cá nhân GitHub, không phải tài liệu dự án.)
+Next.js (static export) + Tailwind, triển khai lên Vercel tại **https://portfolio.tranvanhuy.io.vn**. (`README.md` là hồ sơ hiển thị trên trang cá nhân GitHub, không phải tài liệu dự án.)
 
 ## Chạy local
 
