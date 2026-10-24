@@ -70,7 +70,7 @@ export default function PortfolioNavbar() {
         </nav>
         <div className="flex items-center gap-2">
           <a href={`${MAIN_SITE}/dich-vu`} className="pf-btn !py-1.5 !px-3.5 !text-xs hidden sm:inline-flex items-center gap-1.5">
-            {isVi ? `Thuê ${BRAND.name}` : `Hire ${BRAND.name}`} <ArrowUpRight className="h-3.5 w-3.5" />
+            {isVi ? 'Xem dịch vụ' : 'View services'} <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
           <LocaleSwitch />
           <ThemeButton />
