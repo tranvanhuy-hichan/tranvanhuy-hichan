@@ -1,0 +1,80 @@
+{
+  "id": 6,
+  "category": "gis",
+  "featured": true,
+  "showInitial": false,
+  "order": 5,
+  "internal": true,
+  "time": "05-2026",
+  "demo": "#",
+  "tags": [
+    "Next.js",
+    "TypeScript",
+    "Frappe",
+    "Python",
+    "PostgreSQL",
+    "GIS Maps"
+  ],
+  "en": {
+    "title": "BIMspace - Technical Infrastructure Management",
+    "description": "A technical infrastructure management system applying interactive 3D and 2D maps to manage assets and infrastructure operations.",
+    "longDesc": "A digital solution built at Digital Twin Group (MakeAI) to manage technical infrastructure using interactive 3D and 2D maps. The system enables asset visualization and tracking on the map, and manages the operational workflows (maintenance, monitoring, inspection) related to technical infrastructure.",
+    "role": "A key project I lead at Digital Twin Group (MakeAI) in charge of core development, building on top of an existing codebase.",
+    "responsibilities": [
+      "Developed frontend features with Next.js & TypeScript on top of the existing codebase",
+      "Developed backend features on top of the existing codebase",
+      "Redesigned the user interface for optimal usability"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "Next.js UI & Frappe Backend Decoupling",
+        "reason": "Delivers smooth interactive 2D/3D spatial rendering on the client while utilizing Frappe's robust metadata-driven DocType system and permission controls."
+      },
+      {
+        "decision": "Viewport Bounding-Box Spatial Queries",
+        "reason": "Restricts asset queries to the visible map viewport using PostGIS spatial indexing, preventing client browser memory bloat."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "Rendering large-scale infrastructure layers on interactive maps causing FPS stuttering.",
+        "solution": "Implemented vector tile clustering, level-of-detail (LOD) simplifications, and PostGIS GiST indexing for fast sub-viewport slicing."
+      },
+      {
+        "challenge": "Coordinating multi-department maintenance logs across distributed spatial assets.",
+        "solution": "Configured Frappe Workflow State Machine with strict role-based transitions, automated status alerts, and audit trails."
+      }
+    ]
+  },
+  "vi": {
+    "title": "BIMspace - Quản lý Hạ tầng Kỹ thuật",
+    "description": "Hệ thống quản lý hạ tầng kỹ thuật ứng dụng bản đồ tương tác 3D và 2D để quản lý tài sản và các nghiệp vụ vận hành hạ tầng.",
+    "longDesc": "Giải pháp số được xây dựng tại Digital Twin Group (MakeAI) nhằm quản lý hạ tầng kỹ thuật thông qua bản đồ tương tác 3D và 2D. Hệ thống hỗ trợ trực quan hóa và theo dõi tài sản trên bản đồ, đồng thời quản lý các nghiệp vụ vận hành (bảo trì, giám sát, kiểm tra) liên quan đến hạ tầng kỹ thuật.",
+    "role": "Dự án trọng điểm tôi phụ trách tại Digital Twin Group (MakeAI) đảm nhiệm phát triển chính, kế thừa và phát triển tiếp trên codebase sẵn có.",
+    "responsibilities": [
+      "Phát triển frontend với Next.js & TypeScript dựa trên codebase có sẵn",
+      "Phát triển backend dựa trên codebase có sẵn",
+      "Thiết kế lại giao diện người dùng tối ưu trải nghiệm"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "Tách rời giao diện Next.js và Backend Frappe",
+        "reason": "Mang lại trải nghiệm người dùng mượt mà khi tương tác bản đồ dữ liệu lớn, đồng thời tận dụng hệ thống quản lý DocType và phân quyền mạnh mẽ của Frappe."
+      },
+      {
+        "decision": "Truy vấn không gian theo khung nhìn (Viewport Bounding-Box)",
+        "reason": "Chỉ tải các đối tượng hạ tầng nằm trong khung nhìn hiển thị của bản đồ, giảm thiểu tiêu thụ RAM và chống tràn bộ nhớ trình duyệt."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "Hiển thị hàng nghìn lớp hạ tầng kỹ thuật phức tạp trên bản đồ mà không gây giật lag FPS.",
+        "solution": "Áp dụng kỹ thuật gom cụm dữ liệu (Clustering), đơn giản hóa mức độ chi tiết (LOD) và đánh chỉ mục không gian GiST trên PostGIS."
+      },
+      {
+        "challenge": "Theo dõi và đồng bộ nhật ký bảo trì thiết bị giữa nhiều đơn vị liên quan.",
+        "solution": "Xây dựng Frappe Workflow State Machine với các bước phê duyệt chặt chẽ, tự động gửi cảnh báo và lưu vết lịch sử thao tác."
+      }
+    ]
+  }
+}

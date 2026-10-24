@@ -1,0 +1,32 @@
+name: Update Coding Streak
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/streak.yml
+  schedule:
+    - cron: "0 1 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download streak SVG
+        run: >-
+          curl --fail --location --retry 3
+          --output metrics-streak.svg
+          "https://streak-stats.demolab.com/?user=tranvanhuy-hichan&theme=github-dark-blue&hide_border=true"
+
+      - name: Commit streak SVG
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update coding streak"
+          file_pattern: metrics-streak.svg

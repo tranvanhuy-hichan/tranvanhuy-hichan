@@ -1,0 +1,76 @@
+{
+  "id": 3,
+  "category": "fullstack",
+  "featured": true,
+  "showInitial": true,
+  "order": 2,
+  "internal": false,
+  "time": "12-2025 - 05-2026",
+  "demo": "https://vattudongkha.io.vn",
+  "tags": [
+    "Next.js",
+    "TypeScript",
+    "Prisma",
+    "PostgreSQL",
+    "Google OAuth",
+    "Tailwind CSS"
+  ],
+  "en": {
+    "title": "NexShop — Smart E-Commerce & POS Platform",
+    "description": "A full-stack personal project combining an online store and POS terminal, built with Next.js, TypeScript, and deployed at vattudongkha.io.vn.",
+    "longDesc": "NexShop is a personal full-stack e-commerce solution integrating an online storefront with a Point of Sale (POS) terminal. Built with Next.js (App Router), TypeScript, Prisma ORM with PostgreSQL for data storage, and Google OAuth for authentication. Features product catalog management, shopping cart, order processing, POS transaction flow, and an administrative analytics dashboard.",
+    "role": "A personal project I designed and built entirely on my own, from database design to deployment.",
+    "responsibilities": [
+      "Designed the database schema with Prisma & PostgreSQL",
+      "Built the full-stack app with Next.js App Router & TypeScript",
+      "Integrated Google OAuth authentication",
+      "Built the POS transaction & checkout flow",
+      "Designed the admin analytics dashboard"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "Next.js App Router with Server Actions",
+        "reason": "Reduces client JavaScript footprint and provides secure, direct database transactions for shopping cart and checkout."
+      },
+      {
+        "decision": "Prisma ORM with PostgreSQL",
+        "reason": "Ensures type safety across the entire codebase with transactional safety during inventory deductions."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "Preventing inventory race conditions between simultaneous online orders and physical POS checkouts.",
+        "solution": "Utilized Prisma interactive transactions ($transaction) with database row-level locking during order finalization."
+      }
+    ]
+  },
+  "vi": {
+    "title": "NexShop — Sàn TMĐT & Điểm bán POS Thông minh",
+    "description": "Dự án cá nhân kết hợp cửa hàng trực tuyến và máy bán hàng POS, xây dựng bằng Next.js, TypeScript và triển khai thực tế tại vattudongkha.io.vn.",
+    "longDesc": "NexShop là giải pháp thương mại điện tử full-stack kết hợp giữa website bán hàng trực tuyến và máy POS quản lý tại quầy. Hệ thống được xây dựng bằng Next.js (App Router), TypeScript, Prisma ORM với PostgreSQL và Google OAuth. Bao gồm các tính năng quản lý sản phẩm, giỏ hàng, đặt hàng trực tuyến, thanh toán POS tại quầy và dashboard thống kê doanh thu cho quản trị viên.",
+    "role": "Dự án cá nhân do tôi tự thiết kế và xây dựng toàn bộ từ thiết kế cơ sở dữ liệu đến triển khai thực tế.",
+    "responsibilities": [
+      "Thiết kế cơ sở dữ liệu với Prisma & PostgreSQL",
+      "Xây dựng full-stack với Next.js App Router & TypeScript",
+      "Tích hợp xác thực Google OAuth",
+      "Phát triển quy trình bán hàng và thanh toán POS",
+      "Thiết kế bảng điều khiển phân tích số liệu quản trị"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "Next.js App Router kết hợp Server Actions",
+        "reason": "Tối ưu dung lượng JavaScript tải về máy khách, thực hiện truy vấn cơ sở dữ liệu an toàn và trực tiếp cho các luồng đặt hàng."
+      },
+      {
+        "decision": "Prisma ORM với PostgreSQL",
+        "reason": "Đảm bảo tính an toàn kiểu dữ liệu (Type Safety) toàn diện và bảo đảm an toàn giao dịch khi trừ tồn kho sản phẩm."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "Xử lý tranh chấp tồn kho khi có đồng thời đơn hàng online và thanh toán tại quầy POS.",
+        "solution": "Áp dụng cơ chế Prisma Interactive Transactions ($transaction) với Row-level locking để khóa bản ghi tồn kho trong tích tắc khi thanh toán."
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "period": "2024 – Present",
+      "gpa": "3.5/4.0",
+      "type": "degree",
+      "logo": "/dut.png",
+      "en": {
+        "school": "Da Nang University of Technology, The University of Da Nang",
+        "degree": "Bachelor of Information Technology",
+        "description": "Specialization in Data Science and Artificial Intelligence (AI)"
+      },
+      "vi": {
+        "school": "Trường Đại học Bách khoa, Đại học Đà Nẵng",
+        "degree": "Cử nhân Công nghệ Thông tin",
+        "description": "Chuyên ngành Khoa học Dữ liệu và Trí tuệ Nhân tạo (AI)"
+      }
+    }
+  ],
+  "academicFocus": {
+    "en": {
+      "tag": "Academic Specialization",
+      "title": "Data Science & Artificial Intelligence (AI)",
+      "subtitle": "Bach Khoa Da Nang (DUT)",
+      "points": [
+        "Data Science & ML: Exploratory Data Analysis, Pandas, NumPy, Scikit-learn & Deep Learning.",
+        "Agentic AI & Automation: Multi-agent architectures and workflow automation.",
+        "Software Engineering: Scalable full-stack systems (Spring Boot, React, Next.js, PostgreSQL), Clean Architecture."
+      ]
+    },
+    "vi": {
+      "tag": "Định hướng Chuyên môn",
+      "title": "Khoa học Dữ liệu & Trí tuệ Nhân tạo (AI)",
+      "subtitle": "Đại học Bách Khoa Đà Nẵng (DUT)",
+      "points": [
+        "Khoa học Dữ liệu & Học máy: Khám phá & phân tích dữ liệu, Pandas, NumPy, Scikit-learn và Deep Learning.",
+        "Agentic AI & Tự động hóa: Kiến trúc Multi-agent và tự động hóa quy trình nghiệp vụ.",
+        "Kỹ nghệ Phần mềm: Hệ thống full-stack quy mô lớn (Spring Boot, React, Next.js, PostgreSQL), Clean Architecture."
+      ]
+    }
+  }
+}

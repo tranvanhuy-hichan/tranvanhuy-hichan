@@ -1,0 +1,89 @@
+[
+  {
+    "icon": "🌐",
+    "tags": [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Tailwind CSS"
+    ],
+    "en": {
+      "title": "Full-Stack Web Applications",
+      "desc": "Modern, reactive interfaces and performant frontend architectures with Next.js, React, and TypeScript."
+    },
+    "vi": {
+      "title": "Ứng dụng Web Full-Stack",
+      "desc": "Xây dựng giao diện web hiện đại, phản hồi mượt mà và kiến trúc frontend hiệu năng cao với Next.js, React và TypeScript."
+    }
+  },
+  {
+    "icon": "⚙️",
+    "tags": [
+      "Java (Spring Boot)",
+      "Python (Frappe)",
+      "Node.js",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "en": {
+      "title": "Scalable Backend Systems",
+      "desc": "RESTful APIs, authentication workflows, clean architecture, and real-time communications."
+    },
+    "vi": {
+      "title": "Hệ thống Backend mở rộng",
+      "desc": "Thiết kế RESTful API chuẩn mực, kiến trúc Clean Architecture, luồng xác thực bảo mật và truyền thông realtime."
+    }
+  },
+  {
+    "icon": "📱",
+    "tags": [
+      "Capacitor",
+      "React",
+      "Mobile First"
+    ],
+    "en": {
+      "title": "Cross-Platform Mobile Apps",
+      "desc": "Hybrid applications packaged for responsive and high-performance mobile deployment."
+    },
+    "vi": {
+      "title": "Ứng dụng Di động Đa nền tảng",
+      "desc": "Phát triển và đóng gói ứng dụng di động hybrid tiện lợi, tối ưu trải nghiệm trên mọi thiết bị."
+    }
+  },
+  {
+    "icon": "🗺️",
+    "tags": [
+      "Next.js",
+      "TypeScript",
+      "2D/3D Maps",
+      "PostGIS",
+      "Frappe"
+    ],
+    "en": {
+      "title": "GIS & Digital Transformation",
+      "desc": "Interactive spatial data platforms (2D/3D maps) and enterprise process automation."
+    },
+    "vi": {
+      "title": "GIS & Chuyển đổi số doanh nghiệp",
+      "desc": "Nền tảng quản lý dữ liệu không gian tương tác bản đồ 2D/3D và số hóa tự động hóa quy trình nghiệp vụ."
+    }
+  },
+  {
+    "icon": "🤖",
+    "tags": [
+      "OpenClaw",
+      "Agentic AI",
+      "LLM",
+      "Python",
+      "RAG-style retrieval"
+    ],
+    "en": {
+      "title": "AI Agents & LLM Workflows",
+      "desc": "Production agents with async jobs, code-side retrieval and verification, and human approval — built for government workflows."
+    },
+    "vi": {
+      "title": "AI Agent & quy trình LLM",
+      "desc": "Agent chạy thực tế với job bất đồng bộ, truy xuất và kiểm chứng bằng code, có bước duyệt của con người — xây dựng cho quy trình cơ quan nhà nước."
+    }
+  }
+]

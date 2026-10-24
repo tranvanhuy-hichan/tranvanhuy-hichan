@@ -1,0 +1,76 @@
+{
+  "id": 2,
+  "category": "fullstack",
+  "featured": true,
+  "showInitial": false,
+  "order": 7,
+  "internal": false,
+  "time": "04-2026",
+  "github": "https://github.com/tranvanhuy-hichan/StudyHub-Client",
+  "githubBackend": "https://github.com/tranvanhuy-hichan/StudyHub.git",
+  "demo": "#",
+  "video": "https://drive.google.com/file/d/1F_Zerna0wK-b3lGOQwgS15-CYAVKIY25/view?usp=drive_link",
+  "tags": [
+    "Vue 3",
+    "Spring Boot",
+    "MySQL",
+    "JWT",
+    "Vite"
+  ],
+  "en": {
+    "title": "StudyHub",
+    "description": "A cross-media study material and academic resource sharing portal for university students.",
+    "longDesc": "A collaborative portal allowing university students to upload and share study materials, past exam resources, and lecture notes. Features robust role-based access control, smart content moderation, and advanced full-text search.",
+    "role": "A personal project I conceptualized, designed, and built from scratch.",
+    "responsibilities": [
+      "Designed the database schema",
+      "Designed & developed the backend",
+      "Integrated Google & Email services",
+      "Designed the user interface"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "Spring Boot + JWT Stateless Auth",
+        "reason": "Ensures scalable session management and fine-grained authorization for students, moderators, and admins."
+      },
+      {
+        "decision": "Hierarchical Academic Taxonomy",
+        "reason": "Structured categorization by university, department, and course for instant full-text filtering."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "Handling multi-format file uploads while preventing malicious payloads and file corruption.",
+        "solution": "Implemented server-side MIME verification, upload size quotas, and unique hash-based file deduplication."
+      }
+    ]
+  },
+  "vi": {
+    "title": "StudyHub",
+    "description": "Cổng chia sẻ tài liệu học tập và học liệu số đa phương tiện dành cho sinh viên đại học.",
+    "longDesc": "Nền tảng học tập cộng đồng cho phép sinh viên tải lên, tìm kiếm và chia sẻ tài liệu ôn thi, đề thi mẫu, giáo trình và bài giảng. Hệ thống trang bị cơ chế kiểm duyệt tài liệu thông minh, phân quyền chi tiết và hỗ trợ tìm kiếm toàn văn nhanh chóng.",
+    "role": "Dự án cá nhân do tôi tự lên ý tưởng, thiết kế và phát triển toàn bộ từ đầu.",
+    "responsibilities": [
+      "Thiết kế cơ sở dữ liệu",
+      "Thiết kế & phát triển backend",
+      "Tích hợp các dịch vụ Google và Email",
+      "Thiết kế giao diện người dùng"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "Xác thực JWT phi trạng thái trên Spring Boot",
+        "reason": "Quản lý phiên đăng nhập an toàn, phân quyền linh hoạt theo vai trò sinh viên, kiểm duyệt viên và ban quản trị."
+      },
+      {
+        "decision": "Phân cấp dữ liệu học thuật đa tầng",
+        "reason": "Phân loại rõ ràng theo Trường, Khoa, Môn học giúp sinh viên dễ dàng lọc và tìm kiếm tài liệu chính xác."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "Quản lý tải lên đa định dạng tệp tin (PDF, DOCX, ZIP) an toàn, chống mã độc.",
+        "solution": "Kiểm tra định dạng MIME nghiêm ngặt ở server, giới hạn dung lượng tải lên và loại bỏ các tệp tin trùng lặp bằng thuật toán băm (Hash)."
+      }
+    ]
+  }
+}

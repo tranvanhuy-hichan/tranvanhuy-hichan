@@ -1,0 +1,78 @@
+{
+  "id": 1,
+  "category": "fullstack",
+  "featured": true,
+  "showInitial": false,
+  "order": 6,
+  "internal": false,
+  "time": "05-2026",
+  "github": "https://github.com/tranvanhuy-hichan/SonTraHealthManagement.git",
+  "demo": "#",
+  "video": "https://drive.google.com/file/d/1gP-v7GsawQFA5FAzYJVfpGRxaszoP5wy/view?usp=drive_link",
+  "tags": [
+    "React.js",
+    "Next.js",
+    "Frappe",
+    "Python",
+    "PostGIS",
+    "PostgreSQL"
+  ],
+  "en": {
+    "title": "Son Tra Ward Health Management",
+    "description": "A management system for medical service facilities and businesses designed for the Son Tra ward local government.",
+    "longDesc": "A digital solution built to help local authorities monitor and manage medical and health-related establishments in Son Tra ward. It integrates an interactive digital map for geolocating facilities, managing licensing information, tracking quality inspections, and enabling quick navigation.",
+    "role": "A personal project completed during my internship training at Digital Twin Group (MakeAI), handling the entire system on my own.",
+    "responsibilities": [
+      "Designed the database schema with PostGIS spatial indices",
+      "Designed & developed the backend with Python Frappe",
+      "Designed the user interface using React.js & Next.js",
+      "Integrated map & geolocation services with sub-10ms radius filtering",
+      "Designed a PostGIS-based geospatial data system"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "PostGIS Spatial Engine for Geo-indexing",
+        "reason": "Enables instant radius querying (ST_DWithin) and spatial polygon containment for local administrative boundaries."
+      },
+      {
+        "decision": "Field-Ready Responsive UI in React.js & Next.js",
+        "reason": "Optimized for mobile tablets and desktops used by municipal officers conducting on-site inspections."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "Real-time radius filtering and inspection status categorization under high map panning speeds.",
+        "solution": "Used spatial GiST indexing and client-side GeoJSON memoization, cutting spatial lookup response times to under 10ms."
+      }
+    ]
+  },
+  "vi": {
+    "title": "Quản lý Cơ sở Dịch vụ Y tế Phường Sơn Trà",
+    "description": "Hệ thống quản lý cơ sở và hộ kinh doanh dịch vụ y tế dành cho UBND phường Sơn Trà.",
+    "longDesc": "Giải pháp số hỗ trợ chính quyền địa phương giám sát và quản lý các cơ sở kinh doanh dịch vụ y tế trên địa bàn phường Sơn Trà. Hệ thống tích hợp bản đồ số trực quan để định vị cơ sở, quản lý hồ sơ cấp phép, theo dõi các đợt thanh kiểm tra chất lượng và hỗ trợ tra cứu chỉ đường nhanh chóng.",
+    "role": "Dự án cá nhân hoàn thành trong giai đoạn học việc tại Digital Twin Group (MakeAI), tự đảm nhận toàn bộ hệ thống từ đầu đến cuối.",
+    "responsibilities": [
+      "Thiết kế cơ sở dữ liệu với chỉ mục không gian PostGIS",
+      "Thiết kế & phát triển backend với Python Frappe",
+      "Thiết kế giao diện người dùng sử dụng React.js & Next.js",
+      "Tích hợp bản đồ & dịch vụ định vị với tốc độ lọc bán kính dưới 10ms",
+      "Xây dựng hệ thống dữ liệu địa không gian dựa trên PostGIS"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "Công cụ không gian PostGIS để đánh chỉ mục địa lý",
+        "reason": "Hỗ trợ truy vấn nhanh theo bán kính (ST_DWithin) và phân tích vùng ranh giới hành chính của địa phương."
+      },
+      {
+        "decision": "Giao diện React.js & Next.js thích ứng linh hoạt",
+        "reason": "Tối ưu hóa hiển thị trên cả máy tính bảng và desktop phục vụ trực tiếp cán bộ kiểm tra thực địa."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "Lọc bán kính và phân loại trạng thái kiểm tra theo thời gian thực khi cán bộ lướt bản đồ ở tốc độ cao.",
+        "solution": "Đánh chỉ mục không gian GiST kết hợp memoize GeoJSON ở client, rút ngắn thời gian phản hồi truy vấn dưới 10ms."
+      }
+    ]
+  }
+}

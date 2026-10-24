@@ -1,0 +1,95 @@
+{
+  "id": 5,
+  "category": "fullstack",
+  "featured": true,
+  "showInitial": false,
+  "order": 4,
+  "internal": false,
+  "time": "06-2026",
+  "github": "https://github.com/tranvanhuy-hichan/QLPT_VUE_FE.git",
+  "githubBackend": "https://github.com/tranvanhuy-hichan/QLPT_JAVA_BE.git",
+  "demo": "#",
+  "video": "https://drive.google.com/drive/folders/1pMhWNV0MlMn5DsGgoY7uKyaGYdRp9qo3?usp=sharing",
+  "tags": [
+    "Java",
+    "Spring Boot",
+    "Vue 3",
+    "Capacitor",
+    "WebSocket",
+    "PostgreSQL"
+  ],
+  "en": {
+    "title": "Boarding House Management System",
+    "description": "A multi-platform system for renting, management, billing, and communication, designed for landlords and tenants.",
+    "longDesc": "A full-featured multi-platform boarding house (Quản lý phòng trọ) management system. It provides role-based access control for admins, landlords, and tenants. Key capabilities include Google OAuth2 authentication, automated invoice generation with PDF/Excel reports, real-time tenant-landlord chat via WebSockets, and room status dashboards. The mobile app is packaged using Capacitor.",
+    "role": "A personal project I built entirely on my own, from initial design through deployment.",
+    "responsibilities": [
+      "Designed the database schema",
+      "Designed & developed the backend (Spring Boot)",
+      "Deployed and configured the system on a cloud server",
+      "Integrated third-party services: Google OAuth2, PayOS, Email",
+      "Designed the user interface (Web & Mobile)"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "Spring Boot Layered Architecture",
+        "reason": "Ensures strict separation across Controller, Service, and Repository layers with transactional integrity for financial billing operations."
+      },
+      {
+        "decision": "Capacitor Cross-Platform Packaging",
+        "reason": "Leveraged 100% of Vue 3 components to package high-performance mobile apps without maintaining separate native codebases."
+      },
+      {
+        "decision": "STOMP over WebSocket Protocol",
+        "reason": "Implemented topic-based publish/subscribe channels between landlords and tenants with JWT-authenticated handshakes."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "Automated monthly recurring billing with tiered utility calculations (electricity/water tier pricing).",
+        "solution": "Engineered a reliable scheduled cron service with transactional batch processing, dynamic tiered formula evaluation, and PayOS QR generation."
+      },
+      {
+        "challenge": "Mobile network drops disrupting active WebSocket chat connections.",
+        "solution": "Implemented heartbeat monitoring, exponential backoff auto-reconnection, and fallback unread message polling on client resume."
+      }
+    ]
+  },
+  "vi": {
+    "title": "Hệ thống Quản lý Phòng trọ Đa nền tảng",
+    "description": "Hệ thống quản lý thuê trọ đa nền tảng, thanh toán hóa đơn và giao tiếp giữa chủ trọ và người thuê.",
+    "longDesc": "Một giải pháp đa nền tảng toàn diện (Web & Mobile) dành cho chủ nhà trọ và người thuê. Các tính năng chính bao gồm đăng nhập Google OAuth2, nhắn tin realtime qua WebSocket, tự động tạo hóa đơn và xuất báo cáo PDF/Excel, phân quyền chi tiết (Admin, Chủ trọ, Khách thuê). Phiên bản mobile được đóng gói bằng Capacitor.",
+    "role": "Dự án cá nhân do tôi trực tiếp đảm nhận toàn bộ, từ khâu thiết kế đến khi triển khai thực tế.",
+    "responsibilities": [
+      "Thiết kế cơ sở dữ liệu",
+      "Thiết kế & phát triển backend (Spring Boot)",
+      "Triển khai và cấu hình hệ thống lên server cloud",
+      "Tích hợp các dịch vụ bên thứ ba: Google OAuth2, PayOS, Email",
+      "Thiết kế giao diện người dùng (Web & Mobile)"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "Kiến trúc phân tầng Clean/Layered trên Spring Boot",
+        "reason": "Phân tách rõ rệt giữa Controller, Service và Repository, đảm bảo tính toàn vẹn giao dịch tài chính (Transactional) cho các đợt phát hành hóa đơn phòng trọ."
+      },
+      {
+        "decision": "Đóng gói ứng dụng di động với Capacitor",
+        "reason": "Tận dụng 100% mã nguồn Vue 3 để build app di động Android/iOS mượt mà mà không phải duy trì 2 codebase riêng biệt."
+      },
+      {
+        "decision": "Giao thức STOMP qua WebSocket",
+        "reason": "Quản lý các topic chat riêng biệt theo từng phòng/khách thuê với xác thực JWT an toàn ngay từ bước handshake."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "Tự động hóa chu kỳ xuất hóa đơn định kỳ hàng tháng với bảng giá lũy tiến bậc thang (điện/nước).",
+        "solution": "Thiết kế scheduled cron service xử lý batch transactional, tính toán biểu phí động và tự động tạo mã VietQR/PayOS cho từng hóa đơn."
+      },
+      {
+        "challenge": "Ứng dụng di động khi vào chế độ chạy nền hoặc rớt mạng làm ngắt kết nối WebSocket.",
+        "solution": "Xây dựng cơ chế heartbeat kiểm tra kết nối, tự động reconnect với exponential backoff và fallback polling tin nhắn chưa đọc khi mở lại ứng dụng."
+      }
+    ]
+  }
+}
