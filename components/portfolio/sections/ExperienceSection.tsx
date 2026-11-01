@@ -14,7 +14,7 @@ export default function ExperienceSection() {
           description={store.ui.expDesc || 'Professional engineering roles, company impact, and delivered modules'}
         />
 
-        <div className="pf-timeline relative max-w-4xl pl-5 sm:pl-10 space-y-6 sm:space-y-8">
+        <div className="pf-timeline relative max-w-4xl mx-auto pl-5 sm:pl-10 space-y-6 sm:space-y-8">
           {store.experiences.map((exp: any, i: number) => (
             <div key={exp.id} className="relative fade-up">
               <div

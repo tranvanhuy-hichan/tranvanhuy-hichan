@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import { Moon, Sun, Menu, X, ArrowUpRight } from 'lucide-react';
+import { Moon, Sun, Menu, X } from 'lucide-react';
 import LocaleSwitch from '@/components/portfolio/layout/LocaleSwitch';
 import { usePortfolioStore } from '@/lib/portfolio/store';
 import { STORE_URL, BRAND, ROOT_DOMAIN } from '@/lib/site';
@@ -69,9 +69,6 @@ export default function PortfolioNavbar() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
-          <a href={`${MAIN_SITE}/dich-vu`} className="pf-btn !py-1.5 !px-3.5 !text-xs hidden sm:inline-flex items-center gap-1.5">
-            {isVi ? 'Xem dịch vụ' : 'View services'} <ArrowUpRight className="h-3.5 w-3.5" />
-          </a>
           <LocaleSwitch />
           <ThemeButton />
           <button type="button" className="pf-icon-btn lg:hidden" onClick={() => setOpen(!open)} aria-label="Menu" aria-expanded={open}>
@@ -84,7 +81,6 @@ export default function PortfolioNavbar() {
           {LINKS.map((l) => (
             <a key={l.id} href={`/#${l.id}`} onClick={() => setOpen(false)} className="pf-nav-link">{isVi ? l.vi : l.en}</a>
           ))}
-          <a href={`${MAIN_SITE}/dich-vu`} className="pf-btn mt-2 justify-center !text-xs">{isVi ? 'Xem dịch vụ' : 'View services'} ↗</a>
         </nav>
       )}
     </header>

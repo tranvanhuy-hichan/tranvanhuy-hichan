@@ -2,9 +2,8 @@
 import { useEffect, useState } from 'react';
 import { usePortfolio } from '@/lib/portfolio/store';
 import { useSoundEffects } from '@/hooks/useSoundEffects';
-import { IconGithub, IconLinkedin, IconFacebook, IconMail, IconDownload, IconId, IconFolder } from '../icons/Icons';
+import { IconGithub, IconLinkedin, IconFacebook, IconMail, IconDownload, IconFolder } from '../icons/Icons';
 import HeroIllustration from '../ui/HeroIllustration';
-import DevCardModal from '../ui/DevCardModal';
 
 const DEFAULT_TAGLINES = [
   'Software Developer',
@@ -17,7 +16,6 @@ export default function HeroSection() {
   const store = usePortfolio();
   const sound = useSoundEffects();
   const isVi = store.locale === 'vi';
-  const [showDevCard, setShowDevCard] = useState(false);
   const [currentTagline, setCurrentTagline] = useState('Software Developer & Full-Stack Engineer');
   const personal = store.personal;
   const taglines: string[] = personal.taglines || DEFAULT_TAGLINES;
@@ -125,10 +123,6 @@ export default function HeroSection() {
                 <IconDownload className="w-4 h-4 shrink-0" />
                 <span className="truncate">{store.ui.downloadCv || 'Tải CV'}</span>
               </a>
-              <button type="button" onClick={() => setShowDevCard(true)} className="pf-btn-ghost">
-                <IconId className="w-4 h-4 shrink-0" />
-                <span className="truncate">{isVi ? 'Thẻ Dev Card' : 'Dev Card'}</span>
-              </button>
             </div>
 
             <div className="flex items-center justify-center lg:justify-start gap-2.5 w-full mt-6">
@@ -159,7 +153,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <DevCardModal isOpen={showDevCard} onClose={() => setShowDevCard(false)} />
     </section>
   );
 }

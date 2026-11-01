@@ -7,7 +7,6 @@ import ExperienceSection from '../sections/ExperienceSection';
 import ProjectsSection from '../sections/ProjectsSection';
 import SkillsSection from '../sections/SkillsSection';
 import EducationSection from '../sections/EducationSection';
-import ServicesSection from '../sections/ServicesSection';
 import ContactSection from '../sections/ContactSection';
 import { useScrollAnimation, useActiveSection } from '@/hooks/useScrollAnimation';
 import { usePortfolioStore } from '@/lib/portfolio/store';
@@ -33,7 +32,6 @@ export default function HomeClient() {
         <HeroSection />
         <AboutSection />
         <SolutionsSection />
-        <ServicesSection />
         <ExperienceSection />
         <ProjectsSection />
         <SkillsSection />
