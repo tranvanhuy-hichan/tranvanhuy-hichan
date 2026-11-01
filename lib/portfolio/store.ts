@@ -53,7 +53,9 @@ export function usePortfolio() {
     skills: cat.skills,
   }));
   const projects = d.projects;
-  const filteredProjects = s.projectFilter === 'all' ? projects : projects.filter((p: any) => p.category === s.projectFilter);
+  const filteredProjects = s.projectFilter === 'all'
+    ? projects
+    : projects.filter((p: any) => (Array.isArray(p.categories) ? p.categories.includes(s.projectFilter) : p.category === s.projectFilter));
   const activeCat = skillCategories.find((c: any) => c.id === s.activeSkillCategory);
   return {
     ...s,

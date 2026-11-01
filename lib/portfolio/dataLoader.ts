@@ -19,7 +19,8 @@ for (const src of projectSources) {
 
   const folder = src.folder
   const images = src.images
-  const coverImage = images.length > 0 ? images[0] : (config.image || `/${folder}.png` || '/logo.png')
+  // no image yet: leave it empty so the card shows its placeholder rather than a broken picture
+  const coverImage = images.length > 0 ? images[0] : (config.image || '')
 
   rawProjects.push({
     ...config,
@@ -76,11 +77,13 @@ export function loadPortfolioData(overrides?: { personal?: any; stats?: any } | 
         id: p.id,
         slug: p.slug,
         category: p.category,
+        categories: p.categories,
         featured: p.featured,
         showInitial: p.showInitial,
         order: p.order,
         internal: p.internal,
         time: p.time,
+        rankingBadge: (p as any)[lang]?.rankingBadge || p.rankingBadge || '',
         github: p.github,
         githubBackend: p.githubBackend,
         demo: p.demo,

@@ -1,0 +1,125 @@
+{
+  "id": 11,
+  "category": "ai",
+  "categories": [
+    "ai",
+    "fullstack"
+  ],
+  "featured": true,
+  "showInitial": true,
+  "order": 2,
+  "internal": false,
+  "time": "11-2026 – Present",
+  "demo": "#",
+  "github": "https://github.com/tranvanhuy-hichan/meetmind-ai",
+  "tags": [
+    "LLM",
+    "Ollama",
+    "Qwen",
+    "Speech-to-Text",
+    "FastAPI",
+    "Next.js",
+    "TypeScript",
+    "PostgreSQL",
+    "MinIO",
+    "Docker",
+    "WebSocket",
+    "Google Meet"
+  ],
+  "en": {
+    "title": "MeetMind — AI Meeting Assistant for Google Meet",
+    "rankingBadge": "AI-powered",
+    "description": "Live captions with speaker names, translated for each participant into their own language while people are still speaking, documents the whole room reads in sync, and minutes drafted by a self-hosted LLM.",
+    "longDesc": "MeetMind runs next to Google Meet. A bot joins the room and MeetMind turns its captions into a live transcript that every participant reads in the language of their choice: a self-hosted LLM translates each sentence while it is still being spoken, and a speaking indicator shows who has the floor.\n\nThe host shares documents that everyone opens in tabs that remember where each reader stopped, and one presenter can move the whole room to the page being discussed. When the meeting ends, the LLM drafts the minutes — summary, decisions and action items with owner and deadline, each linked back to the sentence it came from — which the host reviews, edits and exports to Word.\n\nOrganizations, e-mail invitations, Google sign-in and Meet room creation through the Meet API are built in. Everything runs on the owner's own machine: Ollama for the models, MinIO for files, PostgreSQL for data, started with a single command.",
+    "role": "A personal project I designed and built on my own, from architecture to Docker deployment. AI is used in two ways: AI models inside the product, and an AI coding assistant (Claude Code) while building it, working from my requirements while I directed the design and tested the result in real meetings.",
+    "responsibilities": [
+      "Integrated AI into the product: a self-hosted LLM (Qwen2.5 on Ollama) for live translation and for drafting meeting minutes, behind one OpenAI-compatible interface so the model can be swapped by configuration",
+      "Designed live translation that follows the speaker: growing captions are translated while the person is still talking, only the newest text is queued, and the final translation always wins",
+      "Treated prompts as versioned files and made the LLM output verifiable: minutes are structured JSON, every decision and task cites its source sentence, and invented citations are discarded",
+      "Built the backend with FastAPI in a ports-and-adapters design (meeting bot, LLM, storage, e-mail, database all swappable), covered by more than 40 automated tests plus browser end-to-end runs",
+      "Built the Next.js interface: live transcript with a who-is-speaking indicator, a multi-tab document viewer that keeps reading positions, and a presenter mode that moves everyone to the same page",
+      "Added organizations, e-mail invitations, Google sign-in and Meet room creation through the Meet API, and packaged the whole stack so one command (make up) starts it",
+      "Used an AI coding assistant (Claude Code) throughout development, directing the design and checking the result in real meetings"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "Self-hosted LLM instead of a cloud API",
+        "reason": "Meeting content stays on the owner's machine and costs nothing per meeting. Measured on a laptop GPU (RTX 3050, 4 GB), a 3B model translates a sentence in about 0.4 s, fast enough for live captions."
+      },
+      {
+        "decision": "Translate while the person is speaking, not after",
+        "reason": "Waiting for the end of a sentence delayed the translation by several seconds. Live translation keeps at most one request per sentence and language in flight and drops stale text, so a slow model never builds a backlog."
+      },
+      {
+        "decision": "Every AI claim in the minutes must point to a sentence",
+        "reason": "A small model sometimes invents owners or deadlines. The model cites short line labels, unknown labels are discarded, and the host must review before the minutes are finalized."
+      },
+      {
+        "decision": "Ports and adapters around every external service",
+        "reason": "The meeting bot, LLM, storage, e-mail and database sit behind interfaces with fake implementations, so the product runs in demo mode and the core is tested without a GPU or a real meeting."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "Captions arrive as a single sentence that keeps being rewritten while the person speaks.",
+        "solution": "Poll only the utterances that changed since the last poll, twice a second; every change becomes a partial segment with a stable id, and a sentence is closed once its text stops changing."
+      },
+      {
+        "challenge": "A small model drifting: foreign characters in a Vietnamese summary, timestamps mistaken for deadlines, one source line cited for every decision.",
+        "solution": "Removed timestamps and long ids from the prompt, gave the model short line labels, rewrote the prompts in versions and measured the result: every decision now cites the correct line."
+      },
+      {
+        "challenge": "A server restart left the bot in the meeting with nothing listening to it.",
+        "solution": "On start the server closes the meetings that were live, drafts their minutes from what was already transcribed, and tells orphaned bots to leave."
+      }
+    ]
+  },
+  "vi": {
+    "title": "MeetMind — Trợ lý họp AI cho Google Meet",
+    "rankingBadge": "Ứng dụng AI",
+    "description": "Phụ đề trực tiếp kèm tên người nói, dịch sang ngôn ngữ riêng của từng người ngay khi họ còn đang nói, tài liệu cả phòng cùng đọc đồng bộ, và biên bản do LLM tự chạy soạn sẵn.",
+    "longDesc": "MeetMind chạy cạnh Google Meet. Một bot vào phòng họp và MeetMind biến phụ đề của nó thành transcript trực tiếp mà mỗi người đọc bằng ngôn ngữ mình chọn: LLM tự chạy dịch từng câu ngay khi câu còn đang được nói, và chỉ báo cho biết ai đang nói.\n\nChủ trì chia sẻ tài liệu để mọi người mở trong các tab nhớ vị trí đọc của từng người, và một người trình bày có thể đưa cả phòng tới đúng trang đang bàn. Khi cuộc họp kết thúc, LLM soạn biên bản gồm tóm tắt, quyết định và công việc kèm người phụ trách, thời hạn, mỗi mục dẫn về câu gốc; chủ trì xem lại, chỉnh sửa và xuất ra Word.\n\nCó sẵn tổ chức, mời bằng email, đăng nhập Google và tạo phòng Meet qua Meet API. Toàn bộ chạy trên máy của chủ sở hữu: Ollama cho mô hình, MinIO cho tệp, PostgreSQL cho dữ liệu, khởi động bằng một lệnh.",
+    "role": "Dự án cá nhân do tôi tự thiết kế và xây dựng, từ kiến trúc đến triển khai bằng Docker. AI được dùng theo hai cách: các mô hình AI bên trong sản phẩm, và trợ lý lập trình AI (Claude Code) trong lúc xây dựng, làm theo yêu cầu của tôi trong khi tôi định hướng thiết kế và kiểm tra kết quả trong các cuộc họp thật.",
+    "responsibilities": [
+      "Tích hợp AI vào sản phẩm: LLM tự chạy (Qwen2.5 trên Ollama) để dịch trực tiếp và soạn biên bản, qua một giao diện tương thích OpenAI nên đổi mô hình chỉ bằng cấu hình",
+      "Thiết kế dịch trực tiếp bám theo người nói: phụ đề đang dài ra được dịch ngay khi người đó còn nói, chỉ giữ văn bản mới nhất trong hàng chờ, và bản dịch cuối của câu luôn được ưu tiên",
+      "Coi prompt là tệp có phiên bản và làm cho đầu ra của LLM kiểm chứng được: biên bản là JSON có cấu trúc, mỗi quyết định và công việc dẫn về câu gốc, trích dẫn bịa ra bị loại bỏ",
+      "Xây dựng backend bằng FastAPI theo kiến trúc ports and adapters (bot họp, LLM, lưu trữ, email, CSDL đều thay được), có hơn 40 test tự động cùng các lần chạy kiểm tra end-to-end trên trình duyệt",
+      "Xây dựng giao diện Next.js: transcript trực tiếp có chỉ báo ai đang nói, trình xem tài liệu nhiều tab giữ vị trí đọc, và chế độ trình bày đưa mọi người tới cùng một trang",
+      "Thêm tổ chức, mời bằng email, đăng nhập Google và tạo phòng Meet qua Meet API, rồi đóng gói cả hệ thống để một lệnh (make up) khởi động tất cả",
+      "Dùng trợ lý lập trình AI (Claude Code) xuyên suốt quá trình phát triển, tôi định hướng thiết kế và kiểm tra kết quả trong các cuộc họp thật"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "Dùng LLM tự chạy thay vì API trên đám mây",
+        "reason": "Nội dung cuộc họp ở lại máy của chủ sở hữu và không tốn phí cho mỗi cuộc họp. Đo trên GPU laptop (RTX 3050, 4 GB), mô hình 3B dịch một câu khoảng 0,4 giây, đủ nhanh cho phụ đề trực tiếp."
+      },
+      {
+        "decision": "Dịch trong lúc người ta đang nói thay vì đợi nói xong",
+        "reason": "Đợi hết câu làm bản dịch trễ vài giây. Dịch trực tiếp chỉ giữ tối đa một yêu cầu cho mỗi câu và mỗi ngôn ngữ, bỏ văn bản cũ, nên mô hình chậm cũng không tạo ra hàng đợi dồn ứ."
+      },
+      {
+        "decision": "Mọi nhận định của AI trong biên bản phải chỉ về một câu gốc",
+        "reason": "Mô hình nhỏ đôi khi bịa người phụ trách hoặc thời hạn. Mô hình dẫn các nhãn dòng ngắn, nhãn lạ bị loại, và chủ trì phải duyệt trước khi chốt biên bản."
+      },
+      {
+        "decision": "Ports and adapters quanh mọi dịch vụ bên ngoài",
+        "reason": "Bot họp, LLM, lưu trữ, email và CSDL nằm sau các giao diện có bản giả lập, nên sản phẩm chạy được ở chế độ demo và phần lõi được kiểm thử mà không cần GPU hay cuộc họp thật."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "Phụ đề đến dưới dạng một câu liên tục bị viết lại trong lúc người ta nói.",
+        "solution": "Mỗi nửa giây chỉ lấy các đoạn thay đổi từ lần trước; mỗi thay đổi thành một đoạn tạm với mã cố định, và câu được chốt khi văn bản thôi thay đổi."
+      },
+      {
+        "challenge": "Mô hình nhỏ lệch hướng: chữ nước ngoài lẫn trong bản tóm tắt tiếng Việt, mốc thời gian bị nhầm thành thời hạn, mọi quyết định cùng dẫn về một câu.",
+        "solution": "Bỏ mốc thời gian và mã dài khỏi prompt, cho mô hình nhãn dòng ngắn, viết lại prompt theo từng phiên bản và đo kết quả: mọi quyết định nay dẫn đúng câu."
+      },
+      {
+        "challenge": "Máy chủ khởi động lại làm bot còn trong cuộc họp mà không còn ai lắng nghe.",
+        "solution": "Khi khởi động, máy chủ đóng các phiên đang họp, soạn biên bản từ phần đã ghi, và bảo các bot mồ côi rời phòng."
+      }
+    ]
+  }
+}
