@@ -1,0 +1,98 @@
+{
+  "id": 10,
+  "category": "fullstack",
+  "featured": true,
+  "showInitial": true,
+  "order": 2,
+  "internal": false,
+  "time": "10-2026 - 11-2026",
+  "demo": "#",
+  "github": "https://github.com/tranvanhuy-hichan/zenclass.git",
+  "video": "https://drive.google.com/file/d/1zlYSR2mrYKBE2jBsXZezBw_f8h3dV7Hy/view?usp=drive_link",
+  "tags": [
+    "Next.js",
+    "TypeScript",
+    "Prisma",
+    "PostgreSQL",
+    "Multi-tenant",
+    "PayOS",
+    "VietQR",
+    "PDF"
+  ],
+  "en": {
+    "title": "ZenClass — Training Center Management Platform",
+    "description": "A multi-tenant SaaS for training centers: scheduling, attendance, grading, tuition with PayOS auto-reconciliation, PDF receipts and parent/student portals.",
+    "longDesc": "ZenClass is a multi-tenant SaaS platform for language and tutoring centers. Each center gets its own isolated data, branding and payment channel. It covers class scheduling with room and teacher conflict checks, attendance and makeup sessions, configurable grade templates, tuition invoices with VietQR and PayOS online payment (automatic debt settlement through webhooks), server-generated PDF receipts, payroll, reports, and web/mobile portals for students and parents.",
+    "role": "A personal project I designed and built entirely on my own, from database design to deployment on Vercel.",
+    "responsibilities": [
+      "Designed the multi-tenant data model with PostgreSQL row-level security",
+      "Built the full-stack app with Next.js App Router, Server Actions & TypeScript",
+      "Integrated PayOS (per-center keys, webhook reconciliation) and VietQR",
+      "Generated standards-based PDF receipts and schedules on the server",
+      "Designed role-based access control and a per-center theming system",
+      "Deployed and operated the platform on Vercel"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "Tenant isolation with PostgreSQL row-level security",
+        "reason": "Every query runs under the current center id, so a forgotten filter returns nothing instead of leaking another center's data."
+      },
+      {
+        "decision": "Per-center PayOS channels with encrypted keys",
+        "reason": "Tuition goes straight to each center's own account; keys are encrypted with AES-256-GCM and webhooks are verified by signature."
+      },
+      {
+        "decision": "Server-side PDF generation with embedded fonts",
+        "reason": "Receipts and schedules are real PDFs with correct Vietnamese diacritics instead of browser-printed HTML, identical on every device."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "Keeping data of many centers fully separated in a single database.",
+        "solution": "Moved isolation into the database with RLS policies and a restricted application role, so isolation does not depend on every query being written correctly."
+      },
+      {
+        "challenge": "Reconciling online payments reliably when webhooks can be missed.",
+        "solution": "Idempotent webhook handling plus a status check on the payment page, so the debt is settled once and only once."
+      }
+    ]
+  },
+  "vi": {
+    "title": "ZenClass — Nền tảng Quản lý Trung tâm Đào tạo",
+    "description": "SaaS đa trung tâm: xếp lịch, điểm danh, nhập điểm, thu học phí qua PayOS tự gạch nợ, biên lai PDF và cổng học viên/phụ huynh.",
+    "longDesc": "ZenClass là nền tảng SaaS đa trung tâm dành cho trung tâm ngoại ngữ và dạy thêm. Mỗi trung tâm có dữ liệu, giao diện và kênh thanh toán riêng. Hệ thống gồm xếp lịch lớp có kiểm tra trùng phòng và giáo viên, điểm danh và học bù, bộ điểm tự cấu hình, phiếu học phí với VietQR và thanh toán online PayOS (tự gạch nợ qua webhook), biên lai PDF do máy chủ lập, chấm công và lương, báo cáo, cùng cổng web và điện thoại cho học viên và phụ huynh.",
+    "role": "Dự án cá nhân do tôi trực tiếp đảm nhận toàn bộ, từ thiết kế cơ sở dữ liệu đến triển khai trên Vercel.",
+    "responsibilities": [
+      "Thiết kế mô hình dữ liệu đa trung tâm với row-level security của PostgreSQL",
+      "Xây dựng ứng dụng full-stack bằng Next.js App Router, Server Actions và TypeScript",
+      "Tích hợp PayOS (khoá riêng từng trung tâm, đối soát qua webhook) và VietQR",
+      "Xuất biên lai và lịch học dạng PDF chuẩn ngay trên máy chủ",
+      "Thiết kế phân quyền theo vai trò và hệ thống giao diện riêng cho từng trung tâm",
+      "Triển khai và vận hành hệ thống trên Vercel"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "Cô lập dữ liệu từng trung tâm bằng row-level security của PostgreSQL",
+        "reason": "Mọi truy vấn chạy dưới mã trung tâm hiện tại, nên nếu quên lọc ở đâu đó thì kết quả là rỗng chứ không lộ dữ liệu trung tâm khác."
+      },
+      {
+        "decision": "Kênh PayOS riêng cho từng trung tâm, khoá được mã hoá",
+        "reason": "Học phí về thẳng tài khoản của trung tâm; khoá mã hoá AES-256-GCM và webhook được xác thực bằng chữ ký."
+      },
+      {
+        "decision": "Tạo PDF trên máy chủ, nhúng sẵn font",
+        "reason": "Biên lai và lịch học là PDF thật với dấu tiếng Việt đúng, giống nhau trên mọi thiết bị, thay vì in HTML từ trình duyệt."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "Tách biệt hoàn toàn dữ liệu của nhiều trung tâm trong cùng một cơ sở dữ liệu.",
+        "solution": "Đưa việc cô lập xuống tầng cơ sở dữ liệu bằng chính sách RLS và role ứng dụng bị giới hạn, không phụ thuộc vào việc mọi truy vấn đều viết đúng."
+      },
+      {
+        "challenge": "Đối soát thanh toán online khi webhook có thể bị lỡ.",
+        "solution": "Xử lý webhook idempotent kết hợp tự kiểm tra trạng thái ở trang thanh toán, để khoản nợ được gạch đúng một lần."
+      }
+    ]
+  }
+}

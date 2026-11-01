@@ -7,6 +7,7 @@ import p4 from "@/data/projects/qlpt/project.json";
 import p5 from "@/data/projects/sontra-health/project.json";
 import p6 from "@/data/projects/studyhub/project.json";
 import p7 from "@/data/projects/used-car-price/project.json";
+import p8 from "@/data/projects/zenclass/project.json";
 
 export const projectSources: { folder: string; config: any; images: string[] }[] = [
   { folder: "bimspace", config: p0 as any, images: ["/project-images/bimspace/bimspace.png"] },
@@ -17,4 +18,5 @@ export const projectSources: { folder: string; config: any; images: string[] }[]
   { folder: "sontra-health", config: p5 as any, images: ["/project-images/sontra-health/sonTraHealth.png"] },
   { folder: "studyhub", config: p6 as any, images: ["/project-images/studyhub/studyHub.png"] },
   { folder: "used-car-price", config: p7 as any, images: ["/project-images/used-car-price/used-car-price.png"] },
+  { folder: "zenclass", config: p8 as any, images: ["/project-images/zenclass/01-tong-quan.png", "/project-images/zenclass/02-lich-hoc.png", "/project-images/zenclass/03-phieu-hoc-phi.png", "/project-images/zenclass/04-bien-lai-pdf.png", "/project-images/zenclass/05-giao-dien.png"] },
 ];
