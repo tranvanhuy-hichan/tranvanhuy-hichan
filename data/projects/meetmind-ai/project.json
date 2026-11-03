@@ -6,8 +6,8 @@
     "fullstack"
   ],
   "featured": true,
-  "showInitial": true,
-  "order": 2,
+  "showInitial": false,
+  "order": 3,
   "internal": false,
   "time": "11-2026 – Present",
   "demo": "#",

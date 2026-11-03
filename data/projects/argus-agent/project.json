@@ -1,0 +1,184 @@
+{
+  "id": 12,
+  "category": "ai",
+  "categories": [
+    "ai",
+    "fullstack"
+  ],
+  "featured": true,
+  "showInitial": true,
+  "order": 1,
+  "internal": false,
+  "time": "11-2026 – Present",
+  "demo": "#",
+  "github": "https://github.com/tranvanhuy-hichan/argus-agent",
+  "tags": [
+    "Agentic AI",
+    "LLM",
+    "Python",
+    "FastAPI",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "SQLite",
+    "Playwright",
+    "MCP",
+    "Gemini",
+    "Claude",
+    "Ollama",
+    "Telegram",
+    "Docker"
+  ],
+  "en": {
+    "title": "Argus Agent — Personal AI Agent Platform",
+    "rankingBadge": "AI Agent Platform",
+    "description": "A local-first AI agent platform I built end to end: it plans multi-step work, delegates to sub-agents, drives a real browser, remembers by meaning, and is reachable from a web app, a CLI, Telegram or an API — with every risky action behind an approval gate.",
+    "longDesc": "Argus Agent runs on your own machine and behaves like a personal assistant that can actually do work: read and write files, search the web, browse with a real browser, run commands (only with your permission), call APIs, use MCP tools, and generate or look at images. One agent core serves five front doors — a web app, the `argus` CLI, a Telegram bot, an external REST API and scheduled/background jobs — so behaviour and safety rules are the same everywhere.\n\nIt works with any OpenAI-compatible service (Gemini, OpenAI, Ollama, LM Studio, vLLM, Groq, DeepSeek, OpenRouter and more), with Anthropic, or — instead of an API key — with a CLI you are already logged in to (Claude Code). Failed requests are retried and can fall back to a second model.\n\nFor long work the agent writes a plan that updates live, delegates to specialised sub-agents that run in parallel, or starts a background task with progress, cancel and a notification when it finishes. It remembers through a MEMORY.md file, full-text search over old conversations and a vector store, and an AI clean-up that proposes a tidier memory but only writes it after you approve the diff. Scheduled jobs and a heartbeat let it work on its own and report to the Inbox or Telegram.\n\nSafety is built in rather than added on: four permission modes, an approval gate in front of shell commands, file access outside the workspace, MCP calls and HTTP writes, an optional Docker sandbox, encrypted secrets and backups, and an audit log. It ships with an onboarding wizard, a doctor command, systemd/Docker deployment, user, CLI and architecture documentation, and about 9,000 lines of Python, 5,700 lines of TypeScript and 2,300 lines of tests (156 automated tests) behind a GitHub Actions pipeline.",
+    "role": "A personal project I designed and built on my own, from the architecture and security model to the web UI, CLI, Docker packaging and documentation. I used an AI coding assistant (Claude Code) throughout, working from my requirements while I directed the design, reviewed the results and tested the product by hand, including real runs against Gemini and Claude.",
+    "responsibilities": [
+      "Designed the agent core: a streaming tool-calling loop that emits live events to every client, retries transient errors (429, 503, timeouts), falls back to another model, and summarises old turns so small local models keep the start of a long chat",
+      "Built the model layer for any OpenAI-compatible API (15+ services), Anthropic and a \"logged-in CLI\" provider that uses Claude Code instead of an API key — the CLI's own tools are switched off and Argus drives tools through a <tool_call> text protocol, so approvals, plans and memory keep working",
+      "Implemented 38 tools behind one registry with risk levels — files, shell, web, HTTP, browser, images, memory, planning, delegation, background tasks and computer control — and four permission modes: default, read-only, ask-first and full access",
+      "Built planning and multi-agent work: a plan card that updates live, sub-agents with role profiles (researcher, coder, reviewer) that run in parallel with a depth limit, background tasks with progress, cancel and detection of jobs interrupted by a restart, and notifications on completion",
+      "Built a Playwright browser tool: pages are turned into text with stable element refs ([e12]) so models click and type by reference instead of coordinates; private network addresses are blocked by default and a headless toggle lets you watch the agent work",
+      "Built semantic memory: SQLite FTS5 with Vietnamese diacritic folding, a vector store with three embedding backends (offline hash, Ollama, OpenAI-compatible), hybrid ranking, and an AI clean-up of MEMORY.md that shows a diff and backs up before applying",
+      "Integrated MCP in both directions (client for stdio, HTTP and SSE servers; a server that exposes the agent to Claude Code or Cursor) and a skill system based on SKILL.md files with eligibility checks and safe installation from a public registry",
+      "Added Telegram (long polling, one-time pairing codes, inline approve/deny buttons), scheduled jobs with a friendly schedule picker and templates, heartbeat self-checks, an Inbox, and an external REST API with hashed bearer tokens and a per-token command policy",
+      "Hardened security: Fernet-encrypted secrets with the master key in an environment variable, OS keychain or file; AES-GCM encrypted backups with a restore that rejects path traversal and malicious links; host and origin checks against DNS rebinding and CSRF; SSRF filtering re-checked on every redirect; an audit log of every tool call",
+      "Built the `argus` CLI: an arrow-key onboarding wizard, a doctor with auto-fix, daemon and service management (systemd, launchd), chat, run, tasks, memory, backup, secrets, skills and token commands, with JSON output and exit codes for scripting",
+      "Built the React + TypeScript interface: streaming chat with inline tool cards, approvals, plan card, Markdown tables, images and read-aloud; Tasks, Scheduled jobs, an AI-model gallery with official logos, an MCP wizard, statistics with cost estimates and an action history; dark and light themes; full Vietnamese/English with a checker that fails on missing translations",
+      "Redesigned the product for non-technical users: grouped navigation with plain-language names, technical options folded under \"Advanced\", full-width pages and guided flows instead of raw configuration",
+      "Reduced token use: stale tool results (browser snapshots first) are shrunk before each model call — about 87% fewer characters on a real 50-message browsing session — and tools of disabled features are no longer sent",
+      "Packaged and verified it: multi-stage Docker image, a clean split between fixed code (app/) and personal data (user-data/), GitHub Actions CI, 156 automated tests (real subprocess CLI tests, pty wizard tests, fake Telegram/LLM/embedding servers) and three documents — user guide, CLI reference and architecture",
+      "Found and fixed problems by using the product for real: Gemini 3's thought_signature requirement, free-tier rate limits, sub-agent files landing in the wrong folder, and a container that wrote data outside its volume"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "One agent core, many front doors",
+        "reason": "The web app, CLI, Telegram bot, REST API, scheduled jobs and background tasks all call the same run function and differ only in who approves actions and which permission mode applies. Behaviour and security rules live in one place instead of five."
+      },
+      {
+        "decision": "An approval gate instead of trust",
+        "reason": "An agent that can run shell commands must not act on its own. Every risky action asks first; unattended runs (cron, background, API) have nobody to ask and therefore deny by default, and only an explicit full-access mode skips the question."
+      },
+      {
+        "decision": "Use a logged-in CLI as a model through a text tool protocol",
+        "reason": "Subscription logins cannot be used through the public API. Running the official CLI headless with its own tools off lets a user log in once while Argus keeps full control of tools, approvals and memory. The cost is about 3 s per step and no image input, which the UI states plainly."
+      },
+      {
+        "decision": "Vector search inside plain SQLite",
+        "reason": "No extra service to run: float32 blobs, cosine similarity with numpy, and vectors from different embedding models are never compared. An offline hash embedder is the default so memory search works with no network and no model."
+      },
+      {
+        "decision": "Separate fixed code from personal data",
+        "reason": "Everything replaceable lives in app/ and everything personal (config with API keys, database, memory, backups) in user-data/, which is git-ignored. Reinstalling or deleting the code cannot destroy a user's data, and old layouts keep working."
+      },
+      {
+        "decision": "Shrink what is sent, keep what is stored",
+        "reason": "Each agent step resends the whole conversation, and browser pages are large. Older tool results are cut to a short stub in the request while the full history stays in the database and the UI."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "Gemini 3 answered HTTP 400 on the second step of any tool conversation: \"Function call is missing a thought_signature\".",
+        "solution": "Captured the signature the API sends with each function call, stored it with the message and sent it back on the next turn, with Google's documented skip value for older history. Applied only to Gemini endpoints and covered by tests."
+      },
+      {
+        "challenge": "Browsing tasks hit the free tier's rate limit: input grew from 3.6k to 13.7k tokens in six steps because every page snapshot was resent.",
+        "solution": "Measured where tokens went (about 3.9k for tool definitions plus the history), then shrank stale results and hid unusable tools, cutting 87% of the history characters on a real session."
+      },
+      {
+        "challenge": "Small models create a plan and then forget to tick its steps.",
+        "solution": "The first pending step is started automatically when real work begins, and a model-only reminder is appended to tool results. Steps are never marked done by the system, because a progress bar must not claim what did not happen."
+      },
+      {
+        "challenge": "Playwright could not launch the system Chromium: the snap build cannot write to hidden profile folders.",
+        "solution": "Used a visible profile directory under the data folder and a dedicated thread per conversation, with idle shutdown, and verified it with an end-to-end run against a real page."
+      },
+      {
+        "challenge": "A background indexing thread wrote into another test's database and made tests fail randomly (\"database is locked\", \"data already exists\").",
+        "solution": "Traced it to the global worker outliving the test's patched paths; test fixtures now turn off background embedding and drain the queue before tearing down."
+      },
+      {
+        "challenge": "After splitting code from data, the Docker container silently wrote its data outside the mounted volume.",
+        "solution": "Found by actually running the container with a mounted folder, not just building it; fixed by pinning the data root in the image and re-running the check."
+      }
+    ]
+  },
+  "vi": {
+    "title": "Argus Agent — Nền tảng AI Agent cá nhân",
+    "rankingBadge": "Nền tảng AI Agent",
+    "description": "Nền tảng AI agent chạy cục bộ do tôi tự xây dựng từ đầu đến cuối: lập kế hoạch việc nhiều bước, giao việc cho agent con, điều khiển trình duyệt thật, ghi nhớ theo ngữ nghĩa, dùng được từ web, CLI, Telegram hay API — mọi thao tác rủi ro đều qua cổng phê duyệt.",
+    "longDesc": "Argus Agent chạy ngay trên máy của bạn và hoạt động như một trợ lý cá nhân thật sự làm được việc: đọc ghi file, tìm kiếm web, duyệt web bằng trình duyệt thật, chạy lệnh (chỉ khi bạn cho phép), gọi API, dùng công cụ MCP, tạo và xem ảnh. Một lõi agent duy nhất phục vụ năm cửa vào — giao diện web, CLI `argus`, bot Telegram, REST API bên ngoài và các việc chạy theo lịch/chạy nền — nên hành vi và quy tắc an toàn giống nhau ở mọi nơi.\n\nNó dùng được với mọi dịch vụ tương thích OpenAI (Gemini, OpenAI, Ollama, LM Studio, vLLM, Groq, DeepSeek, OpenRouter…), với Anthropic, hoặc — thay cho API key — với một CLI đã đăng nhập sẵn (Claude Code). Yêu cầu lỗi được thử lại và có thể chuyển sang mô hình dự phòng.\n\nVới việc dài, agent lập kế hoạch cập nhật trực tiếp, giao việc cho các agent con chuyên trách chạy song song, hoặc mở một việc chạy nền có tiến độ, nút hủy và thông báo khi xong. Nó ghi nhớ bằng file MEMORY.md, tìm toàn văn trong hội thoại cũ và kho vector, kèm chức năng AI dọn trí nhớ: AI đề xuất bản gọn hơn nhưng chỉ ghi sau khi bạn duyệt phần khác biệt. Việc theo lịch và heartbeat giúp nó tự làm việc và báo kết quả về Hộp thư hoặc Telegram.\n\nAn toàn được xây từ đầu chứ không vá sau: bốn chế độ quyền, cổng phê duyệt trước lệnh shell, truy cập file ngoài workspace, gọi MCP và ghi HTTP, sandbox Docker tùy chọn, mã hóa khóa bí mật và bản sao lưu, cùng nhật ký thao tác. Đi kèm trình hướng dẫn cài đặt, lệnh doctor, triển khai bằng systemd/Docker, tài liệu người dùng, CLI và kiến trúc, cùng khoảng 9.000 dòng Python, 5.700 dòng TypeScript và 2.300 dòng test (156 test tự động) chạy trên GitHub Actions.",
+    "role": "Dự án cá nhân tôi tự thiết kế và xây dựng, từ kiến trúc và mô hình bảo mật đến giao diện web, CLI, đóng gói Docker và tài liệu. Tôi dùng trợ lý lập trình AI (Claude Code) xuyên suốt quá trình, làm theo yêu cầu của tôi trong khi tôi định hướng thiết kế, xem xét kết quả và tự kiểm thử sản phẩm, gồm cả các lần chạy thật với Gemini và Claude.",
+    "responsibilities": [
+      "Thiết kế lõi agent: vòng lặp gọi công cụ có streaming, đẩy sự kiện trực tiếp tới mọi client, tự thử lại lỗi tạm thời (429, 503, hết giờ), chuyển sang mô hình dự phòng và tóm tắt phần hội thoại cũ để model nhỏ chạy local không quên phần đầu cuộc trò chuyện dài",
+      "Xây dựng tầng mô hình cho mọi API tương thích OpenAI (15+ dịch vụ), Anthropic và nhà cung cấp \"CLI đã đăng nhập\" dùng Claude Code thay cho API key — công cụ riêng của CLI bị tắt, Argus điều khiển công cụ qua giao thức văn bản <tool_call> nên phê duyệt, kế hoạch và trí nhớ vẫn hoạt động",
+      "Cài đặt 38 công cụ trong một registry có mức rủi ro — file, shell, web, HTTP, trình duyệt, ảnh, trí nhớ, lập kế hoạch, giao việc, việc nền và điều khiển máy tính — cùng bốn chế độ quyền: mặc định, chỉ đọc, hỏi trước và toàn quyền",
+      "Xây dựng lập kế hoạch và đa agent: thẻ kế hoạch cập nhật trực tiếp, agent con theo vai trò (researcher, coder, reviewer) chạy song song có giới hạn độ sâu, việc nền có tiến độ, nút hủy và phát hiện việc bị gián đoạn khi khởi động lại, thông báo khi hoàn thành",
+      "Xây dựng công cụ trình duyệt bằng Playwright: trang web được chuyển thành văn bản kèm mã tham chiếu phần tử ổn định ([e12]) để model bấm và gõ theo mã thay vì tọa độ; mặc định chặn địa chỉ mạng nội bộ và có công tắc chạy ẩn để xem agent thao tác",
+      "Xây dựng trí nhớ theo ngữ nghĩa: SQLite FTS5 có chuẩn hóa dấu tiếng Việt, kho vector với ba backend embedding (hash offline, Ollama, tương thích OpenAI), xếp hạng kết hợp và chức năng AI dọn MEMORY.md có hiển thị diff và sao lưu trước khi áp dụng",
+      "Tích hợp MCP hai chiều (client cho server stdio, HTTP, SSE; server đưa agent ra cho Claude Code hay Cursor) và hệ thống kỹ năng dựa trên file SKILL.md có kiểm tra điều kiện và cài đặt an toàn từ kho công khai",
+      "Thêm Telegram (long polling, mã ghép đôi dùng một lần, nút Cho phép/Từ chối ngay trong tin nhắn), việc theo lịch có bộ chọn lịch thân thiện và mẫu có sẵn, heartbeat tự kiểm tra, Hộp thư, cùng REST API ngoài với token băm và chính sách lệnh riêng cho từng token",
+      "Gia cố bảo mật: mã hóa Fernet cho khóa bí mật với khóa chủ trong biến môi trường, keychain hệ điều hành hoặc file; sao lưu mã hóa AES-GCM với bước khôi phục chặn đường dẫn thoát ra ngoài và liên kết độc hại; kiểm tra host và origin chống DNS rebinding và CSRF; lọc SSRF kiểm tra lại ở mỗi lần chuyển hướng; nhật ký mọi lần gọi công cụ",
+      "Xây dựng CLI `argus`: trình hướng dẫn cài đặt chọn bằng phím mũi tên, doctor có tự sửa lỗi, quản lý daemon và dịch vụ (systemd, launchd), các lệnh chat, run, tasks, memory, backup, secrets, skills, token, có đầu ra JSON và mã thoát để dùng trong script",
+      "Xây dựng giao diện React + TypeScript: chat streaming với thẻ công cụ, phê duyệt, thẻ kế hoạch, bảng Markdown, ảnh và đọc to; trang Tác vụ, Việc theo lịch, thư viện mô hình AI với logo chính thức, trình hướng dẫn MCP, thống kê kèm ước tính chi phí và lịch sử thao tác; giao diện sáng/tối; song ngữ Việt/Anh đầy đủ kèm bộ kiểm tra báo lỗi khi thiếu bản dịch",
+      "Thiết kế lại sản phẩm cho người không chuyên: thanh điều hướng theo nhóm với tên gọi dễ hiểu, tùy chọn kỹ thuật được gấp vào \"Nâng cao\", trang full-width và luồng có hướng dẫn thay cho cấu hình thô",
+      "Giảm token: kết quả công cụ cũ (đầu tiên là ảnh chụp trang trình duyệt) được rút gọn trước mỗi lần gọi mô hình — ít hơn khoảng 87% ký tự trên một phiên duyệt web thật gồm 50 tin nhắn — và không gửi định nghĩa của công cụ thuộc tính năng đang tắt",
+      "Đóng gói và kiểm chứng: image Docker nhiều giai đoạn, tách rõ mã cố định (app/) khỏi dữ liệu cá nhân (user-data/), CI GitHub Actions, 156 test tự động (test CLI chạy như tiến trình thật, test trình hướng dẫn qua pty, server Telegram/LLM/embedding giả) và ba tài liệu — hướng dẫn sử dụng, tham chiếu CLI, kiến trúc",
+      "Tìm và sửa lỗi bằng cách dùng thật sản phẩm: yêu cầu thought_signature của Gemini 3, giới hạn tốc độ gói miễn phí, file của agent con nằm sai thư mục và container ghi dữ liệu ra ngoài volume"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "Một lõi agent, nhiều cửa vào",
+        "reason": "Giao diện web, CLI, bot Telegram, REST API, việc theo lịch và việc nền đều gọi cùng một hàm chạy, chỉ khác người duyệt thao tác và chế độ quyền. Hành vi và quy tắc bảo mật nằm một chỗ thay vì năm chỗ."
+      },
+      {
+        "decision": "Cổng phê duyệt thay vì tin tưởng",
+        "reason": "Agent có thể chạy lệnh shell thì không được tự hành động. Mọi thao tác rủi ro đều hỏi trước; các lần chạy không người giám sát (cron, nền, API) không có ai để hỏi nên mặc định từ chối, và chỉ chế độ toàn quyền mới bỏ qua câu hỏi."
+      },
+      {
+        "decision": "Dùng CLI đã đăng nhập làm mô hình qua giao thức công cụ dạng văn bản",
+        "reason": "Tài khoản thuê bao không dùng được qua API công khai. Chạy CLI chính thức ở chế độ không giao diện với công cụ riêng bị tắt cho phép người dùng đăng nhập một lần trong khi Argus giữ toàn quyền kiểm soát công cụ, phê duyệt và trí nhớ. Đổi lại mỗi bước mất khoảng 3 giây và không nhận ảnh — giao diện nói rõ điều này."
+      },
+      {
+        "decision": "Tìm kiếm vector ngay trong SQLite",
+        "reason": "Không phải chạy thêm dịch vụ: lưu float32 dạng blob, tính cosine bằng numpy, và vector của các mô hình embedding khác nhau không bao giờ bị đem ra so sánh. Mặc định dùng embedding hash offline nên tìm trí nhớ hoạt động khi không có mạng hay model."
+      },
+      {
+        "decision": "Tách mã cố định khỏi dữ liệu cá nhân",
+        "reason": "Mọi thứ có thể thay thế nằm trong app/, mọi thứ cá nhân (config chứa API key, cơ sở dữ liệu, trí nhớ, bản sao lưu) nằm trong user-data/ và bị git bỏ qua. Cài lại hay xóa mã nguồn không thể làm mất dữ liệu của người dùng, và bố cục cũ vẫn chạy được."
+      },
+      {
+        "decision": "Rút gọn thứ gửi đi, giữ nguyên thứ đã lưu",
+        "reason": "Mỗi bước agent gửi lại cả hội thoại, mà trang web thì rất dài. Kết quả công cụ cũ được cắt còn một đoạn ngắn trong yêu cầu, còn lịch sử đầy đủ vẫn nằm trong cơ sở dữ liệu và giao diện."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "Gemini 3 trả HTTP 400 ở bước thứ hai của mọi hội thoại có công cụ: \"Function call is missing a thought_signature\".",
+        "solution": "Bắt lại chữ ký API gửi kèm mỗi lời gọi hàm, lưu cùng tin nhắn và gửi lại ở lượt sau, kèm giá trị bỏ qua mà Google quy định cho lịch sử cũ. Chỉ áp dụng cho endpoint Gemini và có test bao phủ."
+      },
+      {
+        "challenge": "Việc duyệt web chạm giới hạn tốc độ của gói miễn phí: đầu vào tăng từ 3,6k lên 13,7k token sau sáu bước vì ảnh chụp mỗi trang bị gửi lại.",
+        "solution": "Đo xem token đi đâu (khoảng 3,9k cho định nghĩa công cụ cộng phần lịch sử), rồi rút gọn kết quả cũ và ẩn công cụ không dùng được, giảm 87% ký tự lịch sử trên một phiên thật."
+      },
+      {
+        "challenge": "Model nhỏ lập kế hoạch xong rồi quên tick từng bước.",
+        "solution": "Bước đầu tiên chưa làm được tự động bắt đầu khi có việc thật, và một lời nhắc chỉ dành cho model được gắn vào kết quả công cụ. Hệ thống không bao giờ tự đánh dấu một bước là xong, vì thanh tiến độ không được báo điều chưa xảy ra."
+      },
+      {
+        "challenge": "Playwright không chạy được Chromium của hệ thống: bản snap không ghi được vào thư mục hồ sơ ẩn.",
+        "solution": "Dùng thư mục hồ sơ không ẩn trong thư mục dữ liệu và một luồng riêng cho mỗi hội thoại, có tự đóng khi rảnh, rồi kiểm chứng bằng lần chạy đầu-cuối trên một trang thật."
+      },
+      {
+        "challenge": "Luồng nền lập chỉ mục ghi nhầm vào cơ sở dữ liệu của test khác khiến test hỏng ngẫu nhiên (\"database is locked\", \"đã có dữ liệu\").",
+        "solution": "Lần ra nguyên nhân là worker toàn cục sống lâu hơn đường dẫn đã được patch của test; fixture test giờ tắt việc nhúng nền và chờ hàng đợi cạn trước khi dọn."
+      },
+      {
+        "challenge": "Sau khi tách mã khỏi dữ liệu, container Docker âm thầm ghi dữ liệu ra ngoài volume đã mount.",
+        "solution": "Phát hiện nhờ chạy container thật với thư mục được mount chứ không chỉ build; sửa bằng cách cố định thư mục dữ liệu trong image và chạy lại kiểm tra."
+      }
+    ]
+  }
+}

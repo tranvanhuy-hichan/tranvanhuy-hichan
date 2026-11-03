@@ -53,32 +53,33 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & 
       </p>
     </td>
     <td width="50%" valign="top">
-      <h3>🛍️ NexShop — E-Commerce & POS Platform</h3>
-      <p>Full-stack omnichannel retail platform combining an online storefront with an in-person Point of Sale (POS) terminal and revenue analytics.</p>
+      <h3>🧭 Argus Agent — Personal AI Agent Platform</h3>
+      <p>A <b>local-first AI agent platform</b> I designed and built end to end: one agent core behind a web app, a CLI, a Telegram bot, a REST API and scheduled jobs — with every risky action behind an approval gate.</p>
       <p>
-        <code>Next.js</code> · <code>TypeScript</code> · <code>Prisma</code> · <code>PostgreSQL</code> · <code>Google OAuth</code> · <code>Tailwind CSS</code>
+        <code>Agentic AI</code> · <code>LLM</code> · <code>Python</code> · <code>FastAPI</code> · <code>React</code> · <code>TypeScript</code> · <code>SQLite</code> · <code>Playwright</code> · <code>MCP</code> · <code>Docker</code>
       </p>
       <ul>
-        <li>Next.js App Router with Server Actions & Prisma ORM</li>
-        <li>POS offline-tolerant terminal & transactional stock locking</li>
-        <li>Admin revenue analytics dashboard & Google OAuth authentication</li>
+        <li><b>Plans, sub-agents and background tasks</b> — live plan card, parallel role-based sub-agents, long jobs with progress and cancel</li>
+        <li><b>Any model</b> — Gemini, OpenAI, Ollama, Anthropic… or a logged-in CLI (Claude Code) instead of an API key; retry and fallback built in</li>
+        <li><b>Real browser (Playwright), semantic memory, MCP client + server, Telegram, skills</b></li>
+        <li><b>Secure by design</b> — 4 permission modes, encrypted secrets and backups, SSRF/CSRF guards, audit log; 156 automated tests and CI</li>
       </ul>
       <p>
-        <a href="https://vattudongkha.io.vn" target="_blank"><b>🌐 Live Website (vattudongkha.io.vn)</b></a>
+        <a href="https://github.com/tranvanhuy-hichan/argus-agent" target="_blank"><b>💻 Source code (AGPL-3.0)</b></a>
       </p>
     </td>
   </tr>
 </table>
 
 <p>
-  <b>Also:</b> 🏫 <a href="https://doantruongthptsonha.sonhahub.cloud/" target="_blank">Youth Union Portal & Management System</a> — a student science & engineering competition project (Next.js · Prisma · PostgreSQL · Passkey/WebAuthn · PWA) where I served as <b>technical advisor & support</b> for the student team.
+  <b>Also:</b> 🛍️ <a href="https://vattudongkha.io.vn" target="_blank">NexShop</a> — full-stack e-commerce & POS platform (Next.js · Prisma · PostgreSQL) · 🏫 <a href="https://doantruongthptsonha.sonhahub.cloud/" target="_blank">Youth Union Portal & Management System</a> — a student science & engineering competition project (Next.js · Prisma · PostgreSQL · Passkey/WebAuthn · PWA) where I served as <b>technical advisor & support</b> for the student team.
 </p>
 
 ---
 
 ## 🤖 AI Agent Engineering
 
-I build **LLM-powered agents that do real work** — not demos. Public Investment is the production system where I proved it, but the approach is general and reusable on any workflow:
+I build **LLM-powered agents that do real work** — not demos. Public Investment is the production system where I proved it, and **Argus Agent** is the general-purpose agent platform I built on my own (planning, sub-agents, browser control, memory, MCP, approval gates). The approach is reusable on any workflow:
 
 | Capability | What I build |
 |---|---|

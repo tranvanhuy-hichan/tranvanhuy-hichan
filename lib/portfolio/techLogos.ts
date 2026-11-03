@@ -20,8 +20,8 @@ export const techLogoMap: Record<string, string> = {
   'Tailwind': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
   'Docker': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg',
   'Capacitor': 'https://cdn.simpleicons.org/capacitor/119EFF',
-  'OpenClaw': 'https://cdn.simpleicons.org/openai/10A37F',
-  'Agentic AI': 'https://cdn.simpleicons.org/openai/10A37F',
+  'OpenClaw': 'https://cdn.simpleicons.org/probot/10A37F',
+  'Agentic AI': 'https://cdn.simpleicons.org/probot/10A37F',
   'Ollama': 'https://cdn.simpleicons.org/ollama/000000',
   'FastAPI': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg',
   'MinIO': 'https://cdn.simpleicons.org/minio/C72E49',
@@ -31,6 +31,12 @@ export const techLogoMap: Record<string, string> = {
   'JWT': 'https://cdn.simpleicons.org/jsonwebtokens/000000',
   'Prisma': 'https://cdn.simpleicons.org/prisma/white',
   'PostGIS': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg',
+  'SQLite': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg',
+  'Playwright': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg',
+  'Telegram': 'https://cdn.simpleicons.org/telegram/26A5E4',
+  'Gemini': 'https://cdn.simpleicons.org/googlegemini/8E75B2',
+  'Claude': 'https://cdn.simpleicons.org/claude/D97757',
+  'MCP': 'https://cdn.simpleicons.org/modelcontextprotocol/6B7280',
   'GIS Maps': 'https://cdn.simpleicons.org/leaflet/199900',
 }
 

@@ -9,6 +9,7 @@ import p6 from "@/data/projects/studyhub/project.json";
 import p7 from "@/data/projects/used-car-price/project.json";
 import p8 from "@/data/projects/zenclass/project.json";
 import p9 from "@/data/projects/meetmind-ai/project.json";
+import p10 from "@/data/projects/argus-agent/project.json";
 
 export const projectSources: { folder: string; config: any; images: string[] }[] = [
   { folder: "bimspace", config: p0 as any, images: ["/project-images/bimspace/bimspace.png"] },
@@ -21,4 +22,5 @@ export const projectSources: { folder: string; config: any; images: string[] }[]
   { folder: "used-car-price", config: p7 as any, images: ["/project-images/used-car-price/used-car-price.png"] },
   { folder: "zenclass", config: p8 as any, images: ["/project-images/zenclass/01-tong-quan.png", "/project-images/zenclass/02-lich-hoc.png", "/project-images/zenclass/03-phieu-hoc-phi.png", "/project-images/zenclass/04-bien-lai-pdf.png", "/project-images/zenclass/05-giao-dien.png"] },
   { folder: "meetmind-ai", config: p9 as any, images: [] }, // screenshots go in public/project-images/meetmind-ai/ and are listed here
+  { folder: "argus-agent", config: p10 as any, images: ["/project-images/argus-agent/01-chat.png", "/project-images/argus-agent/02-plan-and-files.png", "/project-images/argus-agent/03-tasks.png", "/project-images/argus-agent/04-automations.png", "/project-images/argus-agent/05-ai-models.png", "/project-images/argus-agent/06-ai-models-cli.png", "/project-images/argus-agent/07-skills.png", "/project-images/argus-agent/08-memory.png", "/project-images/argus-agent/09-settings.png", "/project-images/argus-agent/10-statistics.png", "/project-images/argus-agent/11-home.png"] },
 ];

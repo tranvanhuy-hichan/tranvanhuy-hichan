@@ -10,27 +10,27 @@
       {
         "name": "Agent Orchestration (async jobs)",
         "level": 80,
-        "logo": "https://cdn.simpleicons.org/openai/10A37F"
+        "logo": "https://cdn.simpleicons.org/probot/10A37F"
       },
       {
         "name": "Tool Calling & Skill Design",
         "level": 80,
-        "logo": "https://cdn.simpleicons.org/openai/10A37F"
+        "logo": "https://cdn.simpleicons.org/probot/10A37F"
       },
       {
         "name": "Retrieval & Verification",
         "level": 80,
-        "logo": "https://cdn.simpleicons.org/openai/10A37F"
+        "logo": "https://cdn.simpleicons.org/probot/10A37F"
       },
       {
         "name": "Prompt & Structured Output",
         "level": 85,
-        "logo": "https://cdn.simpleicons.org/openai/10A37F"
+        "logo": "https://cdn.simpleicons.org/probot/10A37F"
       },
       {
         "name": "Human-in-the-loop & Guardrails",
         "level": 80,
-        "logo": "https://cdn.simpleicons.org/openai/10A37F"
+        "logo": "https://cdn.simpleicons.org/probot/10A37F"
       }
     ]
   },
