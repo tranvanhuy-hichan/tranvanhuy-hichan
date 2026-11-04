@@ -54,15 +54,16 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & 
     </td>
     <td width="50%" valign="top">
       <h3>🧭 Argus Agent — Personal AI Agent Platform</h3>
-      <p>A <b>local-first AI agent platform</b> I designed and built end to end: one agent core behind a web app, a CLI, a Telegram bot, a REST API and scheduled jobs — with every risky action behind an approval gate.</p>
+      <p>A <b>local-first AI agent platform</b> I designed and built end to end: one agent core behind a desktop app, a web app, a CLI, a Telegram bot, a REST API and scheduled jobs — with every risky action behind an approval gate.</p>
       <p>
         <code>Agentic AI</code> · <code>LLM</code> · <code>Python</code> · <code>FastAPI</code> · <code>React</code> · <code>TypeScript</code> · <code>SQLite</code> · <code>Playwright</code> · <code>MCP</code> · <code>Docker</code>
       </p>
       <ul>
         <li><b>Plans, sub-agents and background tasks</b> — live plan card, parallel role-based sub-agents, long jobs with progress and cancel</li>
-        <li><b>Any model</b> — Gemini, OpenAI, Ollama, Anthropic… or a logged-in CLI (Claude Code) instead of an API key; retry and fallback built in</li>
-        <li><b>Real browser (Playwright), semantic memory, MCP client + server, Telegram, skills</b></li>
-        <li><b>Secure by design</b> — 4 permission modes, encrypted secrets and backups, SSRF/CSRF guards, audit log; 156 automated tests and CI</li>
+        <li><b>Any model</b> — Gemini, OpenAI, Ollama, Anthropic… or a logged-in CLI (Claude Code, Antigravity, Codex) instead of an API key; retry and fallback built in</li>
+        <li><b>40+ MCP services with OAuth</b> — one-click catalogue, <code>@</code>mention a service in chat; plus a real browser (Playwright), semantic memory, Telegram and skills</li>
+        <li><b>Learns your habits</b> — repeats a request 3 times and it drafts a skill or scheduled automation for you to approve</li>
+        <li><b>Secure by design</b> — 4 permission modes, encrypted secrets and backups, SSRF/CSRF guards, audit log; 208 automated tests and CI</li>
       </ul>
       <p>
         <a href="https://github.com/tranvanhuy-hichan/argus-agent" target="_blank"><b>💻 Source code (AGPL-3.0)</b></a>
