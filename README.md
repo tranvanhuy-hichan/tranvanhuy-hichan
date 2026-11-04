@@ -61,9 +61,10 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & 
       <ul>
         <li><b>Plans, sub-agents and background tasks</b> — live plan card, parallel role-based sub-agents, long jobs with progress and cancel</li>
         <li><b>Any model</b> — Gemini, OpenAI, Ollama, Anthropic… or a logged-in CLI (Claude Code, Antigravity, Codex) instead of an API key; retry and fallback built in</li>
-        <li><b>40+ MCP services with OAuth</b> — one-click catalogue, <code>@</code>mention a service in chat; plus a real browser (Playwright), semantic memory, Telegram and skills</li>
+        <li><b>Ask your own documents</b> — drag in PDF, Word, Excel or PowerPoint; answers cite file and page (hybrid keyword + embedding search, Ollama or Gemini embeddings), plus an analysis report and REST/MCP access</li>
+        <li><b>54 plugins (MCP services) with OAuth</b> — one-click catalogue, <code>@</code>mention a service in chat; plus a real browser (Playwright), semantic memory, Telegram and skills</li>
         <li><b>Learns your habits</b> — repeats a request 3 times and it drafts a skill or scheduled automation for you to approve</li>
-        <li><b>Secure by design</b> — 4 permission modes, encrypted secrets and backups, SSRF/CSRF guards, audit log; 208 automated tests and CI</li>
+        <li><b>Secure by design</b> — 4 permission modes, encrypted secrets and backups, SSRF/CSRF guards, audit log; 223 automated tests and CI</li>
       </ul>
       <p>
         <a href="https://github.com/tranvanhuy-hichan/argus-agent" target="_blank"><b>💻 Source code (AGPL-3.0)</b></a>
