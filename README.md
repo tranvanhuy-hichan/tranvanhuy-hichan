@@ -181,7 +181,7 @@ I build **LLM-powered agents that do real work** — not demos. Public Investmen
 
 <p align="center">
   <a target="_blank" href="https://portfolio.tranvanhuy.io.vn"><img width="38" height="38" src="https://img.icons8.com/doodle/40/000000/domain.png" alt="Portfolio" /></a>&nbsp;&nbsp;
-  <a target="_blank" href="https://www.linkedin.com/in/huy-tran-van-5753b13b4"><img width="38" height="38" src="https://img.icons8.com/doodle/40/000000/linkedin--v2.png" alt="LinkedIn" /></a>&nbsp;&nbsp;
+  <a target="_blank" href="https://www.linkedin.com/in/tranvanhuy2603"><img width="38" height="38" src="https://img.icons8.com/doodle/40/000000/linkedin--v2.png" alt="LinkedIn" /></a>&nbsp;&nbsp;
   <a target="_blank" href="https://github.com/tranvanhuy-hichan"><img width="38" height="38" src="https://img.icons8.com/doodle/40/000000/github--v1.png" alt="GitHub" /></a>&nbsp;&nbsp;
   <a target="_blank" href="https://facebook.com/tranvanhuy260306"><img width="38" height="38" src="https://img.icons8.com/doodle/40/000000/facebook-new.png" alt="Facebook" /></a>&nbsp;&nbsp;
   <a href="mailto:tranvanhuy064206@gmail.com"><img width="38" height="38" src="https://img.icons8.com/doodle/40/000000/gmail-new.png" alt="Email" /></a>

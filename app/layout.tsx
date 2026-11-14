@@ -52,7 +52,7 @@ const jsonLd = {
       url: `${SITE}/`,
       image: `${SITE}/icon-512.png`,
       worksFor: { '@type': 'Organization', '@id': `${STORE_URL}/#organization`, name: BRAND.name, url: `${STORE_URL}/` },
-      sameAs: [STORE_URL, 'https://github.com/tranvanhuy-hichan', 'https://www.linkedin.com/in/huy-tran-van-5753b13b4', 'https://facebook.com/tranvanhuy260306'],
+      sameAs: [STORE_URL, 'https://github.com/tranvanhuy-hichan', 'https://www.linkedin.com/in/tranvanhuy2603', 'https://facebook.com/tranvanhuy260306'],
       address: { '@type': 'PostalAddress', addressLocality: 'Đà Nẵng', addressRegion: 'Đà Nẵng', addressCountry: 'VN' },
       alumniOf: { '@type': 'EducationalOrganization', name: 'Trường Đại học Bách khoa - Đại học Đà Nẵng' },
     },
