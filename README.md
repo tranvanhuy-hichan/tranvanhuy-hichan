@@ -19,47 +19,33 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year **Data Science & AI** student at **Da
 
 ---
 
-## 📁 Featured Projects
+## ⚡ What I Build
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🤖 Public Investment Project Management System</h3>
-      <p>Production system for wards and communes of <b>Da Nang city (Huong Tra Ward)</b>, digitizing the 10-step public investment workflow. I lead core development and <b>built its AI-agent layer</b> on OpenClaw.</p>
-      <p>
-        <code>OpenClaw</code> · <code>LLM</code> · <code>React</code> · <code>TypeScript</code> · <code>Frappe</code> · <code>Python</code> · <code>PostgreSQL</code>
-      </p>
-      <ul>
-        <li><b>AI estimate review</b> — code-side matching first, LLM only for the rest, citations verified in code</li>
-        <li><b>AI extraction and drafting</b> from Excel workbooks and official Word forms</li>
-        <li><b>Async agent jobs</b> with human approval and a full audit trail</li>
-      </ul>
-      <p>
-        <i>🔒 Enterprise project — in production (source code private)</i><br />
-        <a href="https://digitaltwin.huongtra.danang.gov.vn/dautucong/" target="_blank"><b>🌐 Production system (login required)</b></a>
-      </p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>🧭 Nestor Agent — Personal AI Agent Platform</h3>
-      <p>A <b>local-first AI agent platform</b> I built end to end: one agent core behind a desktop app, web app, CLI, Telegram bot and REST API, with every risky action behind an approval gate.</p>
-      <p>
-        <code>Python</code> · <code>FastAPI</code> · <code>React</code> · <code>TypeScript</code> · <code>SQLite</code> · <code>Playwright</code> · <code>MCP</code> · <code>Docker</code>
-      </p>
-      <ul>
-        <li><b>Plans, sub-agents and background tasks</b> with live progress and cancel</li>
-        <li><b>Any model</b> — Gemini, OpenAI, Ollama, Anthropic or a logged-in CLI</li>
-        <li><b>Ask your own documents</b> with answers that cite file and page</li>
-      </ul>
-      <p>
-        <a href="https://github.com/tranvanhuy-hichan/nestor-agent" target="_blank"><b>💻 Source code (AGPL-3.0)</b></a>
-      </p>
-    </td>
-  </tr>
-</table>
+- 🌐 **Full-Stack Web Applications** — modern, reactive interfaces and performant frontends with Next.js, React and TypeScript.
+- ⚙️ **Scalable Backend Systems** — RESTful APIs, auth workflows, clean architecture and real-time communication (Spring Boot, Frappe, Node.js).
+- 📱 **Cross-Platform Mobile Apps** — hybrid apps packaged with Capacitor for responsive, high-performance mobile deployment.
+- 🗺️ **GIS & Digital Transformation** — interactive 2D/3D spatial data platforms and enterprise process automation.
+- 🤖 **AI Agents & LLM Workflows** — production agents with async jobs, code-side retrieval and verification, and human approval, built for government workflows.
 
-<p>
-  <b>Also:</b> 🛍️ <a href="https://vattudongkha.io.vn" target="_blank">NexShop</a> — e-commerce & POS platform (Next.js · Prisma · PostgreSQL) · 🏫 <a href="https://doantruongthptsonha.sonhahub.cloud/" target="_blank">Youth Union Portal</a> — student competition project where I was <b>technical advisor</b>.
-</p>
+---
+
+## 📁 Projects
+
+| Project | What it is | Stack |
+|---|---|---|
+| 🧭 [**Nestor Agent**](https://github.com/tranvanhuy-hichan/nestor-agent) | Local-first personal AI agent platform: plans, sub-agents, real browser, answers from your documents with citations | Python · FastAPI · React · MCP |
+| 🤖 [**Public Investment System**](https://digitaltwin.huongtra.danang.gov.vn/dautucong/) | Production system for wards in Da Nang; I built its AI-agent layer (estimate review, cost extraction, drafting) 🔒 | OpenClaw · Frappe · React |
+| 🎙️ [**MeetMind**](https://github.com/tranvanhuy-hichan/meetmind-ai) | AI meeting assistant for Google Meet: live translated captions and minutes from a self-hosted LLM | FastAPI · Next.js · Ollama |
+| 🧘 [**ZenClass**](https://github.com/tranvanhuy-hichan/zenclass) | Multi-tenant SaaS for training centers: scheduling, attendance, tuition with PayOS | Next.js · Prisma · PostgreSQL |
+| 🛍️ [**NexShop**](https://vattudongkha.io.vn) | E-commerce and POS platform, live | Next.js · Prisma · PostgreSQL |
+| 🏫 [**Youth Union Portal**](https://doantruongthptsonha.sonhahub.cloud/) | School management portal built by a student team, where I was technical advisor | Next.js · Passkey · PWA |
+| 🏠 [**Smart Rent**](https://github.com/tranvanhuy-hichan/smart-rent) | Boarding-house management for landlords and tenants | Spring Boot · Vue 3 · Capacitor |
+| 🗺️ **BIMspace** | Infrastructure asset management on interactive 3D/2D maps 🔒 | Next.js · Frappe · GIS |
+| 🏥 [**Son Tra Health**](https://github.com/tranvanhuy-hichan/SonTraHealthManagement) | Health facility management system for Son Tra ward | React · Frappe · PostGIS |
+| 📚 [**StudyHub**](https://github.com/tranvanhuy-hichan/study-hub) | Study material sharing portal for university students | Vue 3 · Spring Boot · MySQL |
+| 🚗 [**Used-Car Price**](https://github.com/tranvanhuy-hichan/used-car-price) | End-to-end ML: crawl, clean, compare models, serve estimates | Python · scikit-learn · Streamlit |
+
+🔒 = enterprise project, source code private. More details at [portfolio.tranvanhuy.io.vn](https://portfolio.tranvanhuy.io.vn).
 
 ---
 
