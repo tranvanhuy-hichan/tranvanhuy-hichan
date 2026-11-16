@@ -53,7 +53,7 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & 
       </p>
     </td>
     <td width="50%" valign="top">
-      <h3>🧭 Argus Agent — Personal AI Agent Platform</h3>
+      <h3>🧭 Nestor Agent — Personal AI Agent Platform</h3>
       <p>A <b>local-first AI agent platform</b> I designed and built end to end: one agent core behind a desktop app, a web app, a CLI, a Telegram bot, a REST API and scheduled jobs — with every risky action behind an approval gate.</p>
       <p>
         <code>Agentic AI</code> · <code>LLM</code> · <code>Python</code> · <code>FastAPI</code> · <code>React</code> · <code>TypeScript</code> · <code>SQLite</code> · <code>Playwright</code> · <code>MCP</code> · <code>Docker</code>
@@ -67,7 +67,7 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & 
         <li><b>Secure by design</b> — 4 permission modes, encrypted secrets and backups, SSRF/CSRF guards, audit log; 223 automated tests and CI</li>
       </ul>
       <p>
-        <a href="https://github.com/tranvanhuy-hichan/argus-agent" target="_blank"><b>💻 Source code (AGPL-3.0)</b></a>
+        <a href="https://github.com/tranvanhuy-hichan/nestor-agent" target="_blank"><b>💻 Source code (AGPL-3.0)</b></a>
       </p>
     </td>
   </tr>
@@ -81,7 +81,7 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & 
 
 ## 🤖 AI Agent Engineering
 
-I build **LLM-powered agents that do real work** — not demos. Public Investment is the production system where I proved it, and **Argus Agent** is the general-purpose agent platform I built on my own (planning, sub-agents, browser control, memory, MCP, approval gates). The approach is reusable on any workflow:
+I build **LLM-powered agents that do real work** — not demos. Public Investment is the production system where I proved it, and **Nestor Agent** is the general-purpose agent platform I built on my own (planning, sub-agents, browser control, memory, MCP, approval gates). The approach is reusable on any workflow:
 
 | Capability | What I build |
 |---|---|

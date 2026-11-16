@@ -9,7 +9,7 @@ import p6 from "@/data/projects/studyhub/project.json";
 import p7 from "@/data/projects/used-car-price/project.json";
 import p8 from "@/data/projects/zenclass/project.json";
 import p9 from "@/data/projects/meetmind-ai/project.json";
-import p10 from "@/data/projects/argus-agent/project.json";
+import p10 from "@/data/projects/nestor-agent/project.json";
 
 export const projectSources: { folder: string; config: any; images: string[] }[] = [
   { folder: "bimspace", config: p0 as any, images: ["/project-images/bimspace/bimspace.png"] },
@@ -22,5 +22,5 @@ export const projectSources: { folder: string; config: any; images: string[] }[]
   { folder: "used-car-price", config: p7 as any, images: ["/project-images/used-car-price/used-car-price.png"] },
   { folder: "zenclass", config: p8 as any, images: ["/project-images/zenclass/01-tong-quan.png", "/project-images/zenclass/02-lich-hoc.png", "/project-images/zenclass/03-phieu-hoc-phi.png", "/project-images/zenclass/04-bien-lai-pdf.png", "/project-images/zenclass/05-giao-dien.png"] },
   { folder: "meetmind-ai", config: p9 as any, images: [] }, // screenshots go in public/project-images/meetmind-ai/ and are listed here
-  { folder: "argus-agent", config: p10 as any, images: ["/project-images/argus-agent/01-home.png", "/project-images/argus-agent/02-chat.png", "/project-images/argus-agent/04-ask-documents.png", "/project-images/argus-agent/05-documents.png", "/project-images/argus-agent/06-ask-from-documents.png", "/project-images/argus-agent/07-embedding-local.png", "/project-images/argus-agent/08-embedding-gemini.png", "/project-images/argus-agent/03-plan-and-files.png", "/project-images/argus-agent/09-plugins.png", "/project-images/argus-agent/10-mention.png", "/project-images/argus-agent/11-ai-models.png", "/project-images/argus-agent/12-ai-models-cli.png", "/project-images/argus-agent/13-tasks.png", "/project-images/argus-agent/14-automations.png", "/project-images/argus-agent/15-skills.png", "/project-images/argus-agent/16-memory.png", "/project-images/argus-agent/17-statistics.png", "/project-images/argus-agent/18-home-light.png", "/project-images/argus-agent/19-chat-light.png"] },
+  { folder: "nestor-agent", config: p10 as any, images: ["/project-images/nestor-agent/01-home.png", "/project-images/nestor-agent/02-chat.png", "/project-images/nestor-agent/04-ask-documents.png", "/project-images/nestor-agent/05-documents.png", "/project-images/nestor-agent/06-ask-from-documents.png", "/project-images/nestor-agent/07-embedding-local.png", "/project-images/nestor-agent/08-embedding-gemini.png", "/project-images/nestor-agent/03-plan-and-files.png", "/project-images/nestor-agent/09-plugins.png", "/project-images/nestor-agent/10-mention.png", "/project-images/nestor-agent/11-ai-models.png", "/project-images/nestor-agent/12-ai-models-cli.png", "/project-images/nestor-agent/13-tasks.png", "/project-images/nestor-agent/14-automations.png", "/project-images/nestor-agent/15-skills.png", "/project-images/nestor-agent/16-memory.png", "/project-images/nestor-agent/17-statistics.png", "/project-images/nestor-agent/18-home-light.png", "/project-images/nestor-agent/19-chat-light.png"] },
 ];
