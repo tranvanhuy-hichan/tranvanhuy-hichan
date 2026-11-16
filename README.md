@@ -8,26 +8,14 @@
 
 ### ✦ About Me
 
-Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & Artificial Intelligence** at **Da Nang University of Technology (DUT - UD)** with a GPA of **3.5 / 4.0**.
+Hi, I'm **Trần Văn Huy** — a 3rd-year **Data Science & AI** student at **Da Nang University of Technology (DUT - UD)**, GPA **3.5 / 4.0**.
 
-- 💼 **Current Role:** Software Developer Intern @ **Digital Twin Group (MakeAI)**.
-- 📍 **Location:** Da Nang, Vietnam.
-- ⚙️ **Core Tech:** Java (Spring Boot), Next.js, React.js, Python (Frappe), PostgreSQL, PostGIS, WebSocket STOMP, Capacitor.
-- 🤖 **AI Focus:** I build **production AI agents** (OpenClaw, LLM workflows) — async agent jobs, code-side retrieval and verification, human-in-the-loop — plus Data Science pipelines.
-- 🎯 **Philosophy:** Engineering robust, scalable full-stack software systems with clean architecture, high reliability, and practical business impact.
-- 🌐 **Live Portfolio:** [portfolio.tranvanhuy.io.vn](https://portfolio.tranvanhuy.io.vn)
+- 💼 **Role:** Software Developer Intern @ **Digital Twin Group (MakeAI)**
+- 📍 **Location:** Da Nang, Vietnam
+- 🤖 **Focus:** production **AI agents** and full-stack systems that ship to real users
+- 🌐 **Portfolio:** [portfolio.tranvanhuy.io.vn](https://portfolio.tranvanhuy.io.vn)
 
 <br clear="both" />
-
----
-
-## ⚡ What I Build
-
-- 🌐 **Full-Stack Web Applications** — Modern, responsive interfaces and performant architectures with Next.js, TypeScript, and React.js.
-- ⚙️ **Scalable Backend Systems** — Clean Architecture RESTful APIs, secure auth workflows (JWT/OAuth2), and real-time STOMP WebSockets with Spring Boot and Python Frappe.
-- 📱 **Cross-Platform Mobile Apps** — Hybrid applications packaged with Capacitor for seamless multi-platform deployment.
-- 🗺️ **GIS & Digital Transformation** — Interactive 2D/3D spatial data platforms with PostGIS and automated statutory enterprise workflows.
-- 🤖 **AI Agents & LLM Workflows** — Production agents for estimate review, document parsing/drafting and legal research, with verification and human approval.
 
 ---
 
@@ -36,35 +24,31 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & 
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>🤖 Ward/Commune-Level Public Investment Project Management System</h3>
-      <p>Production system rolled out to wards and communes of <b>Da Nang city (currently Huong Tra Ward)</b>, digitizing the 10-step public investment workflow. I am in charge of core development and <b>built its AI-agent layer</b> on OpenClaw.</p>
+      <h3>🤖 Public Investment Project Management System</h3>
+      <p>Production system for wards and communes of <b>Da Nang city (Huong Tra Ward)</b>, digitizing the 10-step public investment workflow. I lead core development and <b>built its AI-agent layer</b> on OpenClaw.</p>
       <p>
-        <code>OpenClaw</code> · <code>Agentic AI</code> · <code>LLM</code> · <code>React</code> · <code>TypeScript</code> · <code>Frappe</code> · <code>Python</code> · <code>PostgreSQL</code>
+        <code>OpenClaw</code> · <code>LLM</code> · <code>React</code> · <code>TypeScript</code> · <code>Frappe</code> · <code>Python</code> · <code>PostgreSQL</code>
       </p>
       <ul>
-        <li><b>AI estimate review</b> against a monthly price warehouse — code-side matching first, LLM only for what code can't resolve, citations verified in code</li>
-        <li><b>AI cost extraction</b> from Excel workbooks, mapped onto existing cost lines; <b>AI drafting</b> of official Word forms</li>
-        <li><b>Async agent jobs</b> (queue, progress, cancel, resume) shared by every AI feature, with human approval and a full audit trail</li>
-        <li>Scheduled <b>legal-base discovery</b> and a <b>permission-aware data assistant</b></li>
+        <li><b>AI estimate review</b> — code-side matching first, LLM only for the rest, citations verified in code</li>
+        <li><b>AI extraction and drafting</b> from Excel workbooks and official Word forms</li>
+        <li><b>Async agent jobs</b> with human approval and a full audit trail</li>
       </ul>
       <p>
-        <i>🔒 Enterprise project @ Digital Twin Group (MakeAI) — in production (source code private)</i><br />
+        <i>🔒 Enterprise project — in production (source code private)</i><br />
         <a href="https://digitaltwin.huongtra.danang.gov.vn/dautucong/" target="_blank"><b>🌐 Production system (login required)</b></a>
       </p>
     </td>
     <td width="50%" valign="top">
       <h3>🧭 Nestor Agent — Personal AI Agent Platform</h3>
-      <p>A <b>local-first AI agent platform</b> I designed and built end to end: one agent core behind a desktop app, a web app, a CLI, a Telegram bot, a REST API and scheduled jobs — with every risky action behind an approval gate.</p>
+      <p>A <b>local-first AI agent platform</b> I built end to end: one agent core behind a desktop app, web app, CLI, Telegram bot and REST API, with every risky action behind an approval gate.</p>
       <p>
-        <code>Agentic AI</code> · <code>LLM</code> · <code>Python</code> · <code>FastAPI</code> · <code>React</code> · <code>TypeScript</code> · <code>SQLite</code> · <code>Playwright</code> · <code>MCP</code> · <code>Docker</code>
+        <code>Python</code> · <code>FastAPI</code> · <code>React</code> · <code>TypeScript</code> · <code>SQLite</code> · <code>Playwright</code> · <code>MCP</code> · <code>Docker</code>
       </p>
       <ul>
-        <li><b>Plans, sub-agents and background tasks</b> — live plan card, parallel role-based sub-agents, long jobs with progress and cancel</li>
-        <li><b>Any model</b> — Gemini, OpenAI, Ollama, Anthropic… or a logged-in CLI (Claude Code, Antigravity, Codex) instead of an API key; retry and fallback built in</li>
-        <li><b>Ask your own documents</b> — drag in PDF, Word, Excel or PowerPoint; answers cite file and page (hybrid keyword + embedding search, Ollama or Gemini embeddings), plus an analysis report and REST/MCP access</li>
-        <li><b>54 plugins (MCP services) with OAuth</b> — one-click catalogue, <code>@</code>mention a service in chat; plus a real browser (Playwright), semantic memory, Telegram and skills</li>
-        <li><b>Learns your habits</b> — repeats a request 3 times and it drafts a skill or scheduled automation for you to approve</li>
-        <li><b>Secure by design</b> — 4 permission modes, encrypted secrets and backups, SSRF/CSRF guards, audit log; 223 automated tests and CI</li>
+        <li><b>Plans, sub-agents and background tasks</b> with live progress and cancel</li>
+        <li><b>Any model</b> — Gemini, OpenAI, Ollama, Anthropic or a logged-in CLI</li>
+        <li><b>Ask your own documents</b> with answers that cite file and page</li>
       </ul>
       <p>
         <a href="https://github.com/tranvanhuy-hichan/nestor-agent" target="_blank"><b>💻 Source code (AGPL-3.0)</b></a>
@@ -74,88 +58,29 @@ Hi, I'm **Trần Văn Huy** — a 3rd-year student majoring in **Data Science & 
 </table>
 
 <p>
-  <b>Also:</b> 🛍️ <a href="https://vattudongkha.io.vn" target="_blank">NexShop</a> — full-stack e-commerce & POS platform (Next.js · Prisma · PostgreSQL) · 🏫 <a href="https://doantruongthptsonha.sonhahub.cloud/" target="_blank">Youth Union Portal & Management System</a> — a student science & engineering competition project (Next.js · Prisma · PostgreSQL · Passkey/WebAuthn · PWA) where I served as <b>technical advisor & support</b> for the student team.
-</p>
-
----
-
-## 🤖 AI Agent Engineering
-
-I build **LLM-powered agents that do real work** — not demos. Public Investment is the production system where I proved it, and **Nestor Agent** is the general-purpose agent platform I built on my own (planning, sub-agents, browser control, memory, MCP, approval gates). The approach is reusable on any workflow:
-
-| Capability | What I build |
-|---|---|
-| **Agent orchestration** | Long-running agent jobs behind a queue: progress, cancel, retry, resume after reload, results applied server-side |
-| **Tool use & skills** | Agents that read files, call internal tools/APIs and follow reusable "skill" playbooks written for the domain |
-| **Retrieval before the LLM** | Deterministic search/matching in code first, so the model sees only what it needs — cheaper, faster, reproducible |
-| **Structured output & verification** | JSON-schema'd answers, numeric checks in code, citations validated against source files, unverified findings flagged |
-| **Human-in-the-loop** | Approve/reject checkpoints, editable drafts, audit trail of every decision |
-| **Learning from feedback** | Agents that learn the user's preferred document format from their edits |
-| **Safe by design** | Agents read data through the same permission layer as the UI; results cached by content hash to avoid repeated LLM calls |
-
-**Typical agent I can ship:** document reviewer · data/Excel extractor · report & form drafter · research/monitoring agent · natural-language data assistant — end to end, from prompt and tool design to the backend, queue and UI.
-
-<p>
-  <code>OpenClaw</code> · <code>LLM APIs</code> · <code>Prompt & Skill Design</code> · <code>Tool Calling</code> · <code>Structured Outputs</code> · <code>Python</code> · <code>Job Queues (Redis)</code> · <code>PostgreSQL</code> · <code>React / Next.js</code>
+  <b>Also:</b> 🛍️ <a href="https://vattudongkha.io.vn" target="_blank">NexShop</a> — e-commerce & POS platform (Next.js · Prisma · PostgreSQL) · 🏫 <a href="https://doantruongthptsonha.sonhahub.cloud/" target="_blank">Youth Union Portal</a> — student competition project where I was <b>technical advisor</b>.
 </p>
 
 ---
 
 ## 🛠️ Tech Stack
 
-<h3 align="center">Languages</h3>
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=&message=Java&color=000000&style=flat&logo=openjdk&logoColor=white" alt="Java" />
   <img src="https://img.shields.io/static/v1?label=&message=TypeScript&color=000000&style=flat&logo=typescript&logoColor=3178C6" alt="TypeScript" />
-  <img src="https://img.shields.io/static/v1?label=&message=JavaScript&color=000000&style=flat&logo=javascript&logoColor=F7DF1E" alt="JavaScript" />
   <img src="https://img.shields.io/static/v1?label=&message=Python&color=000000&style=flat&logo=python&logoColor=3776AB" alt="Python" />
-  <img src="https://img.shields.io/static/v1?label=&message=SQL&color=000000&style=flat&logo=postgresql&logoColor=4169E1" alt="SQL" />
-</p>
-
-<h3 align="center">Backend & Frameworks</h3>
-<p align="center">
   <img src="https://img.shields.io/static/v1?label=&message=Spring%20Boot&color=222222&style=flat&logo=springboot&logoColor=6DB33F" alt="Spring Boot" />
-  <img src="https://img.shields.io/static/v1?label=&message=Frappe%20Framework&color=222222&style=flat&logo=frappe&logoColor=0089FF" alt="Frappe" />
-  <img src="https://img.shields.io/static/v1?label=&message=Node.js&color=222222&style=flat&logo=nodedotjs&logoColor=5FA04E" alt="Node.js" />
-  <img src="https://img.shields.io/static/v1?label=&message=REST%20APIs&color=222222&style=flat&logo=postman&logoColor=FF6C37" alt="REST APIs" />
-  <img src="https://img.shields.io/static/v1?label=&message=WebSocket%20STOMP&color=222222&style=flat&logo=websocket&logoColor=62B5E5" alt="WebSocket" />
-</p>
-
-<h3 align="center">Frontend & Mobile</h3>
-<p align="center">
+  <img src="https://img.shields.io/static/v1?label=&message=Frappe&color=222222&style=flat&logo=frappe&logoColor=0089FF" alt="Frappe" />
   <img src="https://img.shields.io/static/v1?label=&message=Next.js&color=222222&style=flat&logo=nextdotjs&logoColor=white" alt="Next.js" />
-  <img src="https://img.shields.io/static/v1?label=&message=React.js&color=222222&style=flat&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/static/v1?label=&message=React&color=222222&style=flat&logo=react&logoColor=61DAFB" alt="React" />
   <img src="https://img.shields.io/static/v1?label=&message=Capacitor&color=222222&style=flat&logo=capacitor&logoColor=119EFF" alt="Capacitor" />
-  <img src="https://img.shields.io/static/v1?label=&message=Tailwind%20CSS&color=222222&style=flat&logo=tailwindcss&logoColor=06B6D4" alt="Tailwind CSS" />
-</p>
-
-<h3 align="center">Databases & Geospatial</h3>
-<p align="center">
   <img src="https://img.shields.io/static/v1?label=&message=PostgreSQL&color=222222&style=flat&logo=postgresql&logoColor=4169E1" alt="PostgreSQL" />
   <img src="https://img.shields.io/static/v1?label=&message=PostGIS&color=222222&style=flat&logo=postgresql&logoColor=336791" alt="PostGIS" />
-  <img src="https://img.shields.io/static/v1?label=&message=MySQL&color=222222&style=flat&logo=mysql&logoColor=4479A1" alt="MySQL" />
-  <img src="https://img.shields.io/static/v1?label=&message=SQL%20Server&color=222222&style=flat&logo=microsoftsqlserver&logoColor=CC292B" alt="SQL Server" />
   <img src="https://img.shields.io/static/v1?label=&message=Redis&color=222222&style=flat&logo=redis&logoColor=FF4438" alt="Redis" />
-</p>
-
-<h3 align="center">DevOps, AI & Tools</h3>
-<p align="center">
   <img src="https://img.shields.io/static/v1?label=&message=Docker&color=222222&style=flat&logo=docker&logoColor=2496ED" alt="Docker" />
-  <img src="https://img.shields.io/static/v1?label=&message=Git&color=222222&style=flat&logo=git&logoColor=F05032" alt="Git" />
   <img src="https://img.shields.io/static/v1?label=&message=GitHub%20Actions&color=222222&style=flat&logo=githubactions&logoColor=2088FF" alt="GitHub Actions" />
-  <img src="https://img.shields.io/static/v1?label=&message=Linux&color=222222&style=flat&logo=linux&logoColor=FCC624" alt="Linux" />
   <img src="https://img.shields.io/static/v1?label=&message=Agentic%20AI&color=222222&style=flat&logo=openai&logoColor=10A37F" alt="Agentic AI" />
-  <img src="https://img.shields.io/static/v1?label=&message=OpenClaw%20Agents&color=222222&style=flat&logo=openai&logoColor=10A37F" alt="OpenClaw Agents" />
-  <img src="https://img.shields.io/static/v1?label=&message=LLM%20Workflows&color=222222&style=flat&logo=openai&logoColor=10A37F" alt="LLM Workflows" />
 </p>
-
----
-
-## 🧠 Academic Specialization & Focus
-
-- 📊 **Data Science & ML:** Exploratory Data Analysis, Pandas, NumPy, Scikit-learn, and Deep Learning models.
-- 🤖 **Agentic AI & Automation:** Agent job orchestration, tool calling, hybrid rule-based + LLM pipelines, and automated statutory process workflows.
-- 🏗️ **Software Engineering:** Scalable full-stack systems (Spring Boot, React, Next.js, PostgreSQL), Clean Architecture, and Transactional Systems.
 
 ---
 
@@ -163,16 +88,6 @@ I build **LLM-powered agents that do real work** — not demos. Public Investmen
 
 <div align="center">
   <img width="49.5%" src="./metrics-streak.svg" alt="GitHub contribution streak" /><img width="49.5%" src="./metrics-languages.svg" alt="Most used programming languages" />
-</div>
-
-## 🐍 Contribution Journey
-
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./github-contribution-grid-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="./github-contribution-grid-snake.svg" />
-    <img width="100%" src="./github-contribution-grid-snake.svg" alt="Contribution grid snake animation" />
-  </picture>
 </div>
 
 ---
