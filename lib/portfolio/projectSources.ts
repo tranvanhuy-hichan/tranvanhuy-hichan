@@ -6,7 +6,7 @@ import p3 from "@/data/projects/public-investment-openclaw/project.json";
 import p4 from "@/data/projects/qlpt/project.json";
 import p5 from "@/data/projects/sontra-health/project.json";
 import p6 from "@/data/projects/studyhub/project.json";
-import p7 from "@/data/projects/used-car-price/project.json";
+import p7 from "@/data/projects/ai-vision-toolkit/project.json";
 import p8 from "@/data/projects/zenclass/project.json";
 import p9 from "@/data/projects/meetmind-ai/project.json";
 import p10 from "@/data/projects/nestor-agent/project.json";
@@ -19,7 +19,7 @@ export const projectSources: { folder: string; config: any; images: string[] }[]
   { folder: "qlpt", config: p4 as any, images: ["/project-images/qlpt/qlpt.png"] },
   { folder: "sontra-health", config: p5 as any, images: ["/project-images/sontra-health/sonTraHealth.png"] },
   { folder: "studyhub", config: p6 as any, images: ["/project-images/studyhub/studyHub.png"] },
-  { folder: "used-car-price", config: p7 as any, images: ["/project-images/used-car-price/used-car-price.png"] },
+  { folder: "ai-vision-toolkit", config: p7 as any, images: ["/project-images/ai-vision-toolkit/ai-vision-toolkit.png"] },
   { folder: "zenclass", config: p8 as any, images: ["/project-images/zenclass/01-tong-quan.png", "/project-images/zenclass/02-lich-hoc.png", "/project-images/zenclass/03-phieu-hoc-phi.png", "/project-images/zenclass/04-bien-lai-pdf.png", "/project-images/zenclass/05-giao-dien.png"] },
   { folder: "meetmind-ai", config: p9 as any, images: [] }, // screenshots go in public/project-images/meetmind-ai/ and are listed here
   { folder: "nestor-agent", config: p10 as any, images: ["/project-images/nestor-agent/01-home.png", "/project-images/nestor-agent/02-chat.png", "/project-images/nestor-agent/04-ask-documents.png", "/project-images/nestor-agent/05-documents.png", "/project-images/nestor-agent/06-ask-from-documents.png", "/project-images/nestor-agent/07-embedding-local.png", "/project-images/nestor-agent/08-embedding-gemini.png", "/project-images/nestor-agent/03-plan-and-files.png", "/project-images/nestor-agent/09-plugins.png", "/project-images/nestor-agent/10-mention.png", "/project-images/nestor-agent/11-ai-models.png", "/project-images/nestor-agent/12-ai-models-cli.png", "/project-images/nestor-agent/13-tasks.png", "/project-images/nestor-agent/14-automations.png", "/project-images/nestor-agent/15-skills.png", "/project-images/nestor-agent/16-memory.png", "/project-images/nestor-agent/17-statistics.png", "/project-images/nestor-agent/18-home-light.png", "/project-images/nestor-agent/19-chat-light.png"] },
