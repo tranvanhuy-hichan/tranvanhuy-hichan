@@ -1,0 +1,83 @@
+{
+  "id": 8,
+  "category": "ai",
+  "featured": true,
+  "showInitial": false,
+  "order": 11,
+  "internal": false,
+  "time": "11-2026",
+  "github": "https://github.com/tranvanhuy-hichan/ai-learning-lab",
+  "demo": "#",
+  "tags": [
+    "Python",
+    "PyTorch",
+    "FastAPI",
+    "Computer Vision",
+    "NLP",
+    "Learning in Public"
+  ],
+  "en": {
+    "title": "AI Learning Lab — Learning AI in Public",
+    "description": "A personal learning repository: a roadmap, notes and a dated log next to the models I train (CNN, U-Net, RNN, LSTM, Transformer), all runnable in a bilingual web app.",
+    "longDesc": "A learning project built around one loop: learn a topic, write a short note, then train and measure a model and add it to the app. The repository holds a 24-week roadmap that separates what is only applied from what is not tracked yet, a dated learning log, and seven bilingual notes (English and Vietnamese). Three projects sit beside them. Vision Toolkit: waste classification with a CNN, ResNet18 and EfficientNet-B0 (96.1% test accuracy for EfficientNet-B0) and pet segmentation with a from-scratch U-Net and a ResNet18-encoder U-Net (mIoU 0.767 and 0.809). Sequence Modeling: RNN, LSTM and a fine-tuned DistilBERT on temperature forecasting and IMDB sentiment (BiLSTM 87.7%, DistilBERT 91.6%). Lab Web: a FastAPI and plain-JavaScript web app, English and Vietnamese, light and dark, that runs all four tools on a CPU. I wrote the results down honestly: every number is a single run, one of my hypotheses (that the LSTM's lead over the RNN grows with text length) was disproved by the data, and the limits sit next to each result. It was built with the help of an AI coding assistant, and 32 automated tests plus GitHub Actions CI cover the three projects.",
+    "role": "A personal learning project: I study a topic, write a note, train and measure a model, then add it to the app.",
+    "responsibilities": [
+      "Trained and compared CNN, ResNet18 and EfficientNet-B0 for waste classification, and built a U-Net (from scratch and with a pretrained encoder) for pet segmentation",
+      "Compared RNN, LSTM and a fine-tuned Transformer on a forecasting task and a sentiment task, with baselines and chronological splits",
+      "Wrote the roadmap, learning log and bilingual notes, including what I did not understand and where my first guess was wrong",
+      "Built a bilingual FastAPI and JavaScript web app with tests and CI so every model can be tried with real inputs"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "Write limits and negative results next to every number",
+        "reason": "One of my hypotheses was disproved by the data, and several comparisons changed more than one setting at once; saying so keeps the notes trustworthy."
+      },
+      {
+        "decision": "Keep the web front-end free of libraries and build steps",
+        "reason": "Plain HTML, CSS and JavaScript with an English/Vietnamese switch runs offline and is easy to read while learning."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "The better segmentation model changed several settings at once (pretrained encoder, larger images, border loss weight), so the improvement could not be credited to one change.",
+        "solution": "Documented that limit instead of overclaiming and put a clean one-change-at-a-time ablation on the roadmap."
+      },
+      {
+        "challenge": "A demo app can silently differ from the notebooks that trained the models.",
+        "solution": "Re-ran the inference code on the same test split and matched the notebook accuracy exactly (96.13%) before building the interface, then covered the API with automated tests."
+      }
+    ]
+  },
+  "vi": {
+    "title": "AI Learning Lab — Học AI công khai",
+    "description": "Repo học tập cá nhân: lộ trình, ghi chú và nhật ký theo ngày cạnh các mô hình mình huấn luyện (CNN, U-Net, RNN, LSTM, Transformer), tất cả chạy được trong một web app song ngữ.",
+    "longDesc": "Dự án học tập xoay quanh một vòng lặp: học một chủ đề, viết ghi chú ngắn, rồi huấn luyện và đo một mô hình và thêm vào ứng dụng. Repo gồm lộ trình 24 tuần phân biệt rõ phần chỉ mới được áp dụng với phần chưa ghi nhận, nhật ký học theo ngày và bảy ghi chú song ngữ (tiếng Anh và tiếng Việt). Bên cạnh là ba dự án. Vision Toolkit: phân loại rác bằng CNN, ResNet18 và EfficientNet-B0 (EfficientNet-B0 đạt 96,1% accuracy trên tập test) và phân đoạn thú cưng bằng U-Net tự viết từ đầu cùng U-Net encoder ResNet18 (mIoU 0,767 và 0,809). Sequence Modeling: RNN, LSTM và DistilBERT fine-tune trên dự báo nhiệt độ và cảm xúc IMDB (BiLSTM 87,7%, DistilBERT 91,6%). Lab Web: web app FastAPI và JavaScript thuần, song ngữ Anh và Việt, giao diện sáng và tối, chạy cả bốn công cụ trên CPU. Mình ghi kết quả trung thực: mọi con số là một lần chạy, một giả thuyết của mình (LSTM hơn RNN nhiều hơn khi văn bản dài) đã bị dữ liệu bác bỏ, và giới hạn được ghi ngay cạnh mỗi kết quả. Dự án được xây dựng với sự hỗ trợ của trợ lý lập trình AI, cùng 32 kiểm thử tự động và CI GitHub Actions cho ba dự án.",
+    "role": "Dự án học tập cá nhân: mình học một chủ đề, viết ghi chú, huấn luyện và đo một mô hình, rồi thêm vào ứng dụng.",
+    "responsibilities": [
+      "Huấn luyện và so sánh CNN, ResNet18 và EfficientNet-B0 cho phân loại rác, và xây U-Net (từ đầu và với encoder pretrained) cho phân đoạn thú cưng",
+      "So sánh RNN, LSTM và Transformer fine-tune trên bài dự báo và bài cảm xúc, có baseline và chia theo thời gian",
+      "Viết lộ trình, nhật ký học và ghi chú song ngữ, gồm cả chỗ mình chưa hiểu và nơi dự đoán đầu tiên của mình sai",
+      "Xây web app song ngữ bằng FastAPI và JavaScript, có kiểm thử và CI, để thử mọi mô hình với dữ liệu thật"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "Ghi giới hạn và kết quả âm cạnh mỗi con số",
+        "reason": "Một giả thuyết của mình đã bị dữ liệu bác bỏ và vài so sánh đổi nhiều thiết lập cùng lúc; nói rõ điều đó giữ cho ghi chú đáng tin."
+      },
+      {
+        "decision": "Giữ front-end không dùng thư viện và không có bước build",
+        "reason": "HTML, CSS và JavaScript thuần với nút chuyển Anh/Việt chạy được offline và dễ đọc khi đang học."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "Mô hình phân đoạn tốt hơn đổi nhiều thiết lập cùng lúc (encoder pretrained, ảnh lớn hơn, trọng số loss lớp viền) nên không quy mức cải thiện cho một thay đổi.",
+        "solution": "Ghi rõ giới hạn đó thay vì khẳng định quá mức và đưa một ablation sạch (mỗi lần đổi một thứ) vào lộ trình."
+      },
+      {
+        "challenge": "Ứng dụng demo có thể lặng lẽ khác với notebook đã huấn luyện mô hình.",
+        "solution": "Chạy lại code suy luận trên cùng tập test và ra đúng accuracy của notebook (96,13%) trước khi làm giao diện, rồi phủ API bằng kiểm thử tự động."
+      }
+    ]
+  }
+}
