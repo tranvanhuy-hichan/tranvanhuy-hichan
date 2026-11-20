@@ -20,7 +20,6 @@ export const techLogoMap: Record<string, string> = {
   'Tailwind': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
   'Docker': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg',
   'Capacitor': 'https://cdn.simpleicons.org/capacitor/119EFF',
-  'OpenClaw': 'https://cdn.simpleicons.org/probot/10A37F',
   'Agentic AI': 'https://cdn.simpleicons.org/probot/10A37F',
   'Ollama': 'https://cdn.simpleicons.org/ollama/000000',
   'FastAPI': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg',
