@@ -1,0 +1,91 @@
+{
+  "id": 13,
+  "category": "ai",
+  "featured": true,
+  "showInitial": true,
+  "order": 3,
+  "internal": false,
+  "time": "11-2026",
+  "github": "https://github.com/tranvanhuy-hichan/ai-omniseg",
+  "demo": "#",
+  "tags": [
+    "Python",
+    "PyTorch",
+    "nnU-Net v2",
+    "Medical Imaging",
+    "NIfTI",
+    "PySide6"
+  ],
+  "en": {
+    "title": "OmniSeg — Medical Image Segmentation",
+    "description": "An open-source desktop viewer and training scaffold for multi-model medical image segmentation on NIfTI volumes, built on nnU-Net v2. Ships brain tumour (MRI) and liver tumour (CT) models.",
+    "longDesc": "OmniSeg is a research tool for segmenting 3D medical volumes. It wraps nnU-Net v2 (used as a dependency, not forked) in a desktop viewer with four synchronised viewports (axial, coronal, sagittal, 3D), a model dropdown, brush and eraser tools to correct a prediction, a ruler, and an analysis tab with per-region volume, largest diameter, mean intensity and Dice/IoU against a reference mask. Two tasks are trained and included: brain tumour on MRI (MSD Task01, 2D configuration) and liver tumour on CT (MSD Task03, 3d_lowres). Each task is a folder with a task.json, so a new body region or modality is added without changing the app. Predictions run in about 20 s for a brain case on a laptop RTX 3050 4 GB. The limits are stated in the README: each model is one fold trained for 100 epochs, only training pseudo-Dice is reported, and nothing is validated clinically.",
+    "role": "Sole developer: training pipeline, desktop viewer, task plug-in format, tests and documentation.",
+    "responsibilities": [
+      "Trained brain tumour (MRI, 2D) and liver tumour (CT, 3d_lowres) models with nnU-Net v2 on Kaggle in two stages: CPU preprocessing, then a budgeted GPU run",
+      "Built a PySide6 desktop viewer with four synchronised viewports, 3D mask surfaces, editing tools, measurements and Dice/IoU against a reference mask",
+      "Designed a plug-in task format (task.json, dataset fingerprint, README) so a new model is discovered on start with no change to the app code",
+      "Wrote synthetic-data tests, CI, and bilingual documentation including a table of every training setting read from the saved plans and logs"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "Use nnU-Net v2 as a dependency instead of forking it",
+        "reason": "Upgrades and the proven training recipe stay upstream, and the project only owns the viewer, task format and tooling."
+      },
+      {
+        "decision": "Make each model a folder under tasks/ described by a task.json",
+        "reason": "Adding a body region or modality becomes copying a template, and the app discovers it on the next start."
+      },
+      {
+        "decision": "Label every prediction as an unreviewed AI result in the viewport",
+        "reason": "The software is research-only, so the interface says so every time a mask is shown."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "The brain model works on 2D slices while the liver model needs resampled 3D windows, so one inference path did not fit both.",
+        "solution": "Kept both behind nnUNetv2_predict with settings stored per task, so the viewer only deals with the resulting mask."
+      },
+      {
+        "challenge": "Training-time pseudo-Dice is easy to mistake for full-volume accuracy.",
+        "solution": "Reported only pseudo-Dice, said clearly that no full-volume or external evaluation has been run yet, and listed what is unknown or not measured."
+      }
+    ]
+  },
+  "vi": {
+    "title": "OmniSeg — Phân đoạn ảnh y tế",
+    "description": "Ứng dụng desktop mã nguồn mở để xem và huấn luyện phân đoạn ảnh y tế nhiều mô hình trên volume NIfTI, xây trên nnU-Net v2. Kèm mô hình u não (MRI) và u gan (CT).",
+    "longDesc": "OmniSeg là công cụ nghiên cứu phân đoạn ảnh y tế 3D. Dự án bọc nnU-Net v2 (dùng như thư viện, không fork) trong một trình xem desktop với bốn viewport đồng bộ (axial, coronal, sagittal, 3D), danh sách chọn mô hình, cọ vẽ và tẩy để sửa kết quả, thước đo, và tab phân tích với thể tích từng vùng, đường kính lớn nhất, cường độ trung bình và Dice/IoU so với mask tham chiếu. Hai tác vụ đã huấn luyện và đi kèm: u não trên MRI (MSD Task01, cấu hình 2D) và u gan trên CT (MSD Task03, 3d_lowres). Mỗi tác vụ là một thư mục có task.json, nên thêm vùng cơ thể hay phương thức chụp mới không cần sửa ứng dụng. Một ca não chạy khoảng 20 giây trên laptop RTX 3050 4 GB. README nêu rõ giới hạn: mỗi mô hình chỉ một fold huấn luyện 100 epoch, chỉ báo pseudo-Dice lúc huấn luyện và không có xác nhận lâm sàng.",
+    "role": "Phát triển một mình: pipeline huấn luyện, trình xem desktop, định dạng tác vụ dạng plug-in, kiểm thử và tài liệu.",
+    "responsibilities": [
+      "Huấn luyện mô hình u não (MRI, 2D) và u gan (CT, 3d_lowres) bằng nnU-Net v2 trên Kaggle, chia hai giai đoạn: tiền xử lý bằng CPU rồi chạy GPU theo ngân sách",
+      "Xây trình xem desktop bằng PySide6 với bốn viewport đồng bộ, bề mặt mask 3D, công cụ chỉnh sửa, đo đạc và Dice/IoU so với mask tham chiếu",
+      "Thiết kế định dạng tác vụ dạng plug-in (task.json, dấu vân tay dataset, README) để mô hình mới được nhận ra khi khởi động mà không sửa code ứng dụng",
+      "Viết kiểm thử bằng dữ liệu tổng hợp, CI và tài liệu song ngữ, gồm bảng mọi thiết lập huấn luyện đọc từ plans và log đã lưu"
+    ],
+    "engineeringDecisions": [
+      {
+        "decision": "Dùng nnU-Net v2 như một phụ thuộc thay vì fork",
+        "reason": "Bản nâng cấp và công thức huấn luyện đã được kiểm chứng nằm ở upstream, dự án chỉ lo trình xem, định dạng tác vụ và công cụ."
+      },
+      {
+        "decision": "Mỗi mô hình là một thư mục trong tasks/ mô tả bằng task.json",
+        "reason": "Thêm vùng cơ thể hay phương thức chụp chỉ là sao chép một mẫu, ứng dụng tự nhận ra ở lần khởi động sau."
+      },
+      {
+        "decision": "Gắn nhãn mọi kết quả dự đoán là kết quả AI chưa được duyệt ngay trên viewport",
+        "reason": "Phần mềm chỉ dùng cho nghiên cứu nên giao diện nói rõ điều đó mỗi lần hiển thị mask."
+      }
+    ],
+    "challengesAndSolutions": [
+      {
+        "challenge": "Mô hình não chạy trên lát cắt 2D còn mô hình gan cần cửa sổ 3D đã resample, nên một đường suy luận không dùng chung được.",
+        "solution": "Giữ cả hai sau nnUNetv2_predict với thiết lập lưu theo từng tác vụ, để trình xem chỉ làm việc với mask kết quả."
+      },
+      {
+        "challenge": "Pseudo-Dice lúc huấn luyện dễ bị nhầm với độ chính xác trên toàn volume.",
+        "solution": "Chỉ báo pseudo-Dice, nói rõ chưa có đánh giá toàn volume hay trên dữ liệu ngoài, và liệt kê những gì chưa biết hoặc chưa đo."
+      }
+    ]
+  }
+}
