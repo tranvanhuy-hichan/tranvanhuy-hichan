@@ -16,7 +16,7 @@ export function useScrollAnimation() {
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      { threshold: 0, rootMargin: '0px 0px -40px 0px' }
     );
 
     const observeElements = () => {
@@ -24,12 +24,26 @@ export function useScrollAnimation() {
         if (!el.classList.contains('visible')) observer.observe(el);
       });
     };
+    // Fallback: reveal anything already at/above the fold, in case the observer missed it (fast scroll, tall cards).
+    let raf = 0;
+    const revealInView = () => {
+      raf = 0;
+      document.querySelectorAll('.fade-up:not(.visible), .fade-left:not(.visible), .fade-right:not(.visible)').forEach((el) => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 40) el.classList.add('visible');
+      });
+    };
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(revealInView); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
     observeElements();
-    const mutationObserver = new MutationObserver(observeElements);
+    const mutationObserver = new MutationObserver(() => { observeElements(); onScroll(); });
     mutationObserver.observe(document.body, { childList: true, subtree: true });
     return () => {
       observer.disconnect();
       mutationObserver.disconnect();
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      if (raf) cancelAnimationFrame(raf);
     };
   }, []);
 }

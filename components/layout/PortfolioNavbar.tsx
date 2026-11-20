@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 import LocaleSwitch from '@/components/portfolio/layout/LocaleSwitch';
 import { usePortfolioStore } from '@/lib/portfolio/store';
-import { STORE_URL, BRAND, ROOT_DOMAIN } from '@/lib/site';
+import { STORE_URL, ROOT_DOMAIN } from '@/lib/site';
 
 export const MAIN_SITE = STORE_URL;
 
@@ -60,7 +60,6 @@ export default function PortfolioNavbar() {
           <img src="/logo.png" alt="Trần Văn Huy" className="h-9 w-9 rounded-xl shadow-sm" />
           <span className="flex flex-col leading-none">
             <span className="pf-heading whitespace-nowrap text-base sm:text-xl">Trần Văn <span className="pf-brand">Huy</span></span>
-            <span className="pf-mute mt-0.5 hidden whitespace-nowrap text-[10px] font-bold tracking-wide min-[360px]:block sm:text-[11px]">{BRAND.role}</span>
           </span>
         </Link>
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Điều hướng chính">
